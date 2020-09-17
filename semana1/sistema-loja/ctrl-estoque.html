@@ -1,68 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Ranchers&display=swap" rel="stylesheet">
+    <title>Musicalizando</title>
 </head>
+
+<!-- Barra de menu -->
+
 <body>
-    <div>
-        <p>Musicalizando</p>
-    </div>
-    
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </div>
+    <header>
+        <div id="logo">
+            <p>Musicalizando</p>
+        </div>
+        <div class="links">
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+        </div>
+    </header>
+    <!-- Conteúdo -->
+    <section class="conteudo">
+        <h2>Controle de Estoque</h2>
 
-    <h2>Controle de Estoque</h2>
+        <table>
+            <tr>
+                <th>Foto</th>
+                <th>Descrição</th>
+                <th>Preço (R$)</th>
+                <th>Quantidade disponível</th>
+            </tr>
 
-    <table>
-        <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
-        </tr>
+            <tr>
+                <td><img src="./img/trompete.webp" alt="Imagem de um trompete" /></td>
+                <td> Trompete </td>
+                <td> R$1.456,00 </td>
+                <td> 5 </td>
+            </tr>
 
-        <tr>
-            <td><img src="./img/trompete.webp" alt="Imagem de um trompete"/></td>
-            <td> Trompete </td>
-            <td> R$1.456,00 </td>
-            <td> 5 </td>
-        </tr>
+            <tr>
+                <td><img src="./img/sax.webp" alt="imagem de um saxofone" /></td>
+                <td> Saxofone </td>
+                <td> R$ 193,90 </td>
+                <td> 7 </td>
+            </tr>
 
-        <tr>
-            <td><img src="./img/sax.webp" alt="imagem de um saxofone"/></td>
-            <td> Saxofone </td>
-            <td> R$ 193,90 </td>
-            <td> 7 </td>
-        </tr>
+            <tr>
+                <td><img src="./img/bateria.webp" alt="imagem de uma bateria vermelha" /></td>
+                <td> Bateria </td>
+                <td> R$1.597,00 </td>
+                <td> 3 </td>
+            </tr>
 
-        <tr>
-            <td><img src="./img/bateria.webp" alt="imagem de uma bateria vermelha"/></td>
-            <td> Bateria </td>
-            <td> R$1.597,00 </td>
-            <td> 3 </td>
-        </tr>
+            <tr>
+                <td><img src="./img/teclado.webp" alt="imagem de um teclado musical" /></td>
+                <td> Teclado </td>
+                <td> R$ 5.800,00 </td>
+                <td> 9 </td>
+            </tr>
 
-        <tr>
-            <td><img src="./img/teclado.webp" alt="imagem de um teclado musical"/></td>
-            <td> Teclado </td>
-            <td> R$ 5.800,00 </td>
-            <td> 9 </td>
-        </tr>
-        
-        <tr>
-            <td><img src="./img/guitarra.webp" alt="imagem de uma guitarra"/></td>
-            <td> Guitarra </td>
-            <td> R$ 899,00 </td>
-            <td> 6 </td>
-        </tr>
-    </table>
+            <tr>
+                <td><img src="./img/guitarra.webp" alt="imagem de uma guitarra" /></td>
+                <td> Guitarra </td>
+                <td> R$ 899,00 </td>
+                <td> 6 </td>
+            </tr>
+        </table>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="">
+            <p>Siga-nos nas redes sociais!</p>
+        </div>
+        <div class="redes-sociais">
+            <img src="https://image.flaticon.com/icons/png/512/25/25305.png" />
+            <img src="https://image.flaticon.com/icons/png/512/25/25425.png" />
+            <img src="https://image.flaticon.com/icons/png/512/8/8800.png" />
+        </div>
+    </footer>
 </body>
+
 </html>

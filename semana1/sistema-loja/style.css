@@ -1,0 +1,94 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    padding-left: 2em;
+    padding-right: 1em;
+    color: black;
+}
+
+/* Barra de menu*/
+
+header {
+    display: flex;
+    padding:19px 10px;
+    background-color: #0096c7;
+    font-family: 'Ranchers', cursive;
+}
+
+#logo{
+    color: #023e8a;
+    font-size: 2em;
+    justify-content: flex-start;
+    margin-left: 1em;
+}
+
+.links {
+    justify-content: flex-end; 
+    font-size: 1.3em;
+    padding-top: 0.5em;
+    margin-left: 16em;
+
+}
+
+/* Conteúdo */
+
+.conteudo h1,h2{
+    font-family: 'Ranchers', cursive;
+    font-size: 2em;
+    padding: 2em 2em 1em 2em;
+    
+}
+
+p#paragrafo{
+    padding: 0em 15em 4.9em 15em;
+    text-align: justify;
+}
+
+.conteudo p {
+    font-family: 'Lato', sans-serif;
+    padding: 2em;
+}
+
+.conteudo {
+    background-color: #ade8f4;
+    display: block;
+    text-align: center;
+}
+
+.conteudo form {
+    border: 2px solid #023e8a;
+}
+
+table {
+    border: 2px solid #023e8a;
+}
+
+
+/*Footer*/
+
+footer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #0096c7;
+    flex-direction: column;
+    padding: 1.5em 1em 1em 1em;
+    font-family: 'Ranchers', cursive;
+    font-size: 1.5em;
+}
+
+
+.redes-sociais img{
+    width: 4%;
+    margin: 1.5em 1.5em 1em 1.5em;
+}
+
+
+    
