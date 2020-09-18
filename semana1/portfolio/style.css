@@ -1,0 +1,182 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Banner */
+
+.banner {
+    background-image: url("./img/background-2426329_1920.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    text-align: center;
+    padding-top: 25vh;
+   }
+   
+   .banner h2, h1 {
+        font-family: 'Petit Formal Script', cursive;
+        color:  #3f3504;
+       }
+   
+   .banner h1 {
+       font-size: 3em;
+       font-family: 'Petit Formal Script', cursive;
+   }
+ 
+
+/* Barra de menu*/
+
+.nav {
+    background: #e6e5e0;
+    /*talvez essa cor aqui: cccccc */
+}
+
+.nav .container {
+    /* width: 80vw; */
+}
+
+.nav__menu {
+    display: flex;
+    padding:29px;
+}
+
+.nav__link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #3f3504;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.nav__mobile {
+    display: none;
+}
+
+/* DESTINOS */
+
+#conteudo .container {
+    max-width: 70%;
+    margin: auto;
+    padding-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+}    
+
+.galeria {
+    display: flex;
+}
+
+.destination--siberia__img {
+    max-width: 78%;
+    margin: 28px 0px 50px 0px
+
+}
+
+.destination__text {
+    text-align: center;
+    color: #000;
+    margin: 180px -20px 0px 40px;
+    font-size: 16px;
+}
+
+.destination__text h3 {
+    font-weight: bold;
+}
+
+.galeria--cima {
+    width: 100%;
+    display: flex;
+    float: left;
+}
+
+.galeria--cima__img {
+    max-width: 50%;
+}
+
+.galeria__descricao--cima{
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+    background-color: #000;
+    padding-left: 30px;
+}
+
+.galeria__title {
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.galeria--baixo {
+    display: flex;
+    float: right;
+}
+
+.galeria--baixo__img {
+    max-width: 50%;
+}
+
+.galeria__descricao--baixo {
+    text-align: right;
+    color: #fff;
+    font-size: 16px;
+    background-color: #000;
+
+}
+
+.galeria__descricao {
+    padding: 25px;
+    opacity: 0.95;
+    padding-top: 80px;
+    padding-right: 40px;
+}
+
+.galeria_paragrafo {
+    opacity: 0.5;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #9c860a;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 80px;
+    text-align: center;
+    padding: 33px;
+    font-weight: bold;  
+    font-size: 16px;
+}
+
+.footer img{
+    padding: 40px 0px;
+}
+
+.footer li {
+    padding: 0.4em 0.7em;
+}
+
+.footer__socialmedia{
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+}
+
+.telefone {
+    margin-top: 2em;
+}
+
+.assinatura {
+    margin-top: 1em;
+}
