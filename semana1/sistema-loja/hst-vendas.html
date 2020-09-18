@@ -30,14 +30,32 @@
     </header>
     <!-- Formulário -->
     <section class="formulario">
-        <h2>Adicionar Produto</h2>
+        <h2>Histórico de Vendas</h2>
         <form action="">
             <div id="adicionar">
                 <div>
-                    <label for="link-foto">Link para foto: </label>
-                    <input type="url" id="link-foto" name="link-foto">
+                    <label for="data">Data da venda:</label>
+                    <input type="date" id="data" name="data">
+                </div>  
+                <div>
+                    <label for="vendedor">Funcionário responsável:</label>
+                    <select id="vendedor" name="vendedor">
+                        <option value="macedo">Caio Macedo</option>
+                        <option value="ferreira">Ana Ferreira</option>
+                    </select>
+                </div> 
+                <div>
+                    <label for="hora">Select a time:</label>
+                    <input type="time" id="hora" name="hora">
+                </div>              
+                <div>
+                    <label for="produto">Produto: </label>
+                    <input type="url" id="produto" name="produto">
                 </div>
-
+                <div>
+                    <label for="quantidade">Quantidade: </label>
+                    <input type="number" id="quantidade" name="quantidade">
+                </div>
                 <div>
                     <label for="descricao">Descrição do produto: </label>
                     <input type="text" id="descricao" name="descrição">
@@ -47,15 +65,18 @@
                     <label for="preco">Preço (em R$): </label>
                     <input type="number" id="preco" name="preço">
                 </div>
-
                 <div>
-                    <label for="quantidade">Quantidade disponível: </label>
-                    <input type="number" id="quantidade" name="quantidade">
+                    <label for="pagamento">Forma de Pagamento:</label>
+                    <select id="pagamento" name="pagamento">
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="cartao-credito">Cartão de crédito</option>
+                        <option value="boleto">Boleto</option>
+                    </select>
                 </div>
-            </div>
-                <div class="form-add">
+                <div class="form-vendas">
                     <button type="submit">Adicionar</button>
                 </div>
+            </div>
         </form>
     </section>
     <!-- Footer -->
@@ -70,7 +91,9 @@
         </div>
         <div class=signature>
             <small>Copyright © 2020
-            <p> </> Codado por<a href=https://www.linkedin.com/in/diana-monteiro-b8565510b/ target="_blank"> Diana Monteiro</a> </p></small>
+                <p>
+                    </> Codado por<a href=https://www.linkedin.com/in/diana-monteiro-b8565510b/ target="_blank"> Diana
+                        Monteiro</a> </p></small>
         </div>
     </footer>
 </body>

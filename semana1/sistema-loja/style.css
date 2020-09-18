@@ -6,11 +6,13 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 a {
     text-decoration: none;
-    padding-left: 2em;
-    padding-right: 1em;
-    color: black;
+    color: #03045e;
 }
 
 /* Barra de menu*/
@@ -23,51 +25,119 @@ header {
 }
 
 #logo{
-    color: #023e8a;
+    color: #03045e;  
     font-size: 2em;
     justify-content: flex-start;
     margin-left: 1em;
 }
 
+.links a {
+    text-decoration: none;
+    padding-left: 2em;
+    padding-right: 1em;
+    color: #03045e;
+}
+
 .links {
     justify-content: flex-end; 
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding-top: 0.5em;
-    margin-left: 16em;
+    margin-left: 4.5em;
+    font-weight: 100;
 
 }
 
-/* Conteúdo */
+/* Conteúdo,Formulário & Tabelas */
 
-.conteudo h1,h2{
+h2{
     font-family: 'Ranchers', cursive;
     font-size: 2em;
-    padding: 2em 2em 1em 2em;
-    
+    padding: 2em 2em 0em 2em;
+    color: #03045e;  
 }
 
-p#paragrafo{
-    padding: 0em 15em 4.9em 15em;
-    text-align: justify;
+table, th, td {
+    border: 2px solid #023e8a;
+    border-collapse: collapse;
+    background-color: #caf0f8;
+    font-family:'Lato', sans-serif;
 }
 
-.conteudo p {
+td {
+    padding: 0.5em;
+}
+
+th {
+    padding: 0.6em;
+    font-family: 'Ranchers', cursive;
+    font-weight: 100;
+    font-size: 1.1em;
+    background-color: #0096c7;
+}
+
+form {
+    border: 2px solid #023e8a;
+    border-collapse: collapse;
+    background-color: #caf0f8;
+    margin: 2em 29em 4em 29em;
+}
+
+label, input {
+    margin: 5px;
+    font-family:'Lato', sans-serif;
+}
+
+button{
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    background-color: #0096c7;
+}
+
+button:hover{
+    background-color: #023e8a;
+}
+
+#adicionar {
+    margin: 1em;
+}
+
+.form-vendas {
+    margin-top: 1em;
+}
+
+.fundo {
+    font-weight: bolder;
+    background-color: #caf0f8;
+    margin: 3em 15em 4em 15em;
     font-family: 'Lato', sans-serif;
-    padding: 2em;
+    padding: 1em 2em 2em 2em;
+    border: 2px solid #023e8a;
 }
 
-.conteudo {
-    background-color: #ade8f4;
-    display: block;
+.tabela h2 {
+    padding-bottom: 1em;
+}
+
+.tabela{
+    padding: 0.8em 23em 4em 23em;
+}
+
+.conteudo h1{
+    font-family: 'Ranchers', cursive;
+    font-size: 2em;
+    padding: 2em 2em 0em 2em;  
+    color: #03045e;  
+}
+
+.formulario, .tabela, .conteudo {
+    /* background-color: #ade8f4; */
+    background-image: url(./img/kit-placas-instrumentos-musicais-decoracao.jpg);
+    display: flex;
+    flex-direction: column;
     text-align: center;
-}
-
-.conteudo form {
-    border: 2px solid #023e8a;
-}
-
-table {
-    border: 2px solid #023e8a;
+    justify-content: center;
 }
 
 
@@ -82,11 +152,16 @@ footer {
     padding: 1.5em 1em 1em 1em;
     font-family: 'Ranchers', cursive;
     font-size: 1.5em;
+    color: #03045e;  
 }
 
+.signature {
+    font-size: 20px;
+    margin-top: 1em;
+}
 
 .redes-sociais img{
-    width: 4%;
+    width: 3%;
     margin: 1.5em 1.5em 1em 1.5em;
 }
 
