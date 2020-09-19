@@ -13,6 +13,14 @@ a {
     text-decoration: none;
 }
 
+p{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+li{
+    list-style-type: none;
+}
 /* Banner */
 
 .banner {
@@ -33,7 +41,6 @@ a {
        font-size: 3em;
        font-family: 'Petit Formal Script', cursive;
    }
- 
 
 /* Barra de menu*/
 
@@ -64,95 +71,103 @@ a {
     display: none;
 }
 
-/* DESTINOS */
+/* CONTEÚDO */
 
-#conteudo .container {
-    max-width: 70%;
-    margin: auto;
-    padding-top: 1.5em;
+#biografia {
     display: flex;
-    flex-direction: column;
-}    
-
-.galeria {
-    display: flex;
+    flex-wrap: nowrap;
+    flex-flow: row nowrap;
 }
 
-.destination--siberia__img {
-    max-width: 78%;
-    margin: 28px 0px 50px 0px
-
-}
-
-.destination__text {
+.conteudo .container{
+    display: flex;
     text-align: center;
-    color: #000;
-    margin: 180px -20px 0px 40px;
-    font-size: 16px;
+    flex-direction: column;
+    background-color: #f1efe4;
+    padding-bottom: 8em;
 }
 
-.destination__text h3 {
-    font-weight: bold;
+.conteudo h2 {
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 2em;
+    margin: 2em;
+    padding-top: 1em;
 }
 
-.galeria--cima {
-    width: 100%;
-    display: flex;
-    float: left;
+#conteudo {
+    background-color: #f1efe4;
 }
 
-.galeria--cima__img {
-    max-width: 50%;
+#conteudo h2{
+    text-align: center;
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 2.5em;
+    padding-top: 2.5em;
 }
 
-.galeria__descricao--cima{
-    text-align: left;
-    color: #fff;
-    font-size: 16px;
-    background-color: #000;
-    padding-left: 30px;
+#biografia {
+    background-color: #f1efe4;
+    margin: 4.5em 5em 0em 5em;
+    padding-bottom: 7em;
 }
 
-.galeria__title {
-    font-weight: bold;
-    font-size: 25px;
-    padding-bottom: 20px;
+#biografia p {
+    margin-top:2em;
 }
 
-.galeria--baixo {
-    display: flex;
-    float: right;
+.formacao li {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.galeria--baixo__img {
-    max-width: 50%;
+form {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    border: 2px solid #3f3504;
+    border-radius: 3px;
+    padding: 4em 4em 3em 4em;
+}
 }
 
-.galeria__descricao--baixo {
-    text-align: right;
-    color: #fff;
-    font-size: 16px;
-    background-color: #000;
-
+label {
+    margin: 10em 1em;
 }
 
-.galeria__descricao {
-    padding: 25px;
-    opacity: 0.95;
-    padding-top: 80px;
-    padding-right: 40px;
+input {
+    border: 1px solid #3f3504;
+    margin: 1em;
+    height: 1.7em;
 }
 
-.galeria_paragrafo {
-    opacity: 0.5;
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    margin-top: 3em;
+    background-color: #caae0d;
+    border: 2px solid #353b45;
+    border-radius: 3px;
+    height: 35px;
+    width: 80px;
+}
+
+.projetos img {
+    margin-top:2em;
+    width: 30%;
+}
+
+.conteudo h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tecnologias li{
+    font-family: 'Montserrat', sans-serif;
+    margin: 1em;
 }
 
 /* FOOTER */
 
 .footer {
-    background-color: #9c860a;
+    background-color: #caae0d;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 80px;
     text-align: center;
     padding: 33px;
     font-weight: bold;  
@@ -164,7 +179,7 @@ a {
 }
 
 .footer li {
-    padding: 0.4em 0.7em;
+    margin: 0.4em 5em;
 }
 
 .footer__socialmedia{
