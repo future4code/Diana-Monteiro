@@ -167,3 +167,9 @@ td button {
 button:hover {
     background-color: #635a3d;
 }
+
+#btn-compra {
+    font-family:'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+}
