@@ -146,6 +146,11 @@ input {
     height: 1.7em;
 }
 
+.msg{
+    padding-right: 0.5em;
+    margin-right: 3em;
+}
+
 button {
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
