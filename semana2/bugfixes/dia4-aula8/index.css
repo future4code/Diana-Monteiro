@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -44,6 +48,9 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    display: block;
+    margin: 9em auto;
+    
 }
 
 .botao-amarelo:hover {
