@@ -74,8 +74,8 @@ div img {
 }
 
 .icone {
-    height: 15px;
-    width: 15px;
+    height: 17px;
+    width: 17px;
     background-color: white;
 }
 
@@ -123,6 +123,14 @@ div:last-child {
     border-left: 0;
     border-right: 0;
     border-bottom: 1px solid;
+}
+
+.icone:hover{
+    opacity: 0.5;
+}
+
+.icone:active {
+    opacity: 1;
 }
 
 table {
@@ -178,5 +186,5 @@ button:hover {
 #voltar {
     display: flex;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 12em;
 }
