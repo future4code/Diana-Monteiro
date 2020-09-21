@@ -132,7 +132,6 @@ table {
     font-weight: 600;
 }
 
-
 td button {
     background-color: #fadf63;
     width: 150px;
@@ -160,7 +159,9 @@ td button {
     background-color: #635a3d
 }
 
-.fundobranco {
+#image {
+    width: 50px;
+    height: 50px;
     background-color: white;
 }
 
@@ -172,4 +173,10 @@ button:hover {
     font-family:'Roboto', sans-serif;
     font-size: 1em;
     font-weight: 700;
+}
+
+#voltar {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
 }
