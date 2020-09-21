@@ -158,3 +158,7 @@ td button {
 .fundobranco {
     background-color: white;
 }
+
+button:hover {
+    background-color: #635a3d;
+}
