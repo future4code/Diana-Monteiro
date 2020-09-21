@@ -75,6 +75,8 @@ div img {
 
 .icone {
     height: 15px;
+    width: 15px;
+    background-color: white;
 }
 
 
@@ -151,4 +153,8 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+.fundobranco {
+    background-color: white;
 }
