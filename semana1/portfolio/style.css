@@ -1,0 +1,214 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+li{
+    list-style-type: none;
+}
+/* Banner */
+
+.banner {
+    background-image: url("./img/background-2426329_1920.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    text-align: center;
+    padding-top: 25vh;
+   }
+   
+   .banner h2, h1 {
+        font-family: 'Petit Formal Script', cursive;
+        color:  #3f3504;
+       }
+   
+   .banner h1 {
+       font-size: 3em;
+       font-family: 'Petit Formal Script', cursive;
+   }
+
+/* Barra de menu*/
+
+.nav {
+    background: #e6e5e0;
+    /*talvez essa cor aqui: cccccc */
+}
+
+.nav .container {
+    /* width: 80vw; */
+}
+
+.nav__menu {
+    display: flex;
+    padding:29px;
+}
+
+.nav__link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #3f3504;
+    padding: 1.8em;
+    text-align: center;
+    justify-content: center;
+}
+
+.nav__link:hover{
+    background-color: #9c860a;
+}
+/* CONTEÚDO */
+
+#biografia {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-flow: row nowrap;
+    background-color: #f1efe4;
+    margin: 4.5em 5em 0em 5em;
+    }
+
+#biografia p {
+    margin-top:2em;
+}
+
+#biografia img {
+    border: 2px solid #3f3504;
+}
+
+.dowload{
+    display: flex;
+    padding: 0em 3em 6em 70%;
+}
+
+.dowload button{
+    width: 11em;
+    height: 3em;
+}
+
+.conteudo .container{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: #f1efe4;
+    padding-bottom: 8em;
+}
+
+.conteudo h2 {
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 2em;
+    margin: 2em;
+    padding-top: 1em;
+}
+
+#conteudo {
+    background-color: #f1efe4;
+}
+
+#conteudo h2{
+    text-align: center;
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 2.5em;
+    padding-top: 2.5em;
+}
+
+.formacao li {
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    border: 2px solid #3f3504;
+    border-radius: 3px;
+    padding: 4em 4em 3em 4em;
+}
+
+label {
+    margin: 10em 1em;
+}
+
+input {
+    border: 1px solid #3f3504;
+    margin: 1em;
+    height: 1.7em;
+}
+
+.msg{
+    padding-right: 0.5em;
+    margin-right: 3em;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    margin-top: 3em;
+    background-color: #caae0d;
+    border: 2px solid #353b45;
+    border-radius: 3px;
+    height: 35px;
+    width: 80px;
+}
+
+button:hover{
+    background-color: #9c860a;
+}
+
+.projetos img {
+    margin-top:2em;
+    width: 30%;
+}
+
+.conteudo h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tecnologias li{
+    font-family: 'Montserrat', sans-serif;
+    margin: 1em;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #caae0d;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding: 33px;
+    font-weight: bold;  
+    font-size: 16px;
+}
+
+.footer img{
+    padding: 40px 0px;
+}
+
+.footer li {
+    margin: 0.4em 5em;
+}
+
+.footer__socialmedia{
+    display: flex;
+    justify-content: center;
+    opacity: 0.5;
+}
+
+.telefone {
+    margin-top: 2em;
+}
+
+.assinatura {
+    margin-top: 1em;
+}
