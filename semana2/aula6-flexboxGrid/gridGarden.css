@@ -1,0 +1,138 @@
+/* level 1  */
+  
+  #water {
+  grid-column-start: 3;
+  }
+
+/* level 2 */
+
+  #poison {
+  grid-column-start:5;
+  }
+
+/* level 3 */
+ 
+  #water {
+    grid-column-start: 1;
+  grid-column-end: 4;
+  }
+
+/* level 4 */
+ 
+  #water {
+    grid-column-start: 5;
+  grid-column-end:2;
+  }
+
+/* level 5 */
+ 
+  #water {
+    grid-column-start: 1;
+  grid-column-end: -2;
+  }
+
+/* level 6 */
+
+  #poison {
+  grid-column-start: -3;
+  }
+
+/* level 7 */
+
+  #water {
+    grid-column-start: 2;
+  grid-column-end: span 2;
+  }
+
+/* level 8 */
+ 
+  #water {
+    grid-column-start: 1;
+  grid-column-end: span 5;
+  }
+
+/* level 9 */
+ 
+  #water {
+  grid-column-start: span 3
+    grid-column-end: 6;
+  }
+
+/* level 10 */
+  
+  #water {
+  grid-column: 4 / 6;
+  }
+
+/* level 11 */
+
+  #water {
+  grid-column: 2 / 5;
+  }
+
+/* level 12 */
+  
+  #water {
+  grid-row-start: 3;
+  }
+
+/* level 13 */
+  
+  #water {
+  grid-row: 3 / 6;
+  }
+
+/* level 14 */
+  
+  #poison {
+  grid-column: 2;
+  grid-row: 5;
+  }
+
+/* level 15 */
+  
+  #water {
+  grid-column: 2 / span 4;
+  grid-row: 1 / 6;
+  }
+
+/* level 16 */
+
+  #water {
+  grid-area: 1 / 2 / 4 / 6;
+  }
+
+/* level 17 */
+
+#water-1 {
+    grid-area: 1 / 4 / 6 / 5;
+  }
+  
+  #water-2 {
+  grid-area: 2 / 3 / 5 / 6;
+  }
+
+/* level 18 */
+
+.water {
+    order: 0;
+  }
+  
+  #poison {
+  order: 1;
+  }
+
+/* level 19 */
+
+.water {
+    order: 0;
+  }
+  
+  .poison {
+  order: -1;
+  }
+
+/* level 20 */
+
+
+
