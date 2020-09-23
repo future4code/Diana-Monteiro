@@ -72,11 +72,11 @@ div {
 
 @media screen and (min-device-width : 421px) and (max-device-width : 800px) {
 
-    #second-block {
+    #second-block, #white-block {
         grid-template: 1fr 1fr / 1fr 1fr;
     }
 
-    #green-block {
+    #green-block, #branco-block {
         grid-column: 1/3;
     }
 
@@ -90,6 +90,10 @@ div {
     }
 
     #second-block{
+        grid-template: 1fr / 1fr;
+    }
+
+    #third-block{
         grid-template: 1fr / 1fr;
     }
 
