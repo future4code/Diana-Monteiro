@@ -93,10 +93,6 @@ div {
         grid-template: 1fr / 1fr;
     }
 
-    #third-block{
-        grid-template: 1fr / 1fr;
-    }
-
     #black-block{
         grid-template: 1fr / 1fr;
         max-height: 100%;
