@@ -85,29 +85,15 @@ div {
 @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
     
     #first-block{
-        grid-template: 1fr / 1fr;
         height: 4em;
     }
 
-    #second-block{
+    #second-block, #black-block, #white-block {
         grid-template: 1fr / 1fr;
-    }
-
-    #third-block{
-        grid-template: 1fr / 1fr;
-    }
-
-    #black-block{
-        grid-template: 1fr / 1fr;
-        max-height: 100%;
     }
 
     .black-block{
         height: 4em;
     }
 
-    #white-block{
-        grid-template: 1fr / 1fr;
-    }
-    
 }
