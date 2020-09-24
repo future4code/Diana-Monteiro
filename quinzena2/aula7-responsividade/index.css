@@ -1,0 +1,99 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+
+#main-container {
+    border: none;
+}
+
+#first-block {
+    border:none;
+    height: 3em;
+    background-color: red;
+}
+
+#second-block, #black-block, #white-block {
+    display: grid;
+    margin: 1em;
+    gap: 1em;
+    border: none;
+}
+
+#second-block {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#black-block {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#white-block{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.blue-block, .yellow-block, .green-block, .black-block, .white-block {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.blue-block {
+    background-color: blue;
+    height: 4em;
+}
+
+.yellow-block {
+    height: 4em;
+    background-color: yellow;
+}
+
+.green-block {
+    background-color: green;
+    height: 4em;
+}
+
+.black-block {
+    background-color: black;
+    height: 12em;
+    color: white;
+}
+
+.white-block {
+    height: 4em;
+    background-color: white;
+}
+
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+
+    #second-block, #white-block {
+        grid-template: 1fr 1fr / 1fr 1fr;
+    }
+
+    #green-block, #branco-block {
+        grid-column: 1/3;
+    }
+
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+    
+    #first-block{
+        height: 4em;
+    }
+
+    #second-block, #black-block, #white-block {
+        grid-template: 1fr / 1fr;
+    }
+
+    .black-block{
+        height: 4em;
+    }
+
+}
