@@ -113,10 +113,6 @@ div {
     .blue-block, .yellow-block, .white-block, .green-block, .black-block{
         width: 94%;
         margin: 0.5em 0.5em 0.6em 0.5em;
-    }
-
-    .black-block {
         height: 4em;
     }
-
 }
