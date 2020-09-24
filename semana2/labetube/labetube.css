@@ -1,0 +1,89 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Secular One', sans-serif;
+}
+
+/* MENU */
+
+header{
+    display: flex;
+    background-color: orangered;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img {
+    width: 5%;
+}
+
+.busca{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.titulo {
+    display: flex;
+    width: 45%;
+    font-size: 1.8em;
+}
+
+/* CONTEUDO */
+
+#home {
+    display: grid;
+    width: 90%;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
+    margin: 4em auto;
+    gap: 1em;
+
+}
+
+main>section {
+    align-items: center;
+    justify-items: center;
+    border: 1px solid black;
+    display: grid;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+}
+
+
+/* Página Videos */
+
+#media {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-top: 3em;
+    margin-bottom: 8em;
+}
+
+#media>video {
+    width: 60em;
+}
+
+#media>h2 {
+    font-size: 2em;
+}
+
+a {
+  text-decoration: none;  
+  color: black
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    padding: 4em;
+    background-color: orangered;
+    justify-content: space-around;
+    align-items: center;
+}
