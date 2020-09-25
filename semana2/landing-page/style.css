@@ -1,0 +1,166 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* BARRA DE MENU */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff914d;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5em 1.5em;
+}
+
+.link_nav a {
+    padding-left: 2em;
+}
+
+span {
+    padding: 0.5em;
+    font-size: 1.3em;
+}
+
+span:hover{
+    padding: 0.5em;
+    border-radius: 1em;
+    color:  #ffbd59;
+    border: 1px solid #ffbd59;
+}
+
+button {
+    background-color: #ffbd59;
+    font-size: 1.3em;
+    color: #ffffff;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+button:hover {
+    background-color: #fc944c;
+    border: 1px solid #ffbd59;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    background-color: #ffbd59;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 6em;
+}
+
+.sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-family: 'Nanum Brush Script', cursive;    
+    font-weight: 100;
+    font-size: 5.3em;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+
+/* CONTEÚDO */
+
+/* nossos serviços */
+
+#nossos-servicos {
+    display: grid;
+    margin: 0 auto;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+    justify-items: center;
+    row-gap: 5em;
+}
+
+.img-servico {
+    width: 25%;
+}
+
+#titulo-servico {
+    grid-column: 1/4;
+    font-family: 'Caveat Brush', cursive;
+    font-weight: 100;
+    font-size: 4.3em;
+    color: #2a9d8f;
+}
+
+/* abra sua conta */
+
+#abra-sua-conta {
+    background-color: #ff914d;
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* FOOTER */
+
+ul {
+    list-style-type: none;
+}
+
+.footer {
+    background-color: #ffbd59;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    padding: 3em 10em;
+}
+
+.footer img{
+    width: 20%;
+}
+
+.footer__socialmedia{
+    display: flex;
+    margin: 0 auto;
+    padding: 2em 10em;
+}
+
+.atendimento {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+}
+
+.assinatura {
+    margin-top: 2em;
+    color: black;
+}
+
+
+@media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+/* celulares */
+}
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+/* tablets */
+}
+@media screen and (min-device-width : 1200px) {
+/* computadores */
+}
