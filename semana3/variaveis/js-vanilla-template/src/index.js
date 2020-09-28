@@ -47,21 +47,25 @@ console.log (`Você acredita que homens são mais inteligentes que mulheres? ${a
 
 3. Faça um programa que contenha um array com 5 das suas comidas preferidas, armazenado em uma variável. Em seguida, siga os passos:
 
-let arrayfoods = ["hamburguer", "estrogonofe", "japonês", "churrasco", "parmegiana"]
+let arrayFoods = ["hamburguer", "estrogonofe", "japonês", "churrasco", "parmegiana"]
+
+console.log(arrayFoods)
+
+console.log(`Essas são minhas comidas preferidas: \n ${arrayFoods[0]} \n ${arrayFoods[1]} \n ${arrayFoods[2]} \n ${arrayFoods[3]} \n ${arrayFoods[4]} \n `)
 
 let food = prompt('Qual sua comida preferida?')
 
-arrayfoods[1] = food;
+arrayFoods[1] = food;
 
-console.log(`Essas são minhas comidas preferidas: \n ${arrayfoods[0]} \n ${arrayfoods[1]} \n ${arrayfoods[2]} \n ${arrayfoods[3]} \n ${arrayfoods[4]} \n `)
+console.log(`Essas são minhas comidas preferidas: \n ${arrayFoods[0]} \n ${arrayFoods[1]} \n ${arrayFoods[2]} \n ${arrayFoods[3]} \n ${arrayFoods[4]} \n `)
 
 
 4. Faça um programa que contenha um array com 3 perguntas de Sim ou Não, armazenado em uma variável. Por exemplo: "Você está usando uma roupa azul hoje?". Depois, siga os passos:
 
-let arrayperguntas = ['Você tem tatuagem?', 'Você se acha feio?', 'O presidente é um bosta?']
+let arrayPerguntas = ['Você tem tatuagem?', 'Você se acha feio?', 'O presidente é um bosta?']
 
-let arrayrespostas = [true, false, true]
+let arrayRespostas = [true, false, true]
 
-console.log(`\n ${arrayperguntas[0]} ${arrayrespostas[0]} \n ${arrayperguntas[1]} ${arrayrespostas[1]} \n ${arrayperguntas[2]} ${arrayrespostas[2]} \n `)
+console.log(`\n ${arrayPerguntas[0]} ${arrayRespostas[0]} \n ${arrayPerguntas[1]} ${arrayRespostas[1]} \n ${arrayPerguntas[2]} ${arrayRespostas[2]} \n `)
 
 */
