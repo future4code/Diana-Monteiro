@@ -69,3 +69,5 @@ let arrayRespostas = [true, false, true]
 console.log(`\n ${arrayPerguntas[0]} ${arrayRespostas[0]} \n ${arrayPerguntas[1]} ${arrayRespostas[1]} \n ${arrayPerguntas[2]} ${arrayRespostas[2]} \n `)
 
 */
+
+
