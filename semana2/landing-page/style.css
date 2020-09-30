@@ -1,0 +1,561 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* BARRA DE MENU */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff914d;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5em 1.5em;
+}
+
+.link_nav a {
+    padding-left: 2em;
+}
+
+span {
+    padding: 0.5em;
+    font-size: 1.3em;
+}
+
+span:hover{
+    padding: 0.5em;
+    border-radius: 1em;
+    color:  #ffbd59;
+    border: 1px solid #ffbd59;
+}
+
+.nav-button {
+    background-color: #ffbd59;
+    font-size: 1.3em;
+    color: #ffffff;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+button:hover {
+    background-color: #fc944c;
+    border: 1px solid #ffbd59;
+    color:  #ffbd59;
+}
+
+textarea:focus, button:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+} 
+
+.sobre_mobile {
+    display: none;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    background-color: #ffbd59;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 6em;
+}
+
+#sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-family: 'Nanum Brush Script', cursive;    
+    font-weight: 100;
+    font-size: 5.3em;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+.img-sobre {
+    width: 100%;
+ } 
+
+/* CONTEÚDO */
+
+/* nossos serviços */
+
+#nossos-servicos {
+    display: grid;
+    margin: 0 auto;
+    grid-template: 1fr 1fr 1fr/ repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    row-gap: 4em;
+    column-gap: 2em;
+    padding: 3.5em 5em 6em 5em;
+}
+
+.img-servico {
+    width: 22%;
+}
+
+.titulo-servico {
+    grid-column: 1/4;
+    font-family: 'Caveat Brush', cursive;
+    font-weight: 100;
+    font-size: 3em;
+    color: #2a9d8f;
+}
+
+.servicos {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#nossos-servicos>.servicos:hover {
+    padding-top: 1em;
+    border-radius: 2em;
+    background-color:rgb(252, 168, 84, 0.2);
+}
+
+/* abra sua conta */
+
+#abra-sua-conta {
+    background-color: #ff914d;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+    padding: 2em 2em 3em 2em;
+    align-items: center;
+
+}
+
+#titulo-conta {
+    font-family: 'Caveat Brush', cursive;
+    font-weight: 100;
+    font-size: 4.3em;
+    color: #ffffff;
+}
+
+.conta {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 2em;
+}
+
+label {
+    padding: 1.5em 0;
+}
+
+input {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    background-color:  #ff914d;
+}
+
+.conta-button {
+    background-color: #ffbd59;
+    font-size: 1.3em;
+    color: #ffffff;
+    border: none;
+    border-radius: 1em;
+    margin-top: 1em;
+    padding: 0.5em;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+} 
+
+div>img {
+    display: none;
+}
+
+/* FOOTER */
+
+ul {
+    list-style-type: none;
+}
+
+footer {
+    background-color: #ffbd59;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    padding: 2em 10em 3em 10em;
+}
+
+footer img{
+    width: 20%;
+}
+
+.socialmedia{
+    display: flex;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.atendimento {
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+}
+
+.assinatura {
+    margin-top: 2.5em;
+    color: black;
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+      
+    /* BARRA DE MENU */
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .sobre_mobile{
+        display: flex;
+    }
+
+    .img_sobre{
+        display: none;
+    }
+
+     .link_nav a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    span {
+        font-weight: bold;
+        padding: 0em;
+        padding-bottom: 1em;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .nav-button {
+        font-size: 1.5em;
+        border-radius: 2em;
+        padding: 0.6em 1em;
+        margin-bottom: 2em;
+    }
+
+    /* HEADER */
+
+    header {
+        flex-direction: column;
+        padding: 1.5em 1.5em 3em 1.5em;
+    }
+
+    #sobre{
+        margin: 0;
+        text-align: left;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 4em;
+        text-align: center;
+        margin-top: 0.5em;
+    }
+
+    h2 {
+       padding: 0.5em 0 1em 0;
+       text-align: center;
+       font-size: 1.7em;
+    }
+
+    /* CONTEÚDO */
+
+    /* nossos serviços */
+
+    #nossos-servicos {
+        display: flex; 
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .servicos {
+        font-size: 1.3em;
+        padding: 0 1.1em;
+    }
+
+    .titulo-servico {
+        font-size: 2.3em;
+        text-align: center;
+        padding-top: 1em;
+    }
+
+    .img-servico {
+        width: 50%;
+    }
+
+    #emprestimos {
+        margin-bottom: 2em;
+    }
+
+    /* abra sua conta */
+
+    #abra-sua-conta {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    #titulo-conta {
+        font-size: 4em;
+        text-align: center;
+        padding: 0 0.1em;
+        margin: 1em 0 0 0;
+        
+    }
+
+    .conta-button {
+        font-size: 1.1em;
+        padding: 0.3em;
+        margin: 0;
+    }
+
+    .conta {
+        font-size: 1.7em;
+    }
+
+    .img-conta {
+        display: none;
+    }
+
+    div>img {
+        display: list-item;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    .form-nome {
+        padding-top: 0em;
+    }
+
+   /* FOOTER */
+
+    footer {
+    padding: 2em;
+    }
+
+    footer img{
+        width: 90%;
+    }
+}
+
+@media screen and (min-device-width : 421px) and (max-device-width : 800px) {
+
+    /* BARRA DE MENU */
+
+    span {
+        display: none;
+    }
+
+    .nav-button {
+        display: block;
+        justify-content: center;
+        margin-bottom: 0.9em;
+        border-radius: 0.5em;
+    }
+
+    /* HEADER */
+
+    header {
+        flex-direction: column;
+        padding: 3em;
+    }
+
+    header h1 {
+        font-size: 4em;
+        text-align: center;
+    }
+
+    h2 {
+        padding: 1em 0;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    /* CONTEÚDO */
+
+    /* nossos serviços */
+
+    #nossos-servicos {
+        display: flex; 
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .servicos {
+        font-size: 1.1em;
+    }
+
+    #emprestimos{
+        margin-bottom: 2em;
+    }
+
+    .titulo-servico {
+        font-size: 2em;
+        text-align: center;
+        padding: 1em 1em 0 1em;
+    }
+
+    .img-servico {
+        width: 30%;
+    }
+
+    /* abra sua conta */
+
+    #abra-sua-conta {
+        padding: 0;
+    }
+
+    #titulo-conta {
+        font-size: 3.6em;
+        text-align: center;
+        margin: 1em 0 0 0;
+    }
+
+    .conta-button {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+
+    .conta {
+        font-size: 1.2em;
+    }
+
+    .img-conta {
+        display: none;
+    }
+
+    div>img {
+        display: list-item;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+    padding: 2em;
+    }
+
+    footer img{
+        width: 70%;
+    }
+}
+
+@media screen and (min-device-width : 801px) and (max-device-width : 986px) {
+    
+    /* BARRA DE MENU */
+    span {
+        font-size: 1.1em;
+    }
+
+    .link_nav a {
+        padding-left: 0;
+    }
+
+    /* HEADER */
+
+    header {
+        padding: 3em 2em 4em 2em;
+    }
+
+    header h1 {
+        font-size: 4.6em;
+        /* text-align: center; */
+    }
+
+    .img-sobre {
+        padding-top: 7em;
+     } 
+
+
+    /* CONTEÚDO */
+
+    /* nossos serviços */
+
+    #nossos-servicos {
+        grid-template: 1fr 1fr/ 1fr 1fr;
+        row-gap: 2em;
+        column-gap: 1em;
+        padding: 0 1em 5em 1em;
+    }
+    .img-servico {
+        width: 30%;
+    }
+    .titulo-servico {
+        font-size: 2.8em;
+        text-align: center;
+        grid-column: 1/3;
+        padding: 1em 1em 0 1em;
+    }
+
+    /* abra sua conta */
+ 
+    #titulo-conta {
+        margin: 1em 0 0 0;
+    }
+
+    .conta-button {
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+
+    .conta {
+        font-size: 1.2em;
+        margin: 2em 0;
+    }
+
+    .img-conta {
+        display: none;
+    }
+
+    div>img {
+        display: list-item;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+    padding: 2em;
+    }
+
+    footer img{
+        width: 30%;
+    }
+}
