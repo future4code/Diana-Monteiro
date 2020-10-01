@@ -21,7 +21,7 @@ O código está dizendo para somar um valor a variável enquando i for menor que
 
 //3.
   
-let arrayOriginal = [10, 24, 37, 40, 53, 60, 73, 80, 96, 103]
+//let arrayOriginal = [10, 24, 37, 40, 53, 60, 73, 80, 96, 103]
 
 //a.
 // for (let numero of arrayOriginal) {
@@ -80,19 +80,7 @@ let arrayOriginal = [10, 24, 37, 40, 53, 60, 73, 80, 96, 103]
     // 0
     // 00
     // 000
-    // 0000
-
-    // const quantidadeTotal = Number(prompt("Digite a quantidade de linhas: "))
-    // let quantidadeAtual = 0
-    // while(quantidadeAtual < quantidadeTotal){
-    //   let linha = ""
-    //   for(let asteriscos = 0; asteriscos < quantidadeAtual + 1; asteriscos++){
-    //     linha += "0"
-    //   }
-    //   console.log(linha)
-    //   quantidadeAtual++
-    // }
-    
+    // 0000  
 
 // Exercícios de escrita de código //
 
@@ -106,27 +94,27 @@ let arrayOriginal = [10, 24, 37, 40, 53, 60, 73, 80, 96, 103]
 
 // let tentativas = 1
 
-// while (numeroPensado !== numeroChutado){
-//     if (numeroPensado > numeroChutado){
-//         console.log("Errrrrrrrou, é maior")
-//     }
-//     else if( numeroPensado < numeroChutado){
-//         console.log("Errrrrrrrou, é menor")
-//     }
+//     while (numeroPensado !== numeroChutado){
+//         if (numeroPensado > numeroChutado){
+//             console.log("Errrrrrrrou, é maior")
+//         }
+//         else if( numeroPensado < numeroChutado){
+//             console.log("Errrrrrrrou, é menor")
+//         }
 
-// tentativas++
-// numeroChutado = Number(prompt("Chute um número e eu te digo se acertou!"))
-// console.log("O número chutado foi: "+ numeroChutado)
+//     tentativas++
+//     numeroChutado = Number(prompt("Chute um número e eu te digo se acertou!"))
+//     console.log("O número chutado foi: "+ numeroChutado)
 
-// }
+//     }
 
 // console.log("Acertou!!!")
 // console.log("O número de tentativas foi: " + tentativas)
 
 //3.
 
-// let numeroPensado = Math.floor(Math.random()*100)
 // console.log("Vamos jogar!!!")
+// let numeroPensado = Math.floor(Math.random()*100)
 
 // let numeroChutado = Number(prompt("Chute um número e eu te digo se acertou!"))
 // console.log("O número chutado foi: "+ numeroChutado)
