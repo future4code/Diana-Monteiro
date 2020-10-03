@@ -12,55 +12,71 @@
  */
 
 
+alert("Seja Bem-vindo ao jogo BlackJack!!")
 
+// INCIANDO JOGO E SORTEANDO CARTAS
 
-if(confirm("Quer iniciar uma nova rodada?")){
+if (confirm("Quer iniciar uma nova rodada?")) {
 
    const firstCardUser = comprarCarta()
    const secondCardUser = comprarCarta()
    const firstCardComputer = comprarCarta()
    const secondCardComputer = comprarCarta()
-   
-   let pointsUser
-   let pointsComputer
-   let arrayExtraCards =[]
-   let arrayExtraCardsComputer =[]
 
-   if (firstCardUser && secondCardUser === 11){
-   firstCardUser = comprarCarta()
-   secondCardUser = comprarCarta()
-   }else if (firstCardComputer && secondCardComputer === 11){
-   firstCardComputer = comprarCarta()
-   secondCardComputer = comprarCarta()
-   }else{
-      pointsUser = firstCardUser.valor + secondCardUser.valor
-      pointsComputer = firstCardComputer.valor + secondCardComputer.valor
+   let arrayExtraCards = []
+   let arrayExtraCardsComputer = []
+
+//SE DOIS ASES FOREM SORTEADOS, SORTEEM AS CARTAS NOVAMENTE
+
+   if ((firstCardUser === "A") && (secondCardUser === "A")) {
+      firstCardUser = comprarCarta()
+      secondCardUser = comprarCarta()
+   } else if ((firstCardComputer === "A") && (secondCardComputer === "A")) {
+      firstCardComputer = comprarCarta()
+      secondCardComputer = comprarCarta()
    }
 
-   if(confirm("Suas cartas são "+ firstCardUser.texto + " " + secondCardUser.texto + " . A carta revelada do computador é "+ firstCardComputer.texto + "\n" + "Deseja comprar mais uma carta?")){
-         while(pointsUser <= 21 || confirm === false){
-            const takeOneMore = comprarCarta()
-            arrayExtraCards.push(takeOneMore.texto)
-            confirm("Suas cartas são "+ firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards +" . A carta revelada do computador é "+ firstCardComputer.texto +"\n" + "Deseja comprar mais uma carta?")
-            pointsUser += takeOneMore.valor           
-         }
-   }else{
-         while(pointsComputer <= 21){
-            const takeOneMore = comprarCarta()
-            arrayExtraCardsComputer.push(takeOneMore.texto)
-            pointsComputer += takeOneMore.valor           
-         }
+// ATRIBUINDO VALORES AS VARIAVEIS DE PONTUAÇÃO
+
+   let pointsUser = firstCardUser.valor + secondCardUser.valor
+   let pointsComputer = firstCardComputer.valor + secondCardComputer.valor
+
+// SE AINDA NÃO SOMAREM 21 PONTOS CONTINUE SORTEANDO CARTAS
+
+   if (pointsUser < 21) {
+      for (; ;) {
+         let option = confirm("Suas cartas são " + firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards + ". A carta revelada do computador é " + firstCardComputer.texto + "\n" + "Deseja comprar mais uma carta?")
+         if (option === false) break;
+         if (pointsUser > 21) break;
+         takeOneMore = comprarCarta()
+         arrayExtraCards.push(takeOneMore.texto)
+         pointsUser += takeOneMore.valor
+      }
    } 
-
-   if (pointsUser > pointsComputer || pointsComputer > 21){
-      alert("Suas cartas são "+ firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards +" . Sua pontuação é "+ pointsUser + ". \n As cartas do computador são " + firstCardComputer.texto + " " + secondCardComputer.texto + " " + arrayExtraCardsComputer + ". A pontuação do computador é " + pointsComputer + ". \n O usuário ganhou!!!" )
-   } else if (pointsUser < pointsComputer || pointsUser > 21){
-      alert("Suas cartas são "+ firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards +" . Sua pontuação é "+ pointsUser + ". \n As cartas do computador são " + firstCardComputer.texto + " " + secondCardComputer.texto + " " + arrayExtraCardsComputer + ". A pontuação do computador é " + pointsComputer + ". \n O computador ganhou!!!" )
-   } else {
-      alert("Empate!!!")
+   
+   if (pointsComputer < 21) {
+      for (; ;) {
+         let takeOneMore = comprarCarta()
+         arrayExtraCardsComputer.push(takeOneMore.texto)
+         pointsComputer += takeOneMore.valor
+         if (pointsComputer > 21) break;
+      }
    }
+
+// ESCREVA O RESULTADO E O PLACAR
+
+   if (pointsUser <= 21) {
+      alert("Suas cartas são " + firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards + ". Sua pontuação é " + pointsUser + ". \n As cartas do computador são " + firstCardComputer.texto + " " + secondCardComputer.texto + " " + arrayExtraCardsComputer + ". A pontuação do computador é " + pointsComputer + ". \n Você ganhou!!!")
+   } else if (pointsComputer <= 21) {
+      alert("Suas cartas são " + firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards + ". Sua pontuação é " + pointsUser + ". \n As cartas do computador são " + firstCardComputer.texto + " " + secondCardComputer.texto + " " + arrayExtraCardsComputer + ". A pontuação do computador é " + pointsComputer + ". \n O computador ganhou!!!")
+   } else if (pointsUser === pointsComputer) {
+      alert("Suas cartas são " + firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards + ". Sua pontuação é " + pointsUser + ". \n As cartas do computador são " + firstCardComputer.texto + " " + secondCardComputer.texto + " " + arrayExtraCardsComputer + ". A pontuação do computador é " + pointsComputer + ". \n Empate!!!")
+   } else if ((pointsUser > 21 && pointsComputer > 21))
+   alert("Suas cartas são " + firstCardUser.texto + " " + secondCardUser.texto + " " + arrayExtraCards + ". Sua pontuação é " + pointsUser + ". \n As cartas do computador são " + firstCardComputer.texto + " " + secondCardComputer.texto + " " + arrayExtraCardsComputer + ". A pontuação do computador é " + pointsComputer + ". \n Sem ganhadores, tentem mais uma vez!!!")
+
+
+// SOU VACILÃO NÃO QUERO JOGAR
 
 } else {
-   console.log("O jogo acabou!")
-}    
-
+   alert("O jogo acabou!")
+}
