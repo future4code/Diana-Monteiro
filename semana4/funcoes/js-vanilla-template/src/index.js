@@ -192,4 +192,33 @@ const numbers = [0, 8, 23, 16, 10, 15, 41, 12, 13]
 
 //.c
 
-    
+// const higherIndex = (array) => {
+//     let biggest = array[0]
+//     let index
+//     for (let i=0; i<array.length; i++) {
+//         let element = array[i]
+//         if(biggest < element) {
+//             index = i
+//             biggest = element
+//         } 
+//     }
+
+//     return index
+// }
+
+// console.log(higherIndex(numbers))
+
+//.d
+// const reverseArray = (array) => {
+// let arrayInvert = [];
+
+//     for (let i = array.length;; i--) {
+//         let element= array[i]
+//         arrayInvert.push(element)
+//         if(i <= 0) break;
+//     }
+
+// return arrayInvert;
+// }
+
+// console.log(reverseArray(numbers))
