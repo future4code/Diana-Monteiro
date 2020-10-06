@@ -24,14 +24,19 @@
             </select>
         </form>
 
+        <form action="">
+            <label for="horario">Horário:</label>
+            <input type="time" value="" id="time">
+        </form>
+
         <button onclick="addTask()">Criar tarefa</button>
-        <button onclick="cleanTask(this)">Limpar Lista</button>
+        <button onclick="cleanTask()">Limpar Lista</button>
         
     </header>
     <section>
         <div class="semana">
             <h3>Domingo</h3>
-            <div >
+            <div>
             <ul id="domingo"></ul>
             </div>
         </div>
