@@ -7,6 +7,15 @@
 body {
     height: 100%;
     width: 100%;
+    background-image: url(./sunflower-4866445_1920.jpg);
+    font-family: 'Sansita Swashed', cursive;
+}
+
+h1 {
+    text-align: center;
+    margin: 1.5em;
+    color: #294408;
+
 }
 
 #formulario {
@@ -17,6 +26,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(229, 249, 147, 0.5);
 }
 
 form {
@@ -46,6 +56,32 @@ button {
 }
 
 #container-de-posts {
-    margin: 10px;
-    border-top: 3px double rgb(77, 77, 77);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 3px double rgb(77, 77, 77);
+    background-color: rgb(229, 249, 147, 0.8);
+    margin: 4em;
+    padding: 4em;
+}
+
+img {
+    width: 20%;
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+
+    #formulario {
+        width: 84vw;
+    }
+    
+    #container-de-posts {
+        margin: 2em;
+        padding: 3em 2em;
+    }
+    
+    img {
+        width: 50%;
+    }
 }
