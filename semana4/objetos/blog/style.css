@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url(./sunflower-4866445_1920.jpg);
+    font-family: 'Sansita Swashed', cursive;
+}
+
+h1 {
+    text-align: center;
+    margin: 1.5em;
+    color: #294408;
+
+}
+
+#formulario {
+    border: 1px dotted black;
+    padding: 10px;
+    width: 70vw;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(229, 249, 147, 0.5);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+label {
+    width: 10%;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100px;
+    margin: 0 auto;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid rgb(77, 77, 77);
+}
+
+#container-de-posts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 3px double rgb(77, 77, 77);
+    background-color: rgb(229, 249, 147, 0.8);
+    margin: 4em;
+    padding: 4em;
+}
+
+p {
+    word-wrap: break-word;
+    width: 100%;
+}
+
+img {
+    width: 50%;
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+
+    #formulario {
+        width: 84vw;
+    }
+    
+    #container-de-posts {
+        margin: 2em;
+        padding: 3em 2em;
+    }
+
+    img {
+        width: 80%;
+    }
+
+}
