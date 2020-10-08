@@ -66,8 +66,13 @@ button {
     padding: 4em;
 }
 
+p {
+    word-wrap: break-word;
+    width: 100%;
+}
+
 img {
-    width: 20%;
+    width: 50%;
 }
 
 @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
@@ -80,8 +85,9 @@ img {
         margin: 2em;
         padding: 3em 2em;
     }
-    
+
     img {
-        width: 50%;
+        width: 80%;
     }
+
 }

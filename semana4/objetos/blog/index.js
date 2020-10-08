@@ -5,7 +5,7 @@ const conteudoPost = document.getElementById("conteudo-post");
 const containerPost = document.getElementById("container-de-posts");
 const imagemPost = document.getElementById("img-post");
 
-function inserirNoHTML() {
+const inserirNoHTML= () => {
   let postBlog = {
     titulo: tituloPost.value,
     autor: autorPost.value,
@@ -25,14 +25,14 @@ function inserirNoHTML() {
   }
 }
 
-function apagarInput() {
+const apagarInput = () => {
   tituloPost.value = "";
   autorPost.value = "";
   conteudoPost.value = "";
   imagemPost.value = "";
 }
 
-function criarPost() {
+const criarPost = () => {
   inserirNoHTML();
   apagarInput();
 }
