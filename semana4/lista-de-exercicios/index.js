@@ -195,4 +195,10 @@ let digaHello = () => {
 
 digaHello()
 
+
+------> Exercícios de Função <------
+
+1.   Arrays são variáveis onde podemos armazenar mais de um valor com um único nome. Podemos utilizá-lo quando queremos guardar e acessar mais de um elemento e quando precisamos que os nomes dos elementos sejam números, pois nos arrays os índices são numerados. Objetos são variáveis que assim como arrays podem armazenar mais de um valor com um único nome, porém guardam informações mais detalhadas e de uma forma mais organizada. Os objetos guardam seus elementos no formato de strings e seus índeces são nomeados.
+
+2.
 */
