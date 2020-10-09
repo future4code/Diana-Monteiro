@@ -50,7 +50,30 @@ percorrerarrays1(numeros)
 percorrerarrays2(numeros)
 percorrerarrays3(numeros)
 
+2.
+
+a) true && false && false 
+Return ==> false
+
+b) (true && false) || false
+   false || false
+Return ==> false
+
+c) (false || true) && (false || true)
+    true && true 
+Return ==> true
+
+d) !(false && true) || !(true && true)
+    true || false 
+Return ==> true
+
+e) !(true) && !(true) || !(false && true && true)
+    false && false || false
+    false || false
+Return ==> false
+
 */
+
 
 
 
