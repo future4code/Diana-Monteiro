@@ -17,6 +17,7 @@
    # Como faz ==> O código criar tres variáveis: numeros (que recebe um array) , numero1 (que recebe o valor Infinity) e numero2 (que recebe o valor 0). Em seguida, em FOR, é criada a variável numero que percorre o array numeros. Dentro do primeiro IF em FOR, é comandado que se o valor da variável numero for menor que o valor da variável numero1, numero1 recebe o valor de numero (isso irá acontecer até a variável numero percorrer todos os índices do array numeros). Logo após no segundo IF em FOR, é comandado que se o valor da variável numero for maior que o valor da variável numero2, numero2 recebe o valor de numero (isso irá acontecer até a variável numero percorrer todos os índices do array numeros). Em seguida é impresso no console o valor final das variáveis numero1 e numero2.
    # Valor impresso ==> Será impresso no console os número -10 e 1590.
   
+
 ------> Exercícios de Lógica de Pogramação <------
 
 1. 
@@ -130,5 +131,68 @@ function verificandoNumeros (a,b){
 }
 
 verificandoNumeros(15,30)
+
+------> Exercícios de Função <------
+
+1.
+
+const numeros = [-10, -1, 3, 4, 6, 7, 8, 9, 10, 60] 
+
+const segundoNumero = (array) => {
+    let menor = Infinity
+    let maior = 0
+    let segundoMenor = Infinity
+    let segundoMaior = 0
+    let indiceMenor = 0
+    let indiceMaior = 0
+
+    for (let i of array) {
+        if (i < menor) {
+            menor = i
+            indiceMenor = array.indexOf(menor)
+        }
+        if (i > maior) {
+            maior = i
+            indiceMaior = array.indexOf(maior)
+        }
+    }    
+
+    array.splice(indiceMaior, 1)
+    array.splice(indiceMenor, 1)
+
+    for (let i of array) {
+        if (i < segundoMenor) {
+            segundoMenor = i
+        }
+        if (i > segundoMaior) {
+            segundoMaior = i
+        }
+    }  
+
+    console.log(segundoMenor)
+    console.log(segundoMaior)
+
+}
+
+
+segundoNumero(numeros)
+
+2.
+
+let digaHello = (mensagem) => {
+    alert(mensagem)
+}
+
+const mensagemLabenu = "Hello Futre4! Que agora é Labenu!"
+
+digaHello(mensagemLabenu)
+
+//Fiquei na dúvida se era assim então fiz uma segunda versão
+
+let digaHello = () => {
+    alert("Hello Future4! Que agora é Labenu!")
+}
+
+digaHello()
 
 */
