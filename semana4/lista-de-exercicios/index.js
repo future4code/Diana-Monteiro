@@ -67,12 +67,13 @@ d) !(false && true) || !(true && true)
     true || false 
 Return ==> true
 
-e) !(true) && !(true) || !(false && true && true)
-    false && false || false
-    false || false
-Return ==> false
+e) !(true) && !(true) || (!false && true && true)
+    false && false || true
+    false || true
+Return ==> true
 
 */
+
 
 
 
