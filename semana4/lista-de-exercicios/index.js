@@ -231,4 +231,25 @@ const filmes = () =>{
 
 filmes()
 
+4.
+
+let serHumano = {
+    nome: "Felipe Zanone",
+    idade: "33",
+    email: "felipezanone@gamil.com",
+    endereco: "Rua Aureliano Coutinho 390"
+}
+
+
+const anonimizarPessoa = (objeto) => {
+    const novoObjeto = {
+        ...objeto,
+        nome: "Anônimo"
+    }
+    return novoObjeto
+}
+
+const anonimo = anonimizarPessoa(serHumano)
+console.log(anonimo)
+
 */
