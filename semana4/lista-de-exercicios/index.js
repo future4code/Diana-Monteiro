@@ -201,4 +201,19 @@ digaHello()
 1.   Arrays são variáveis onde podemos armazenar mais de um valor com um único nome. Podemos utilizá-lo quando queremos guardar e acessar mais de um elemento e quando precisamos que os nomes dos elementos sejam números, pois nos arrays os índices são numerados. Objetos são variáveis que assim como arrays podem armazenar mais de um valor com um único nome, porém guardam informações mais detalhadas e de uma forma mais organizada. Os objetos guardam seus elementos no formato de strings e seus índeces são nomeados.
 
 2.
+
+const criarRetangulo = (lado1, lado2) => {
+    const retangulo ={
+        largura: lado1,
+        altura: lado2,
+        perimetro: 2*(lado1 + lado2),
+        area: lado1*lado2
+    }
+
+    return retangulo
+}
+
+const retangulo1 = criarRetangulo(1,2)
+console.log(retangulo1)
+
 */
