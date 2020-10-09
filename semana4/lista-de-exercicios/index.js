@@ -72,9 +72,19 @@ e) !(true) && !(true) || (!false && true && true)
     false || true
 Return ==> true
 
+3.
+
+O código não funciona pois falta um contador no While, sem ele o código entra em loop infinito. Também retirei do While o sinal de = , pois com ele o número iniciado na váriavel também era impresso no console. Com contador e sem o sinal igual, o código funciona como requisitado.
+
+const quantidadeDeNumerosPares = 10
+let i = 0
+
+while(i < quantidadeDeNumerosPares) {
+  console.log(i*2)
+  i++
+}
+
 */
-
-
 
 
 
