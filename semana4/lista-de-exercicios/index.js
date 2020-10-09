@@ -16,5 +16,41 @@
 4. # O que faz ==> O código retorna e imprime no console o maior número e o menor número do array numeros.
    # Como faz ==> O código criar tres variáveis: numeros (que recebe um array) , numero1 (que recebe o valor Infinity) e numero2 (que recebe o valor 0). Em seguida, em FOR, é criada a variável numero que percorre o array numeros. Dentro do primeiro IF em FOR, é comandado que se o valor da variável numero for menor que o valor da variável numero1, numero1 recebe o valor de numero (isso irá acontecer até a variável numero percorrer todos os índices do array numeros). Logo após no segundo IF em FOR, é comandado que se o valor da variável numero for maior que o valor da variável numero2, numero2 recebe o valor de numero (isso irá acontecer até a variável numero percorrer todos os índices do array numeros). Em seguida é impresso no console o valor final das variáveis numero1 e numero2.
    # Valor impresso ==> Será impresso no console os número -10 e 1590.
+  
+------> Exercícios de Lógica de Pogramação <------
+
+1. 
+
+const numeros = [5, 6, 9, 18, 23, 30, 50, 54, 78, 109]
+
+function percorrerarrays1 (array){
+    for (let i of array){
+        console.log(array.length)
+    }
    
+}
+
+function percorrerarrays2 (array){
+    let i = 0
+    while(i < array.length) {
+        console.log(array)
+        i++
+    }
+   
+}
+
+function percorrerarrays3 (array){
+    for (let i=0; i<array.length; i++){
+        console.log(array)
+    }
+   
+}
+
+percorrerarrays1(numeros)
+percorrerarrays2(numeros)
+percorrerarrays3(numeros)
+
 */
+
+
+
