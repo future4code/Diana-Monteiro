@@ -93,6 +93,10 @@ function filtrarDespesas(){
     imprimirDespesas(despesasFiltradas)
 }
 
+function ordenarFiltros (a, b){
+    despesasFiltradas.sort();
+}
+
 
 
 
