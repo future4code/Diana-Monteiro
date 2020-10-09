@@ -87,7 +87,21 @@ while(i < n) {
 
 quantidadeDeNumerosPares()
 
+4.
+
+function triangulos(a,b,c){
+    if ((a === b && b === c)){
+        console.log("É um triângulo Equilátero!")
+    }
+    else if ((a === b && b!== c) || (b === c && b !== a) || (c === a && a !== c)){
+        console.log("É um triângulo Isósceles!")
+    }
+    else {
+        console.log("É um triângulo Escaleno!")
+    }
+}
+
+triangulos()
+
 */
-
-
 
