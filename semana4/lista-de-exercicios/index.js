@@ -216,4 +216,15 @@ const criarRetangulo = (lado1, lado2) => {
 const retangulo1 = criarRetangulo(1,2)
 console.log(retangulo1)
 
+3.
+
+const filmeFavorito ={
+    titulo: "Star Wars",
+    ano: "1977",
+    diretor: "George Lucas",
+    elenco: ["Harrison Ford", "Mark Hamill", "Carrie Fisher", "Shelag Fraser"]
+}
+
+console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.elenco[0]}, ${filmeFavorito.elenco[1]}, ${filmeFavorito.elenco[2]} e ${filmeFavorito.elenco[3]}.`)
+
 */
