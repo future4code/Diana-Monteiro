@@ -235,7 +235,7 @@ filmes()
 
 let serHumano = {
     nome: "Felipe Zanone",
-    idade: "33",
+    idade: 33,
     email: "felipezanone@gamil.com",
     endereco: "Rua Aureliano Coutinho 390"
 }
@@ -252,4 +252,30 @@ const anonimizarPessoa = (objeto) => {
 const anonimo = anonimizarPessoa(serHumano)
 console.log(anonimo)
 
-*/
+------> Exercícios de Funções de Array <------
+
+1.
+
+a)
+ 
+const pessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+const maioresDeIdade = pessoas.filter((pessoas) => {
+    return pessoas.idade >= 20
+})
+
+console.log(maioresDeIdade)
+
+b)
+const menoresDeIdade = pessoas.filter((pessoas) => {
+    return pessoas.idade < 20
+})
+
+console.log(menoresDeIdade)
+
+*/ 
