@@ -278,4 +278,39 @@ const menoresDeIdade = pessoas.filter((pessoas) => {
 
 console.log(menoresDeIdade)
 
-*/ 
+2.
+
+a)
+
+const arrayTeste = [1, 2, 3, 4, 5, 6]
+
+const vezesDois = arrayTeste.map((numero) => {
+    return numero*2
+})
+
+console.log(vezesDois)
+
+b)
+
+const vezesTres = arrayTeste.map((numero) => {
+    numero = numero*3
+    return `${numero}`
+});
+
+console.log(vezesTres)
+
+c)
+
+const frases = arrayTeste.map((numero) => {
+
+    if (numero % 2 === 0){
+        return `${numero} é par`
+    }
+    else {
+        return `${numero} é ímpar`
+    }
+})
+
+console.log(frases)
+
+*/
