@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Bebas Neue', cursive;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+
+.tela-inteira {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-busca {
+  width: 2%;
+}
+
+#campoDeBusca {
+  display: flex;
+  margin-left: 22%;
+  padding: 0 10em;
+}
+
+header {
+  background-color:#ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  height: 10%;
+}
+
+header > h1 {
+  color: black;
+  font-size: 1.5em;
+  margin-left: 5px;
+}
+
+.logo {
+  width: 2%;
+  margin-left: 10px;
+}
+
+.menu-hamburguer {
+  width: 4%;
+  margin-left: 10px;
+}
+
+.menu-img-copia {
+  margin-left: 150px;
+}
+
+.icones-menu{
+  width: 12%;
+  opacity: 0.65;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+sup {
+  font-size: 15px;
+  font-weight: 5;
+}
+
+main {
+  min-height: 80%;
+  display: flex;
+  margin-right: 0.8em;
+}
+
+.menu-vertical {
+  flex-basis: 300px;
+  border-right-style: solid;
+  border-right-width: thin;
+}
+
+.botoes-meunu-vertical {
+  list-style-type: none;
+}
+
+.painel-de-videos {
+  background-color: #f9f9f9d8;
+  padding: 20px;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 24.8% 0.2%);
+  grid-template-rows: repeat(4, 270px 20px);
+  gap: 0.1em;
+}
+
+.media1 {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.media2 {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.media3 {
+  grid-column-start: 5;
+  grid-row-start: 1;
+}
+
+.media4 {
+  grid-column-start: 7;
+  grid-row-start: 1;
+}
+
+.media5 {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.media6 {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+
+.media7 {
+  grid-column-start: 5;
+  grid-row-start: 3;
+}
+
+.media8 {
+  grid-column-start: 7;
+  grid-row-start: 3;
+}
+
+
+.box-pagina-principal {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-columns: 1fr;
+  border-style: solid;
+  border-width: thin; 
+  align-items: start;
+  justify-items: stretch;
+  background-color: #f9f9f9d8;
+}
+
+
+footer {
+  height: 10%;
+  background-color:#ffffff;
+  margin: 7em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid black;
+}
+
+footer>h4{
+  align-items: flex-end;
+  padding-top: 10em;
+}
+
+.box-pagina-principal > img {
+  width: 100%;
+  height: 200px;
+}
+
+h4 {
+  margin-left: 20px;
+}
+
