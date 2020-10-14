@@ -1,0 +1,26 @@
+
+.image-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 300px;
+    height: 90px;
+    margin: 20px;
+    padding: 50px;
+}
+
+.image-button-container > a > img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.button-vermais {
+    margin-left: 100px;
+}
+
+.page-section-social-medias {
+    display: flex;
+    justify-content: center;
+}
