@@ -1,0 +1,20 @@
+.section-skills{
+    border: 1px solid black;
+}
+
+.image-skills-container {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 10px 60px;
+}
+
+.image-skills-container > img {
+    width: 30px;
+    margin-right: 50px;
+}
+
+.image-skills-container > h4 {
+    margin-right: 70px;
+    
+}
