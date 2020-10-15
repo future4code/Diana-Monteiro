@@ -1,0 +1,15 @@
+.redes-sociais-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.redes-sociais-container > img {
+    width: 10%;
+}
+
+button {
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
+    background-color: white;
+}
