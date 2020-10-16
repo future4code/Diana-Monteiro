@@ -19,6 +19,7 @@ export class SecaoCompartilhar extends Component {
   onclickSelecionarRede = (event) => {
     this.setState({ valorId: event.target.id })
     console.log(`Post compartilhado no ${event.target.id} com a mensagem: ${this.state.componenteMensagem}`)
+    this.setState({ componenteMensagem: "" })
   };
 
   render() {
@@ -44,11 +45,11 @@ export class SecaoCompartilhar extends Component {
         />
 
         <div className={"mensagem-compartilhar"}>
-        <label>{"Escreva uma mensagem aqui:"}</label>
+        <label>{"Digite uma mensagem aqui:"}</label>
         <input 
-        className={"input-mensagem"}
-        placeholder={"Mensagem"}
         value={this.state.componenteMensagem}
+        className={"input-mensagem"}
+        placeholder="Digite uma mensagem"
         onChange={this.onChangeMensagem} 
         />
         </div>
