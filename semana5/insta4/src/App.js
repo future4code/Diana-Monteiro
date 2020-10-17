@@ -1,7 +1,13 @@
 import React from "react";
-import "./App.css";
 import Post from "./components/Post/Post";
 import styled from 'styled-components';
+
+const DivAppContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
 
 const DivInput = styled.div`
   display:flex;
@@ -11,22 +17,25 @@ const DivInput = styled.div`
   border: 1px solid gray;
   width: 300px;
   margin-bottom: 10px;
+  background-color: #f8f9fa;
 `
 const BotaoAdicionar = styled.button`
   width: 210px;
   color: black;
   padding: 5px;
   margin: 10px 0 20px 0;
+  background-color: whitesmoke;
 `
 const InputPost = styled.input`
   width: 200px;
   padding: 5px;
   margin: 10px;
+  border-radius: 5px;
 `
 
 const ImagemTopo = styled.img`
   width: 70%;
-  margin-top: 20px;
+  margin: 40px 0 20px 0;
 `
 
 class App extends React.Component {
@@ -35,17 +44,17 @@ class App extends React.Component {
       {
         nomeUsuario: "paulinha",
         fotoUsuario: "https://picsum.photos/50/51",
-        fotoPost: "https://picsum.photos/200/151",
+        fotoPost: "https://picsum.photos/200/191",
       },
       {
         nomeUsuario: "gabriel",
         fotoUsuario: "https://picsum.photos/50/52",
-        fotoPost: "https://picsum.photos/200/152",
+        fotoPost: "https://picsum.photos/200/192",
       },
       {
         nomeUsuario: "mariana",
         fotoUsuario: "https://picsum.photos/50/53",
-        fotoPost: "https://picsum.photos/200/153",
+        fotoPost: "https://picsum.photos/200/193",
       }
     ],
 
@@ -94,9 +103,9 @@ class App extends React.Component {
     });
 
     return(
-    <div className={"app-container"}>
+    <DivAppContainer>
     <DivInput>
-    <ImagemTopo src="https://fontmeme.com/temporary/9e8b8908b3ebf184ad2263d4869c08c1.png" alt={'Imagem do Labegram'}/>
+    <ImagemTopo src="https://fontmeme.com/permalink/201017/7efd27975a92b739f96e935bd41c409e.png" alt={'Imagem do Labegram'}/>
     <InputPost
       value={this.state.valorInputNomeUsuario}
       onChange={this.onChangeInputNomeUsuario}
@@ -115,7 +124,7 @@ class App extends React.Component {
     <BotaoAdicionar onClick={this.adicionaPost}>Adicionar</BotaoAdicionar>
     </DivInput>
     <div>{listaDePost}</div>
-    </div>
+    </DivAppContainer>
     );
   
   }

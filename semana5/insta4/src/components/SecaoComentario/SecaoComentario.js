@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import "./SecaoComentario.css";
 
+
 export class SecaoComentario extends Component {
   state = {
-	  comentario: ""
+    comentario: "",
   };
 
   onChangeComentario = (event) => {
-	  this.setState({ comentario: event.target.value })
-	  console.log(this.state.comentario)
-  }
+    this.setState({ comentario: event.target.value });
+    // console.log(this.state.comentario)
+  };
 
   render() {
+    
     return (
       <div className={"comment-container"}>
         <input
@@ -20,8 +22,9 @@ export class SecaoComentario extends Component {
           value={this.state.comentario}
           onChange={this.onChangeComentario}
         />
-        <button onClick={this.props.aoEnviar}>Enviar</button>
+        <button onClick={()=>this.props.aoEnviar(this.state.comentario)}>Enviar</button>
       </div>
     );
+
   }
 }
