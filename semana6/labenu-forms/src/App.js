@@ -29,6 +29,8 @@ class App extends React.Component {
       return <Form2/>;
       case 3 :  
       return <Form3/>;
+      case 4 :  
+      return <Final/>;
       default:
       return <div></div>;
     }
@@ -39,24 +41,13 @@ class App extends React.Component {
   }
 
   render(){
-    const aparecerBotao = () => {
-      const etapas = this.state.etapa <= 3 ?
-      <DivFormulario>
-        {this.renderizarPagina()}
-        <Botao onClick={this.onClickProximaEtapa}>{"Próxima etapa"}</Botao>
-      </DivFormulario> : <Final/>
-      
-      return etapas;
-    }
-
-
-
     return(
       <DivFormulario>
-        {aparecerBotao()}
+        {this.renderizarPagina()}
+        {this.state.etapa !== 4 &&
+        <Botao onClick={this.onClickProximaEtapa}>{"Próxima etapa"}</Botao>}
       </DivFormulario>
-    )
-
+    );
   }
 }
 
