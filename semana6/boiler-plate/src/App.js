@@ -5,7 +5,9 @@ import { JsxEmit } from "typescript";
 
 const TarefaList = styled.ul`
   padding: 0;
-  width: 200px;
+  width: 20em;
+  display:flex;
+  flex-direction:column;
 `;
 
 const Tarefa = styled.li`
@@ -17,7 +19,20 @@ const InputsContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
+  margin-bottom: 10px;
 `;
+
+const DivTarefas = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+`
+const BotaoOrdenar = styled.button`
+  margin: 0 5px 20px 5px;
+`
+const DivBotoes = styled.div`
+  display:flex;
+`
 
 class App extends React.Component {
   state = {
@@ -68,9 +83,36 @@ class App extends React.Component {
     this.setState({tarefas: listaTarefas})
   };
 
+  ordenarCrescente = () => {
+    const ordemCrescente = this.state.tarefas.sort((a,b) => {
+      return (a.texto > b.texto) ? 1 : ((b.texto > a.texto) ? -1 : 0)
+    })
+    this.setState({tarefas: ordemCrescente})
+  }
+
+  
+  ordenarDecrescente = () => {
+    const ordemDecrescente = this.state.tarefas.reverse((a,b) => {
+      return (a.texto > b.texto) ? 1 : ((b.texto > a.texto) ? -1 : 0)
+    })
+    this.setState({tarefas: ordemDecrescente})
+  }
+
   onChangeFilter = (event) => {
     this.setState({ filtro: event.target.value });
   };
+
+  removerTarefa = (id) => {
+    const listaDeTarefas = this.state.tarefas.filter((tarefa) => {
+      return id !== tarefa.id
+    })
+
+    this.setState({tarefas: listaDeTarefas})
+  }
+
+  limparLista = () => {
+    this.setState({tarefas: []})
+  }
 
   render() {
     const listaFiltrada = this.state.tarefas.filter((tarefa) => {
@@ -104,15 +146,23 @@ class App extends React.Component {
         <TarefaList>
           {listaFiltrada.map((tarefa) => {
             return (
+              <DivTarefas>
               <Tarefa
                 completa={tarefa.completa}
                 onClick={() => this.selectTarefa(tarefa.id)}
               >
                 {tarefa.texto}
               </Tarefa>
+              <button onClick={() => this.removerTarefa(tarefa.id)}>remover</button>
+              </DivTarefas>
             );
           })}
         </TarefaList>
+        <DivBotoes> 
+        <BotaoOrdenar onClick={this.ordenarCrescente}> Ordem Crescente </BotaoOrdenar>
+        <BotaoOrdenar onClick={this.ordenarDecrescente}> Ordem Decrescente </BotaoOrdenar>
+        </DivBotoes>
+        <button onClick={this.limparLista}>Limpar Lista</button>
       </div>
     );
   }
