@@ -34,6 +34,10 @@ class App extends React.Component {
     this.getAllUsers();
   };
 
+  componentDidUpdate = () => {
+    this.getAllUsers();
+  };
+
   getAllUsers = () => {
     axios.get(
         "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
@@ -79,7 +83,8 @@ class App extends React.Component {
   };
 
   deletUser = (user) => {
-    axios.delete(
+    if(window.confirm("Tem certeza que deseja deletar o usuário?")){
+    return axios.delete(
         `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user.id}`,
         {
           headers: {
@@ -94,6 +99,9 @@ class App extends React.Component {
         console.log(error.message);
         window.alert("Usuário não pode ser deletado!");
       });
+    } else {
+      alert("Deleção cancelada!")
+    }
   };
 
   onChangeEmailValue = (event) => {
