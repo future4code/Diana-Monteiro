@@ -9,7 +9,7 @@ const Button = styled.button`
   border-radius: 5px;
 `;
 
-const DivUsers = styled.div`
+const DivDetails = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,21 +22,31 @@ const DivUsers = styled.div`
   border-radius: 5px;
 `;
 
-class Users extends React.Component {
+const Infos = styled.p`
+  font-size: 18px;
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+`;
 
+class UsersDetails extends React.Component {
   render() {
     return (
       <div>
         <Button onClick={this.props.changePage}>
-          Voltar para página de Login
+          Voltar para Lista de Usuários
         </Button>
-        <DivUsers>
-          <h1>Usuários Cadastrados</h1>
-          <div>{this.props.usersLists}</div>
-        </DivUsers>
+        <DivDetails>
+          <h1>Detalhes do Usuário</h1>
+          <Infos>Nome: {this.props.detailsUser.name}</Infos>
+          <Infos>Email: {this.props.detailsUser.email}</Infos>
+          <Infos>Id: {this.props.detailsUser.email}</Infos>
+          <Button onClick={this.props.deleteUser}>Deletar Usuário</Button>
+        </DivDetails>
       </div>
     );
   }
 }
 
-export default Users;
+export default UsersDetails;
