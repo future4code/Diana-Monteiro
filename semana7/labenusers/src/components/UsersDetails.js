@@ -36,7 +36,17 @@ const Div = styled.div`
 `;
 const Input = styled.input`
   height: 20px;
+  margin-left:10px;
 `;
+
+const baseUrl =
+  "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
+
+const axiosConfig = {
+  headers: {
+    Authorization: "diana-monteiro-dumont",
+  },
+};
 
 class UsersDetails extends React.Component {
   state = {
@@ -55,24 +65,31 @@ class UsersDetails extends React.Component {
       name: this.state.nameValue,
       email: this.state.emailValue,
     };
-
-    axios
-      .put(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${user.id}`,
-        body,
-        {
-          headers: {
-            Authorization: "diana-monteiro-dumont",
-          },
-        }
-      )
+    axios.put(`${baseUrl}/${user.id}`, body, axiosConfig)
       .then((answer) => {
         window.alert("Edições salvas com sucesso!");
+        this.props.getAllUsers();
       })
       .catch((error) => {
         console.log(error.message);
         window.alert("Algo está errado!");
       });
+  };
+
+  deletUser = async (user) => {
+    if (window.confirm("Tem certeza que deseja deletar o usuário?")) {
+      try {
+        const response = await axios.delete(
+          `${baseUrl}/${user.id}`,
+          axiosConfig
+        );
+        window.alert("Usuário deletado com sucesso!");
+        this.props.getAllUsers();
+      } catch (error) {
+        console.log(error.message);
+        window.alert("Usuário não pode ser deletado!");
+      }
+    }
   };
 
   inputVisibility = () => {
@@ -131,7 +148,7 @@ class UsersDetails extends React.Component {
               <Button onClick={() => this.editUser(this.props.detailsUser)}>Salvar</Button>
             )}
 
-          <Button onClick={() => this.props.deletUser(this.props.detailsUser)}>
+          <Button onClick={() => this.deletUser(this.props.detailsUser)}>
             Deletar Usuário
           </Button>
 
