@@ -116,6 +116,7 @@ class RenderPage extends React.Component {
           <UsersDetails
             changePage={this.goToDetails}
             detailsUser={this.state.detailsUser}
+            deletUser={this.deletUser}
           />
         );
       } else {

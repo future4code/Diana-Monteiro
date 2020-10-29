@@ -27,6 +27,9 @@ const ButtonSave = styled.button`
   background-color: rgb(69, 123, 157);
   border-radius: 5px;
   width: 16em;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Button = styled.button`
@@ -35,6 +38,9 @@ const Button = styled.button`
   color: white;
   background-color: rgb(69, 123, 157);
   border-radius: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 class Login extends React.Component {
