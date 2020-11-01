@@ -3,16 +3,21 @@ import React from "react";
 
 const Assignature = styled.a`
     text-decoration: none;
-    color: white;
+    color: #fb810e;
     display: flex;
-    height: 6em;
-    margin-top: 20px;
-    padding-bottom: 10px;
+    height: 2.8em;
+    font-family: "Lobster", cursive;
+    padding-bottom: 20px;
     align-items: flex-end;
     justify-content: center;
-    border: 1px solid white;
+    border: 4px double #fb810e;
     border-right: none;
     border-left: none;
+    border-bottom: none;
+    background-color: black;
+    @media (min-device-width: 320px) and (max-device-width: 420px) {
+    font-size: 20px;
+  }
 `
 
 class Footer extends React.Component {
@@ -21,9 +26,7 @@ class Footer extends React.Component {
     return (
       <footer>
           <Assignature href="https://github.com/DiaMont30" target="_blank">
-            <small>
-              <b>Copyright © Diana Monteiro 2020</b>
-            </small>
+             Copyright © Diana Monteiro 2020
           </Assignature>
       </footer>
     );

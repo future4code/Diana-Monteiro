@@ -1,6 +1,4 @@
 import './App.css';
-import axios from "axios";
-import styled from "styled-components";
 import React from "react";
 import PlayLists from "./components/PlayLists"
 import Footer from "./components/Footer"
