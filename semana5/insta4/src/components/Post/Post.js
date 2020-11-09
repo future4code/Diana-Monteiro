@@ -16,37 +16,37 @@ const DivPostContainer = styled.div`
   border: 1px solid gray;
   width: 300px;
   margin-bottom: 10px;
-`
+`;
 const DivPostHeader = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
   padding-left: 10px;
-`
+`;
 const DivPostFooter = styled.div`
   height: 40px;
   display: flex;
   align-items: center;
   padding: 0 10px;
   justify-content: space-between;
-`
+`;
 const ImgUsePhoto = styled.img`
   height: 30px;
   width: 30px;
   margin-right: 10px;
   border-radius: 50%;
-`
+`;
 const ImgPostPhoto = styled.img`
   width: 100%;
-`
+`;
 
 const DivComentario = styled.div`
   margin-left: 15px;
-`
+`;
 const DivListaComentarios = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 class Post extends React.Component {
   state = {
@@ -56,7 +56,7 @@ class Post extends React.Component {
     numeroComentarios: 0,
     salvo: false,
     compartilhar: false,
-    arrayComentarios: []
+    arrayComentarios: [],
   };
 
   onClickCurtida = () => {
@@ -92,14 +92,15 @@ class Post extends React.Component {
   aoEnviarComentario = (comentario) => {
     const novoComentario = comentario;
 
-    const novoArrayComentarios = [...this.state.arrayComentarios,
+    const novoArrayComentarios = [
+      ...this.state.arrayComentarios,
       novoComentario,
-    ]
+    ];
 
     this.setState({
       comentando: false,
       numeroComentarios: this.state.numeroComentarios + 1,
-      arrayComentarios: novoArrayComentarios
+      arrayComentarios: novoArrayComentarios,
     });
   };
 
@@ -137,10 +138,13 @@ class Post extends React.Component {
     const listaDeComentarios = this.state.arrayComentarios.map(
       (comentario, id) => {
         return (
-        <DivListaComentarios> 
-        <ImgUsePhoto src={this.props.fotoUsuario} alt={"Imagem do usuario"} key={id}/>
-        <p key={id}>{comentario}</p>
-        </DivListaComentarios>
+          <DivListaComentarios key={id}>
+            <ImgUsePhoto
+              src={this.props.fotoUsuario}
+              alt={"Imagem do usuario"}
+            />
+            <p> {comentario}</p>
+          </DivListaComentarios>
         );
       }
     );
@@ -181,7 +185,6 @@ class Post extends React.Component {
         {componenteCompartilhar}
 
         <DivComentario>{listaDeComentarios}</DivComentario>
-
       </DivPostContainer>
     );
   }
