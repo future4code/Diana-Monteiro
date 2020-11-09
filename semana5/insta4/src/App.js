@@ -17,14 +17,14 @@ const DivInput = styled.div`
   border: 1px solid gray;
   width: 300px;
   margin-bottom: 10px;
-  background-color: #f8f9fa;
+  background-color: #dcdcdc;
 `
 const BotaoAdicionar = styled.button`
   width: 210px;
   color: black;
   padding: 5px;
   margin: 10px 0 20px 0;
-  background-color: whitesmoke;
+  background-color: #a9a9a9;
 `
 const InputPost = styled.input`
   width: 200px;
