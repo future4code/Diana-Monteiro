@@ -58,8 +58,8 @@ const InicialScreen = (props) => {
       </DivName>
       </DivProfile>
       <DivButtom>
-        <Img src={remove} onClick={props.itsAMatch}/>
-        <Img src={heart} onClick={props.itsAMatch} />
+        <Img src={remove} onClick={()=>props.itsAMatch("no")}/>
+        <Img src={heart} onClick={()=>props.itsAMatch("yes")} />
       </DivButtom>
     </DivInicial>
   );

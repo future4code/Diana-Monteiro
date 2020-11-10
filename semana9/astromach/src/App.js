@@ -19,18 +19,53 @@ const DivMain = styled.div`
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 5px;
 `;
 
+const urlBase =
+  "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/diana-monteiro/";
+
 function App(props) {
   const [currentScreen, setCurrentScreen] = useState(true);
-  const [allProfiles, setAllProfiles] = useState([])
+  const [allProfiles, setAllProfiles] = useState({});
 
-  // Pega todos os profiles do Banco de dados
+// Pega todos os profiles do Banco de dados
 
-  useEffect (() => {
-      axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/diana/person").then ((response) => {
-        setAllProfiles(response.data.profile)
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  const getProfile = () => {
+    axios
+      .get(`${urlBase}person`)
+      .then((response) => {
+        setAllProfiles(response.data.profile);
       })
-      console.log("oi", allProfiles)
-    }, [])
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const choosePerson = (response) => {
+    let body
+    if (response === "yes") {
+      body = {
+      id: allProfiles.id,
+      choice: true
+      }
+    } else if (response ==="no"){
+      body = {
+        id: allProfiles.id,
+        choice: false
+        }
+    }
+
+    axios
+    .post(`${urlBase}choose-person`, body)
+    .then((res) => {
+      getProfile()
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
 
   //Renderiza as telas, entre a tela inical para matchs.
 
@@ -38,20 +73,17 @@ function App(props) {
     setCurrentScreen(!currentScreen);
   };
 
-  let renderedScreen = ""
+  let renderedScreen = "";
   if (currentScreen) {
-      renderedScreen = <InicialScreen 
-      getProfile = {allProfiles}
-      /> 
-  } else{
-      renderedScreen = <MatchSreen/>
+    renderedScreen = <InicialScreen getProfile={allProfiles} itsAMatch={choosePerson}/>;
+  } else {
+    renderedScreen = <MatchSreen />;
   }
 
   return (
     <DivMain>
-      <NavBar currentScreen={currentScreen} renderScreen={goToMatchs}/>
+      <NavBar currentScreen={currentScreen} renderScreen={goToMatchs} />
       {renderedScreen}
-
     </DivMain>
   );
 }
