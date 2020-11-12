@@ -1,33 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import styled from "styled-components"
-
-const Button = styled.button`
-  display: flex;
-  position: fixed;
-  align-items: flex-end;
-`
-const DivMatch = styled.div`
-  position: relative;
-    height: 70px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    transition: all 0.2s ease 0s;
-    cursor: pointer;
-`
-const DivMatches = styled.div`
-  margin: 1em;
-
-`
-
-const Img = styled.img`
-  height: 100%;
-    width: 50px;
-    margin-right: 10px;
-    border-radius: 50%;
-`
+import {ButtonClear, DivMatch, DivMatches, Name, ImgMatch} from "./styled";
 
 const urlBase =
   "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/diana-monteiro/";
@@ -39,10 +12,6 @@ const MatchScreen = (props) => {
   useEffect(() => {
     getMatches();
   }, []);
-
-  useEffect(() => {
-    getMatches();
-  }, [matches]);
 
   const getMatches = () => {
     axios
@@ -59,6 +28,7 @@ const MatchScreen = (props) => {
     axios
     .put(`${urlBase}clear`)
     .then(() => {
+      getMatches();
       window.alert("Matchs deletados com sucesso!");
     })
     .catch(err => {
@@ -67,16 +37,16 @@ const MatchScreen = (props) => {
   }
 
   const seeAllmatches = matches.map((match) => {
-    return <DivMatch>
-      <Img src={match.photo}/>
-      <p>{match.name}</p>
+    return <DivMatch key={match.id}>
+      <ImgMatch src={match.photo}/>
+      <Name>{match.name}</Name>
       </DivMatch>;
   })
 
     return(
       <DivMatches>
         {seeAllmatches}
-        <Button onClick={()=>clearMatches(matches.id)}>Limpar Matches</Button>
+        <ButtonClear onClick={()=>clearMatches(matches.id)}>Limpar Matches</ButtonClear>
       </DivMatches>
     )
 
