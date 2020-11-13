@@ -5,7 +5,7 @@ import {ButtonClear, Message, DivMatch, DivMatches, Name, ImgMatch} from "./styl
 const urlBase =
   "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/diana-monteiro/";
 
-const MatchScreen = (props) => {
+const MatchScreen = () => {
 
   const [matches, setMatches] = useState([])
 
@@ -45,8 +45,8 @@ const MatchScreen = (props) => {
 
     return(
       <DivMatches>
-        {matches.length == 0 ? <Message> Você Não tem matches!</Message> : null}
         {seeAllmatches}
+        {matches.length == 0 ? <Message> Você Não tem matches!</Message> : null}
         <ButtonClear onClick={()=>clearMatches(matches.id)}>Limpar Matches</ButtonClear>
       </DivMatches>
     )

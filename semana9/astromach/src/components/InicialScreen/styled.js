@@ -1,28 +1,29 @@
-import styled, { keyframes } from "styled-components";
+import styled, {keyframes, css}  from "styled-components";
 
-// CSS Animations for the SwipeCard
-// export const swipeRight = keyframes`
-//   from {
-//     opacity: 1;
-// 	  transform: translate(0) rotate(0);
-//   }
+const slideRigthAnimation= keyframes`
+  from {
+    opacity: 1;
+	  transform: translate(0) rotate(0);
+  }
 
-//   to {
-//     opacity: 0;
-// 	  transform: translate(-200px) rotate(-20deg);
-//   }
-// `;
-// export const swipeLeft = keyframes`
-//   from {
-//     opacity: 1;
-// 	  transform: translate(0) rotate(0);
-//   }
+  to {
+    opacity: 0;
+	  transform: translate(200px) rotate(20deg);
+  }
+`
 
-//   to {
-//     opacity: 0;
-// 	  transform: translate(200px) rotate(20deg);
-//   }
-// `;
+const slideLeftAnimation= keyframes`
+ from {
+    opacity: 1;
+	  transform: translate(0) rotate(0);
+  }
+
+  to {
+    opacity: 0;
+	  transform: translate(-200px) rotate(-20deg);
+  }
+`
+
 
 
 export const Name = styled.p`
@@ -74,9 +75,15 @@ export const DivProfile = styled.div`
   overflow: hidden;
   transition: all 0.5s ease 0s;
   height: 26.9em;
-/* animation: ${props => props.animation} 0.5s forwards; */
   display: flex;
   align-items: center;
+  animation: ${props => {
+    if (props.slideRigth){
+      return css`${slideRigthAnimation} 0.5s`
+    }else if (props.slideLeft) {
+      return css`${slideLeftAnimation} 0.5s`
+    }
+  }};
 `;
 
 export const DivBack = styled.div`

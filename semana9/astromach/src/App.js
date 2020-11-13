@@ -5,6 +5,7 @@ import axios from "axios";
 import NavBar from "./components/NavBar/NavBar";
 import InicialScreen from "./components/InicialScreen/InicialScreen";
 import MatchSreen from "./components/MatchScreen/MatchScreen";
+import logo from "./img/Diana Monteiro Logotipo.png"
 
 const DivMain = styled.div`
   width: 400px;
@@ -19,24 +20,12 @@ const DivMain = styled.div`
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 5px;
 `;
 
-const Signature = styled.p`
+const Logo = styled.img`
+  width: 15%;
+  bottom: 0px;
   position: fixed;
-  bottom: 5em;
-  right: 15em;
-  font-size: 1.5em;
-  transform:rotate(90deg);
-  font-family: 'Dancing Script', cursive;
-  @media (min-device-width: 320px) and (max-device-width: 420px) {
-    transform:rotate(0);
-    right: 4em;
-    bottom: 1em;
-  }
-  @media (min-device-width: 421px) and (max-device-width: 800px) {
-    transform:rotate(0);
-    right: 4em;
-    bottom: 1em;
-  }
-
+  right: 0px;
+  z-index: -1;
 `
 
 const urlBase =
@@ -45,6 +34,10 @@ const urlBase =
 function App() {
   const [currentScreen, setCurrentScreen] = useState(true);
   const [allProfiles, setAllProfiles] = useState({});
+  const [slideRigth, setSlideRigth] = useState(false);
+  const [slideLeft, setSlideLeft] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
 
   // Pega todos os profiles do Banco de dados
 
@@ -53,27 +46,33 @@ function App() {
   }, []);
 
   const getProfile = () => {
+    setLoaded(false)
     axios
       .get(`${urlBase}person`)
       .then((response) => {
         setAllProfiles(response.data.profile);
+        setSlideRigth(false)
+        setSlideLeft(false)
+        setLoaded(true)
       })
       .catch((err) => {
         console.log(err);
       });
+
   };
 
 //Função de escolher profile, match or don't.
 
-  const choosePerson = (response) => {
+  const choosePerson = (boolean) => {
     const body = {
       id: allProfiles.id,
-      choice: response,
+      choice: boolean
     };
 
     axios
       .post(`${urlBase}choose-person`, body)
-      .then((answer) => {
+      .then(() => {
+        {body.choice ? setSlideRigth(true) : setSlideLeft(true)}
         getProfile();
       })
       .catch((err) => {
@@ -92,12 +91,12 @@ function App() {
     <DivMain>
       <NavBar currentScreen={currentScreen} renderScreen={goToMatchs} />
       {currentScreen ? (
-        <InicialScreen getProfile={allProfiles} itsAMatch={choosePerson} />
+        <InicialScreen getProfile={allProfiles} itsAMatch={choosePerson} slideRigth={slideRigth} slideLeft={slideLeft} loaded={loaded}/>
       ) : (
         <MatchSreen />
       )}
     </DivMain>
-    <Signature>Diana Monteiro ©2020</Signature>
+    <a href="https://github.com/DiaMont30" target="_blank"><Logo src={logo}/></a>
     </div>
   );
 }
