@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import {ButtonClear, DivMatch, DivMatches, Name, ImgMatch} from "./styled";
+import {ButtonClear, Message, DivMatch, DivMatches, Name, ImgMatch} from "./styled";
 
 const urlBase =
   "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/diana-monteiro/";
@@ -45,6 +45,7 @@ const MatchScreen = (props) => {
 
     return(
       <DivMatches>
+        {matches.length == 0 ? <Message> Você Não tem matches!</Message> : null}
         {seeAllmatches}
         <ButtonClear onClick={()=>clearMatches(matches.id)}>Limpar Matches</ButtonClear>
       </DivMatches>

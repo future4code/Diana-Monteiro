@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar/NavBar";
 import InicialScreen from "./components/InicialScreen/InicialScreen";
 import MatchSreen from "./components/MatchScreen/MatchScreen";
 
-export const DivMain = styled.div`
+const DivMain = styled.div`
   width: 400px;
   height: 600px;
   position: fixed;
@@ -19,10 +19,30 @@ export const DivMain = styled.div`
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 5px;
 `;
 
+const Signature = styled.p`
+  position: fixed;
+  bottom: 5em;
+  right: 15em;
+  font-size: 1.5em;
+  transform:rotate(90deg);
+  font-family: 'Dancing Script', cursive;
+  @media (min-device-width: 320px) and (max-device-width: 420px) {
+    transform:rotate(0);
+    right: 4em;
+    bottom: 1em;
+  }
+  @media (min-device-width: 421px) and (max-device-width: 800px) {
+    transform:rotate(0);
+    right: 4em;
+    bottom: 1em;
+  }
+
+`
+
 const urlBase =
   "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/diana-monteiro/";
 
-function App(props) {
+function App() {
   const [currentScreen, setCurrentScreen] = useState(true);
   const [allProfiles, setAllProfiles] = useState({});
 
@@ -42,6 +62,8 @@ function App(props) {
         console.log(err);
       });
   };
+
+//Função de escolher profile, match or don't.
 
   const choosePerson = (response) => {
     const body = {
@@ -66,14 +88,17 @@ function App(props) {
   };
 
   return (
+    <div>
     <DivMain>
       <NavBar currentScreen={currentScreen} renderScreen={goToMatchs} />
       {currentScreen ? (
         <InicialScreen getProfile={allProfiles} itsAMatch={choosePerson} />
       ) : (
         <MatchSreen />
-      )};
+      )}
     </DivMain>
+    <Signature>Diana Monteiro ©2020</Signature>
+    </div>
   );
 }
 

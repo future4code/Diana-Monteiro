@@ -1,15 +1,41 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+// CSS Animations for the SwipeCard
+// export const swipeRight = keyframes`
+//   from {
+//     opacity: 1;
+// 	  transform: translate(0) rotate(0);
+//   }
+
+//   to {
+//     opacity: 0;
+// 	  transform: translate(-200px) rotate(-20deg);
+//   }
+// `;
+// export const swipeLeft = keyframes`
+//   from {
+//     opacity: 1;
+// 	  transform: translate(0) rotate(0);
+//   }
+
+//   to {
+//     opacity: 0;
+// 	  transform: translate(200px) rotate(20deg);
+//   }
+// `;
+
 
 export const Name = styled.p`
   font-family: 'Fredoka One', cursive;
   text-shadow:0px 1px 0px black;
   font-size: 1.7em;
 `
-export const P = styled.p`
+export const Message = styled.p`
   font-family: 'Fredoka One', cursive;
   font-size: 1.2em;
   text-align: center;
   margin: 9.5em auto;
+  color: #9670f3;
 `
 
 export const Bio = styled.p`
@@ -48,7 +74,7 @@ export const DivProfile = styled.div`
   overflow: hidden;
   transition: all 0.5s ease 0s;
   height: 26.9em;
-  /* animation: 0.5s ease 0s 1 normal forwards running none; */
+/* animation: ${props => props.animation} 0.5s forwards; */
   display: flex;
   align-items: center;
 `;

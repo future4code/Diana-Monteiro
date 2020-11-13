@@ -6,7 +6,7 @@ import removeIn from "../../img/removerIn.svg";
 
 import {
   ImgPick,
-  P,
+  Message,
   Name,
   Bio,
   ImgProfile,
@@ -18,12 +18,11 @@ import {
 } from "./styled";
 
 const InicialScreen = (props) => {
-
-
+  
   return (
     <DivInicial>
       {props.getProfile ? (
-        <DivProfile>
+        <DivProfile animation={props.animation}>
           <DivBack imgProfile={props.getProfile.photo} />
           <ImgProfile src={props.getProfile.photo} />
           <DivName>
@@ -34,7 +33,7 @@ const InicialScreen = (props) => {
           </DivName>
         </DivProfile>
       ) : (
-        <P>Acabaram os matches, limpe sua lista de matches e atualize a página</P>
+        <Message>Acabaram os matches, limpe sua lista de matches e atualize a página</Message>
       )}
       <DivButtom>
         <ImgPick

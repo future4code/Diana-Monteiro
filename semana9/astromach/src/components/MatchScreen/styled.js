@@ -33,6 +33,8 @@ export const DivMatch = styled.div`
 `;
 export const DivMatches = styled.div`
   margin: 1em 0.7em;
+  overflow-y: auto;
+  height: 480px;
 `;
 
 export const ImgMatch = styled.img`
@@ -41,6 +43,14 @@ export const ImgMatch = styled.img`
   margin-right: 10px;
   border-radius: 50%;
 `;
+
+export const Message = styled.p`
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 9.5em auto;
+  color: #9670f3;
+`
 
 export const Name = styled.p`
 font-family: 'Roboto', sans-serif;
