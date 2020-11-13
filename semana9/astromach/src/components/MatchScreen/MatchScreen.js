@@ -13,6 +13,10 @@ const MatchScreen = () => {
     getMatches();
   }, []);
 
+  useEffect(() => {
+    getMatches()
+  }, [matches])
+
   const getMatches = () => {
     axios
       .get(`${urlBase}matches`)

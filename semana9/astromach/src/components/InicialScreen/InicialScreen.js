@@ -2,7 +2,7 @@ import heart from "../../img/coracao (2).svg";
 import heartIn from "../../img/coracao (3).svg";
 import remove from "../../img/remover.svg";
 import removeIn from "../../img/removerIn.svg";
-import Loader from "./Loader";
+import LoaderProfile from "./LoaderProfile";
 
 import {
   ImgPick,
@@ -20,9 +20,8 @@ import {
 const InicialScreen = (props) => {
   return (
     <DivInicial>
-      {!props.loaded ? 
-        <Loader loaded={props.loaded} />
-        : (props.getProfile ? 
+      {props.loaded ? 
+        (props.getProfile ? 
         <DivProfile slideRigth={props.slideRigth} slideLeft={props.slideLeft}>
           <DivBack imgProfile={props.getProfile.photo} />
           <ImgProfile src={props.getProfile.photo} />
@@ -35,8 +34,7 @@ const InicialScreen = (props) => {
         </DivProfile>
         : <Message>
           Acabaram os matches, limpe sua lista de matches e atualize a página
-        </Message>)
-      }
+        </Message>) : <LoaderProfile loaded={props.loaded} />}
 
       {props.loaded ? 
       <DivButtom>

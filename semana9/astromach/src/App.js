@@ -51,29 +51,30 @@ function App() {
       .get(`${urlBase}person`)
       .then((response) => {
         setAllProfiles(response.data.profile);
-        setSlideRigth(false)
-        setSlideLeft(false)
         setLoaded(true)
       })
       .catch((err) => {
         console.log(err);
+        setLoaded(true)
       });
 
   };
 
 //Função de escolher profile, match or don't.
 
-  const choosePerson = (boolean) => {
+  const choosePerson = (boolean) => {  
+    {boolean ? setSlideRigth(true) : setSlideLeft(true)}
+
     const body = {
       id: allProfiles.id,
       choice: boolean
     };
-
     axios
       .post(`${urlBase}choose-person`, body)
       .then(() => {
-        {body.choice ? setSlideRigth(true) : setSlideLeft(true)}
         getProfile();
+        setSlideRigth(false)
+        setSlideLeft(false)
       })
       .catch((err) => {
         console.log(err);
