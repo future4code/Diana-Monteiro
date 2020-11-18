@@ -1,6 +1,8 @@
 import React from "react";
 import {Navbar, Nav, Button, Form} from 'react-bootstrap'
 import { useHistory } from "react-router-dom";
+import {NavLink} from "./styled";
+import logo from "../../assets/logo2.png";
 
 const NavBar = () => {
 
@@ -19,13 +21,18 @@ const NavBar = () => {
     }
 
   return (
-    <Navbar bg="transparent" variant="light">
-    <Navbar.Brand href="#home">LabeX</Navbar.Brand>
-    <Nav className="mr-auto">
+    <Navbar bg="transparent" variant="dark">
+    <img
+        src={logo}
+        width="250"
+        className="d-inline-block align-top"
+        alt="Labex logo"
+      />
+    <NavLink className="mr-auto" text="white" >
       <Nav.Link onClick={goToHomePage}>Home</Nav.Link>
       <Nav.Link href="#features">Features</Nav.Link>
       <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
+    </NavLink>
     <Form inline>
       <Button variant="outline-primary"onClick={goToList}>Missões</Button>
       <Button variant="outline-primary" onClick={goToLogin}>Login</Button>

@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../components/Navbar";
+import NavBar from "../components/NavBar/Navbar";
 import { useHistory } from "react-router-dom";
 
 

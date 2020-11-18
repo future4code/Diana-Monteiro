@@ -8,6 +8,7 @@ import ListTripsPage from"../Screens/ListTripsPage";
 import TripDetailsPage from "../Screens/TripDetailsPage";
 import LoginPage from "../Screens/LoginPage";
 import AdmPage from "../Screens/AdmPage";
+import AdmTripsPage from "../Screens/AdmTripsPage.js";
 
 
 const Router = () => {
@@ -23,7 +24,7 @@ const Router = () => {
         <Route exact path="/admin">
           <AdmPage/>
         </Route>
-        <Route exact path="/application-form/">
+        <Route exact path="/application-form/:id">
           <ApplicationFormPage />
         </Route>
         <Route exact path="/trips/list">
@@ -35,8 +36,11 @@ const Router = () => {
         <Route exact path="/trips/create">
           <CreateTripPage/>
         </Route>
-        <Route exact path="/trips/details">
+        <Route exact path="/trips/details/:id">
           <TripDetailsPage/>
+        </Route>
+        <Route exact path="/trips/admlist">
+          <AdmTripsPage/>
         </Route>
       </Switch>
     </BrowserRouter>
