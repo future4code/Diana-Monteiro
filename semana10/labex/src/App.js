@@ -7,7 +7,7 @@ import './App.css';
 const DivMain = styled.div`
   background:url(${imageBack}) #444;
   background-size:cover;
-  height: 100vh;
+  height: 100%;
 `
 
 function App() {

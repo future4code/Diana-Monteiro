@@ -5,8 +5,9 @@ import { baseUrl } from "../constants/urls";
 import { CardDeck} from "react-bootstrap";
 import TripCard from "../components/TripCard";
 import NavBar from "../components/NavBar/Navbar";
+import {DivAdmTripsPage} from "./styled";
 
-const ListTripPage = () => {
+const AdmTripsPage = () => {
   const getTrips = useRequestData(`${baseUrl}/trips`, undefined);
 
   const history = useHistory();
@@ -20,7 +21,7 @@ const ListTripPage = () => {
   };
 
   return (
-    <div>
+    <DivAdmTripsPage>
       <NavBar />
       <h1>Lista de missões</h1>
       <CardDeck>
@@ -36,13 +37,14 @@ const ListTripPage = () => {
           date={trip.date}
           goTo = {goToDetails}
           id= {trip.id}
+          nameButton = {"See Details"}
           />
         )
       })}
         </CardDeck>
       <button onClick={goBackAdmPage}>Voltar para Opções de Adm</button>
-    </div>
+    </DivAdmTripsPage>
   );
 };
 
-export default ListTripPage;
+export default AdmTripsPage;

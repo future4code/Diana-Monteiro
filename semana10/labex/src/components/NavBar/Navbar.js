@@ -36,7 +36,6 @@ const NavBar = () => {
     <Form inline>
       <Button variant="outline-primary"onClick={goToList}>Missões</Button>
       <Button variant="outline-primary" onClick={goToLogin}>Login</Button>
-      <Button variant="outline-primary" onClick={goToHomePage}>Logout</Button>
 
     </Form>
   </Navbar>

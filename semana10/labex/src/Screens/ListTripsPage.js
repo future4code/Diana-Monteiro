@@ -14,8 +14,8 @@ const ListTripPage = () => {
 
   const history = useHistory();
 
-  const goToApplication = () => {
-    history.push("/application-form/${id}");
+  const goToApplication = (id) => {
+    history.push(`/application-form/${id}`);
   };
 
   return (
@@ -35,6 +35,7 @@ const ListTripPage = () => {
           date={trip.date}
           goTo={goToApplication}
           id= {trip.id}
+          nameButton = {"To apply"}
           />
         )
       })}

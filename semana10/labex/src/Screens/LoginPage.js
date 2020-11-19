@@ -1,48 +1,41 @@
 import NavBar from "../components/NavBar/Navbar";
 import { useHistory } from "react-router-dom";
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect} from "react";
+import {Form} from "react-bootstrap";
+import { useInput } from "../hooks/useInput";
+import { StyledButton } from "../components/StyledButton";
 import { baseUrl } from "../constants/urls";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, handleEmail] = useInput();
+  const [password, handlePassword] = useInput();
   const history = useHistory();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = window.localStorage.getItem("token");
 
     if (token !== null) {
       history.push("/admin");
     }
-    
   }, [history]);
 
-  const handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
+  const login = (event) => {
+    event.preventDefault();
 
-  const handlePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const login = () => {
     const body = {
       email: email,
-      password: password
+      password: password,
     };
 
     axios
-      .post(
-        `${baseUrl}/login`,
-        body
-      )
+      .post(`${baseUrl}/login`, body)
       .then((response) => {
         window.localStorage.setItem("token", response.data.token);
         history.push("/admin");
       })
       .catch((err) => {
-        alert("Email ou senha incorretos")
+        alert("Email ou senha incorretos");
       });
   };
 
@@ -50,9 +43,23 @@ const LoginPage = () => {
     <div>
       <NavBar />
       <p>Login</p>
-      <input value={email} onChange={handleEmail} />
-      <input value={password} onChange={handlePassword} />
-      <button onClick={login}>Fazer login</button>
+      <Form style={{ width: "18rem" }} className={"d-flex justify-content-center flex-column"} >
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" value={email} onChange={handleEmail}/>
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" value={password} onChange={handlePassword}/>
+        </Form.Group>
+        <StyledButton onClick={login} variant="primary" type="submit">
+          Submit
+        </StyledButton>
+      </Form>
     </div>
   );
 };

@@ -9,32 +9,29 @@ export const StyledButton = styled(Button)`
   color: white;
   padding: 0.5em 1em;
   outline: none;
-  border: 1px solid black;
-  background-color: transparent;
-  overflow: hidden;
-  transition: color 0.4s ease-in-out;
+  border: none;
+  background-color: hsl(236, 32%, 26%);
 
-  ::before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    background-color: #3cefff;
-    transform-origin: center;
-    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
-    transition: transform 0.7s ease-in-out;
-  }
+::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fc2f70;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  transition: transform 0.25s ease-in-out;
+}
 
-  :hover {
-    cursor: pointer;
-    color: #161616;
-  }
+:hover {
+  cursor: pointer;
+}
 
-  :hover::before {
-    transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
-  }
-`;
+:hover::before {
+  transform-origin: center top;
+  transform: scaleY(1);
+}
+`
