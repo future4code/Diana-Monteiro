@@ -3,9 +3,12 @@ import { StyledButton } from "../components/StyledButton";
 import NavBar from "../components/NavBar/Navbar";
 import { useHistory } from "react-router-dom";
 import { DivAdmPage, DivButton} from "./styled";
+import { useProtectedPage } from '../hooks/useProtectedPage';
+
 
 const AdmPage = () => {
   const history = useHistory();
+  useProtectedPage()
 
   const goToCreate = () => {
     history.push("/trips/create");

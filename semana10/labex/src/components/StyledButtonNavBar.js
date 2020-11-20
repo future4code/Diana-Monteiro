@@ -1,20 +1,21 @@
 import styled from "styled-components";
 import {Button} from "react-bootstrap";
 
-export const StyledButton = styled.button`
-    z-index: 1;
+export const StyledButtonNavBar = styled.button`
+  z-index: 1;
   position: relative;
   font-size: inherit;
   font-family: inherit;
   color: white;
   font-family: 'Bebas Neue', cursive;
-  font-size: 1.3em;
+  font-size: 1.5em;
   padding: 0.2em 1.1em;
   outline: none;
   border: none;
   border-radius: 3px;
   background-color: hsl(236, 32%, 26%);
   overflow: hidden;
+  margin: 0 20px;
   transition: color 0.4s ease-in-out;
 
 ::before {

@@ -1,8 +1,7 @@
 import React from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import axios from 'axios'
 import { Form, Col } from "react-bootstrap";
-import { useRequestData } from "../hooks/useRequestData";
 import NavBar from "../components/NavBar/Navbar";
 import { StyledButton } from "../components/StyledButton";
 import { useForm } from "../hooks/useForm";
@@ -16,8 +15,10 @@ const ApplicationFormPage = () => {
     applicationText: '',
     profession: '',
     country: '',
-    trip: null
   })
+
+  const history = useHistory()
+
 
   const handleInputChange = (event) => {
     const {value, name} = event.target;
@@ -41,13 +42,12 @@ const ApplicationFormPage = () => {
     axios.post(`${baseUrl}/trips/${id}/apply`, body)
     .then(() => {
       alert("Application successfully submitted! Stay tuned to the result!")
+      history.push('/trips/list')
     }).catch(error => {
       alert("Something is wrong, check your data!")
       console.log(error)
     })
   }
-
-  console.log(onSubmitApplication)
 
   return (
     <div>
@@ -58,22 +58,22 @@ const ApplicationFormPage = () => {
           <Form.Group as={Col}>
             <Form.Label>Name</Form.Label>
             <Form.Control 
+            required
             type="text" 
             placeholder="Enter your full name"
             onChange={handleInputChange}
             value={form.name}
             name={'name'}
-            min="3"
-            pattern={"[a-zA-ZÀ-ú ] {3,}"}
+            pattern={"^.{3,}"}
             />
           </Form.Group>
 
           <Form.Group as={Col}>
-            <Form.Label>Age</Form.Label>
+            <Form.Label>Age  *Only for people over 18.</Form.Label>
             <Form.Control 
+            required
             type="number"
             min="18" 
-            placeholder="Enter your Age" 
             onChange={handleInputChange}
             value={form.age}
             name={'age'}
@@ -82,39 +82,43 @@ const ApplicationFormPage = () => {
         </Form.Row>
 
         <Form.Group>
-          <Form.Label>Application Text</Form.Label>
+          <Form.Label>Application Text *Enter more than 30 characters.</Form.Label>
           <Form.Control
-            as="textarea"
-            rows={3}
+            required
             type="text"
             placeholder="Answer why are you a good candidate?"
             onChange={handleInputChange}
             value={form.applicationText}
             name={'applicationText'}
-            pattern={"[a-zA-ZÀ-ú ] {3,}"}
+            pattern={"^.{30,}"}
+            // as="textarea" 
+            // rows={3}
           />
         </Form.Group>
 
         <Form.Row>
           <Form.Group as={Col}>
-            <Form.Label>Profession</Form.Label>
+            <Form.Label>Profession  *Enter more than 10 characters.</Form.Label>
             <Form.Control
+            required
              onChange={handleInputChange}
              value={form.profession}
              name={'profession'}
+             pattern={"^.{10,}"}
              />
           </Form.Group>
 
           <Form.Group as={Col}>
             <Form.Label>Country</Form.Label>
             <Form.Control
+            required
              as="select" 
-             defaultValue="Choose..."
-             labelId="select-paises"
+             defaultValue="Where are you from?"
              onChange={handleInputChange}
              value={form.country}
              name={'country'}
              >
+               <option>Where are you from?</option>
               <Countries/>
             </Form.Control>
           </Form.Group>

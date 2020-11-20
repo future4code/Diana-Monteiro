@@ -3,9 +3,9 @@ import { useHistory } from "react-router-dom";
 import { useRequestData } from "../hooks/useRequestData";
 import { baseUrl } from "../constants/urls";
 import TripCard from "../components/TripCard";
-import { CardDeck } from "react-bootstrap";
-import NavBar from "../components/NavBar/Navbar"
-
+import { CardColumns } from "react-bootstrap";
+import NavBar from "../components/NavBar/Navbar";
+import { TitleAdm, DivCards, DivTripsPage } from "./styled";
 
 const ListTripPage = () => {
 
@@ -19,15 +19,17 @@ const ListTripPage = () => {
   };
 
   return (
-    <div>
+    <DivTripsPage>
       <NavBar/>
-      <h1>Lista de missões</h1>
-      <CardDeck>
+      <hr/>
+      <TitleAdm>Missions</TitleAdm>
+      <hr/>
+      <DivCards>
       {getTrips && getTrips.trips.map((trip, i) =>{
         return(
           <TripCard
           key={trip.id}
-          image={`https://picsum.photos/200/200?a=${i}`}
+          image={`https://picsum.photos/400/200?a=${i}`}
           name = {trip.name}
           description={trip.description}
           duration={trip.durationInDays}
@@ -39,8 +41,8 @@ const ListTripPage = () => {
           />
         )
       })}
-      </CardDeck>
-    </div>
+      </DivCards>
+    </DivTripsPage>
   );
 };
 

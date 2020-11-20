@@ -1,17 +1,12 @@
 import React from "react";
 import { StyledButton } from "../components/StyledButton";
 import { Card } from "react-bootstrap";
-import styled from 'styled-components';
-
-
-const DivCard = styled.div`
-  margin: 0 auto;
-`
 
 const TripCard = (props) => {
   return (
-    <DivCard>
-      <Card bg="transparent" text="white" style={{ width: "18rem" }}>
+    <div>
+      <Card bg="transparent" text="white" style={{ width: '25em' }}>
+      <Card.Img variant="top" src={props.image} />
       <Card.Header as="h5">{props.name}</Card.Header>
         <Card.Body>
           <Card.Text>Description: {props.description}</Card.Text>
@@ -22,7 +17,7 @@ const TripCard = (props) => {
           <br />
         </Card.Body>
       </Card>
-    </DivCard>
+    </div>
   );
 };
 

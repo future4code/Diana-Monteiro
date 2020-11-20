@@ -1,5 +1,13 @@
 import styled from "styled-components"
 
+
+export const TitleAdm = styled.h1`
+  font-family: 'Julius Sans One', sans-serif;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  color: white;
+`
 //Styled HomePage
 
 export const TextHome = styled.p`
@@ -23,6 +31,15 @@ export const Div = styled.div`
 
 export const DivAdmTripsPage = styled.div`
     height: 150vh;
+`
+export const DivCards = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+`
+//Styled ListPage
+
+export const DivTripsPage = styled.div`
 `
 //Styled AdmPage
 

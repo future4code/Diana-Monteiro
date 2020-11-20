@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ApplicationFormPage from "../Screens/ApplicationFormPage";
 import CreateTripPage from "../Screens/CreateTripPage";
 import HomePage from "../Screens/HomePage";
-import ListApplicationsPage from '../Screens/ListApplicationsPage'
 import ListTripsPage from"../Screens/ListTripsPage";
 import TripDetailsPage from "../Screens/TripDetailsPage";
 import LoginPage from "../Screens/LoginPage";
@@ -29,9 +28,6 @@ const Router = () => {
         </Route>
         <Route exact path="/trips/list">
           <ListTripsPage/>
-        </Route>
-        <Route exact path="/trips/applications">
-          <ListApplicationsPage/>
         </Route>
         <Route exact path="/trips/create">
           <CreateTripPage/>

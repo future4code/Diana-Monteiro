@@ -2,14 +2,18 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useRequestData } from "../hooks/useRequestData";
 import { baseUrl } from "../constants/urls";
-import { CardDeck} from "react-bootstrap";
+import { CardColumns} from "react-bootstrap";
 import TripCard from "../components/TripCard";
 import NavBar from "../components/NavBar/Navbar";
 import {DivAdmTripsPage} from "./styled";
+import { useProtectedPage } from '../hooks/useProtectedPage';
+
 
 const AdmTripsPage = () => {
   const getTrips = useRequestData(`${baseUrl}/trips`, undefined);
 
+  useProtectedPage();
+  
   const history = useHistory();
 
   const goBackAdmPage = () => {
@@ -24,7 +28,7 @@ const AdmTripsPage = () => {
     <DivAdmTripsPage>
       <NavBar />
       <h1>Lista de missões</h1>
-      <CardDeck>
+      <CardColumns>
       {getTrips && getTrips.trips.map((trip, i) =>{
         return(
           <TripCard
@@ -41,7 +45,7 @@ const AdmTripsPage = () => {
           />
         )
       })}
-        </CardDeck>
+        </CardColumns>
       <button onClick={goBackAdmPage}>Voltar para Opções de Adm</button>
     </DivAdmTripsPage>
   );

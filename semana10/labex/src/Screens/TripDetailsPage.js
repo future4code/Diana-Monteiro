@@ -41,16 +41,18 @@ const TripDetailsPage = () => {
     };
 
     axios
-      .put(`${baseUrl}/trip/${id}/candidates/${applicationsId}/decide`, body, axiosConfig)
+      .put(`${baseUrl}/trips/${id}/candidates/${applicationsId}/decide`, body, axiosConfig)
       .then(() => {
         if(boolean){
           alert("Approved Candidate")
         } else{
           alert("Failed Candidate")
         }
+        getTripDetails()
       })
       .catch((err) => {
         console.log(err);
+        alert("Failed")
       });
   };
 
