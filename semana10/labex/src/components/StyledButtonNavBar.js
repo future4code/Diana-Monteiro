@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Button} from "react-bootstrap";
 
 export const StyledButtonNavBar = styled.button`
   z-index: 1;
@@ -42,4 +41,10 @@ export const StyledButtonNavBar = styled.button`
 :hover::before {
   transform: translate3d(-50%, 50%, 0) scale3d(15, 15, 15);
 }
+
+:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
 `

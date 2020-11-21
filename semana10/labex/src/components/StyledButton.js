@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Button} from "react-bootstrap";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled(Button)`
     z-index: 1;
   position: relative;
   font-size: inherit;
@@ -10,12 +10,13 @@ export const StyledButton = styled.button`
   font-family: 'Bebas Neue', cursive;
   font-size: 1.3em;
   padding: 0.2em 1.1em;
+  margin-right: 20px;
   outline: none;
   border: none;
   border-radius: 3px;
   background-color: hsl(236, 32%, 26%);
   overflow: hidden;
-  transition: color 0.4s ease-in-out;
+  transition: color 0.45s ease-in-out;
 
 ::before {
   content: '';
@@ -23,8 +24,8 @@ export const StyledButton = styled.button`
   position: absolute;
   bottom: 100%;
   left: 100%;
-  width: 1em;
-  height: 1em;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border-radius: 3px;
   background-color: #75b8c8;
@@ -41,4 +42,10 @@ export const StyledButton = styled.button`
 :hover::before {
   transform: translate3d(-50%, 50%, 0) scale3d(15, 15, 15);
 }
+
+:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
 `

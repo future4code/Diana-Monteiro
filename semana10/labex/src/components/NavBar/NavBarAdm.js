@@ -4,18 +4,17 @@ import { useHistory } from "react-router-dom";
 import {NavLink, Logo} from "./styled";
 import logo from "../../assets/logo2.png";
 import {StyledButtonNavBar} from "../StyledButtonNavBar"
+import {useProtectedPage} from "../../hooks/useProtectedPage"
 
 const NavBar = () => {
 
     const history = useHistory(); 
+    useProtectedPage();
 
-    const goToLogin = () =>{
-        history.push("/login")
-    }
-
-    const goToList = () => {
-        history.push("/trips/list")
-    }
+    const logout = () => {
+        window.localStorage.clear();
+        history.push("/");
+      };    
 
     const goToHomePage = () => {
       history.push("/")
@@ -23,6 +22,14 @@ const NavBar = () => {
 
     const scrollToContacts = () => {
       window.scrollTo(0, 500);
+    };
+
+    const goToCreate = () => {
+        history.push("/trips/create");
+    };
+
+    const goBackAdmPage = () => {
+      history.push("/adm");
     };
 
   return (
@@ -39,9 +46,11 @@ const NavBar = () => {
       <Nav.Link href="https://www.flickr.com/photos/spacex" target="_blank">Gallery</Nav.Link>
     </NavLink>
     <Form inline>
-      <StyledButtonNavBar variant="outline-primary"onClick={goToList}>Missões</StyledButtonNavBar>
-      <StyledButtonNavBar variant="outline-primary" onClick={goToLogin}>Login</StyledButtonNavBar>
-
+      <StyledButtonNavBar variant="outline-primary"onClick={goToCreate}>Create Missions</StyledButtonNavBar>
+      <StyledButtonNavBar onClick={goBackAdmPage}>
+        Go to Missions
+      </StyledButtonNavBar>
+      <StyledButtonNavBar variant="outline-primary" onClick={logout}>Logout</StyledButtonNavBar>
     </Form>
   </Navbar>
   );

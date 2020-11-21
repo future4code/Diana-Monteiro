@@ -10,7 +10,7 @@ const HomePage = () => {
         <NavBar/>
         <DivTextHome>
         <TitleHome>LabeX: The Travel Revolution</TitleHome>
-            <TextHome>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</TextHome>
+            <TextHome>Welcome to Labex, we are a company that makes space dreams come true. Our company was created, in 1988, from a dream, the freedom to travel wherever your personal universe allows. We brought the travel revolution to planet Earth, and we took you to revolutionize space. Here at Labex you don't have to be a multi millionaire to be a crew member on a mission, you just need to be a human being who makes a difference in the world. On this platform you will find the missions available at the moment and you can apply as a future astronaut, write to us and show us who you are and where you want to go. You are an important being for the universe, be good to everything inside him and he will give back. Come and be a revolutionary astronaut of dreams and reach the stars with us.</TextHome>
         </DivTextHome>
     </Div>
   );

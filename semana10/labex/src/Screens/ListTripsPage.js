@@ -3,9 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useRequestData } from "../hooks/useRequestData";
 import { baseUrl } from "../constants/urls";
 import TripCard from "../components/TripCard";
-import { CardColumns } from "react-bootstrap";
 import NavBar from "../components/NavBar/Navbar";
-import { TitleAdm, DivCards, DivTripsPage } from "./styled";
+import { TitleList, DivCards} from "./styled";
 
 const ListTripPage = () => {
 
@@ -19,11 +18,10 @@ const ListTripPage = () => {
   };
 
   return (
-    <DivTripsPage>
+    <div>
       <NavBar/>
-      <hr/>
-      <TitleAdm>Missions</TitleAdm>
-      <hr/>
+      <div>
+      <TitleList>Check the Missions, Let's go to space!</TitleList>
       <DivCards>
       {getTrips && getTrips.trips.map((trip, i) =>{
         return(
@@ -42,7 +40,8 @@ const ListTripPage = () => {
         )
       })}
       </DivCards>
-    </DivTripsPage>
+    </div>
+    </div>
   );
 };
 

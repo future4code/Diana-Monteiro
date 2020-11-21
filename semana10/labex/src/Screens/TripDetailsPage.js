@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { baseUrl, axiosConfig } from "../constants/urls";
 import { useProtectedPage } from "../hooks/useProtectedPage";
-import NavBar from "../components/NavBar/Navbar";
-import { Card } from "react-bootstrap";
+import NavBarAdm from "../components/NavBar/NavBarAdm";
+import { ApplicationCard } from "../components/ApplicationCard";
+import { DivDetailsCard, TitleAdm, TitleNoApply, DivNoApply } from "./styled";
 import { StyledButton } from "../components/StyledButton";
 
 const TripDetailsPage = () => {
   const [trip, setTrip] = useState({});
   const [applications, setApplications] = useState([]);
-  const history = useHistory();
   const { id } = useParams();
   useProtectedPage();
+  const history = useHistory();
 
-  const goBackAdmPage = () => {
-    history.push("/admin");
+  const goBack = () => {
+    history.goBack();
   };
 
   useEffect(() => {
@@ -34,59 +35,59 @@ const TripDetailsPage = () => {
       });
   };
 
-  const decideCandidate = (boolean, applicationsId) => {  
-
+  const decideCandidate = (boolean, applicationsId) => {
     const body = {
-      approve: boolean
+      approve: boolean,
     };
 
     axios
-      .put(`${baseUrl}/trips/${id}/candidates/${applicationsId}/decide`, body, axiosConfig)
+      .put(
+        `${baseUrl}/trips/${id}/candidates/${applicationsId}/decide`,
+        body,
+        axiosConfig
+      )
       .then(() => {
-        if(boolean){
-          alert("Approved Candidate")
-        } else{
-          alert("Failed Candidate")
+        if (boolean) {
+          alert("Approved Candidate");
+        } else {
+          alert("Failed Candidate");
         }
-        getTripDetails()
+        getTripDetails();
       })
       .catch((err) => {
         console.log(err);
-        alert("Failed")
+        alert("Failed");
       });
   };
 
   return (
     <div>
-      <NavBar />
-      <div>
-        <h1>Applications for Missions</h1>
-        <h3>{trip.name}</h3>
-        {applications.lengh === 0 ? (
-          <h5>No application for this mission</h5>
-        ) : (applications.map(application => {
-          return(<Card
-            bg="dark"
-            text="white"
-            className="text-center"
-            style={{ width: "30rem" }}
-            key={application.id}
-          >
-            <Card.Header as="h5">{application.name}</Card.Header>
-            <Card.Body>
-              <Card.Title>
-              {application.country}. {application.age} years old, {application.profession}. 
-              </Card.Title>
-              <Card.Text>{application.applicationText}</Card.Text>
-              <StyledButton variant="primary" onClick={() => decideCandidate(true, application.id)}>Accept</StyledButton>
-              <StyledButton variant="primary" onClick={() => decideCandidate(false, application.id)}>Reject</StyledButton>
-            </Card.Body>
-          </Card>)
-        }))}
-      </div>
-      <StyledButton onClick={goBackAdmPage}>
-        Voltar para Opções de Adm
-      </StyledButton>
+      <NavBarAdm />
+      <TitleAdm>Applications for Mission: {trip.name}</TitleAdm>
+      <DivDetailsCard>
+        {applications.length === 0 ? (
+          <DivNoApply>
+            <TitleNoApply>
+              There are no applications for this mission.
+            </TitleNoApply>
+            <StyledButton variant="transparent"  onClick={goBack}>Go Back</StyledButton>
+          </DivNoApply>
+        ) : (
+          applications.map((application) => {
+            return (
+              <ApplicationCard
+                id={application.id}
+                name={application.name}
+                country={application.country}
+                age={application.age}
+                profession={application.profession}
+                applicationText={application.applicationText}
+                decide={decideCandidate}
+              />
+            );
+          })
+        )}
+      </DivDetailsCard>
     </div>
   );
 };

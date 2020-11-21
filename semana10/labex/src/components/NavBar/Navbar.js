@@ -1,7 +1,7 @@
 import React from "react";
 import {Navbar, Nav, Form} from 'react-bootstrap'
 import { useHistory } from "react-router-dom";
-import {NavLink, Logo} from "./styled";
+import {NavLink} from "./styled";
 import logo from "../../assets/logo2.png";
 import {StyledButtonNavBar} from "../StyledButtonNavBar"
 
@@ -39,7 +39,7 @@ const NavBar = () => {
       <Nav.Link href="https://www.flickr.com/photos/spacex" target="_blank">Gallery</Nav.Link>
     </NavLink>
     <Form inline>
-      <StyledButtonNavBar variant="outline-primary"onClick={goToList}>Missões</StyledButtonNavBar>
+      <StyledButtonNavBar variant="outline-primary"onClick={goToList}>Missions</StyledButtonNavBar>
       <StyledButtonNavBar variant="outline-primary" onClick={goToLogin}>Login</StyledButtonNavBar>
 
     </Form>

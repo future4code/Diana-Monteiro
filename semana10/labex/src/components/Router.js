@@ -7,21 +7,21 @@ import ListTripsPage from"../Screens/ListTripsPage";
 import TripDetailsPage from "../Screens/TripDetailsPage";
 import LoginPage from "../Screens/LoginPage";
 import AdmPage from "../Screens/AdmPage";
-import AdmTripsPage from "../Screens/AdmTripsPage.js";
+import AdmTripsPage from "../Screens/AdmPage.js";
 
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
+      <Route exact path="/">
+          <HomePage />
+        </Route>
         <Route exact path="/login">
             <LoginPage/>
         </Route>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route exact path="/admin">
-          <AdmPage/>
+        <Route exact path="/adm">
+          <AdmTripsPage/>
         </Route>
         <Route exact path="/application-form/:id">
           <ApplicationFormPage />
@@ -34,9 +34,6 @@ const Router = () => {
         </Route>
         <Route exact path="/trips/details/:id">
           <TripDetailsPage/>
-        </Route>
-        <Route exact path="/trips/admlist">
-          <AdmTripsPage/>
         </Route>
       </Switch>
     </BrowserRouter>

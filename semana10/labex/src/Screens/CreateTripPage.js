@@ -1,13 +1,13 @@
 import React from "react";
 import axios from 'axios'
-import NavBar from "../components/NavBar/Navbar";
+import NavBarAdm from "../components/NavBar/NavBarAdm";
 import { useHistory } from "react-router-dom";
 import { StyledButton } from "../components/StyledButton";
 import { Form, Col } from "react-bootstrap";
 import { useForm } from "../hooks/useForm";
 import { useProtectedPage } from '../hooks/useProtectedPage';
 import { baseUrl, axiosConfig } from "../constants/urls";
-
+import { TitleList, DivForm } from "./styled";
 
 const CreateTripPage = () => {
   const {form, onChange, resetState} = useForm({
@@ -23,7 +23,7 @@ const CreateTripPage = () => {
   const history = useHistory();
 
   const goBackAdmPage = () => {
-    history.push("/admin");
+    history.push("/adm");
   };
 
   const handleInputChange = (event) => {
@@ -31,17 +31,6 @@ const CreateTripPage = () => {
 
     onChange(value, name);
   }
-
-  // const currentDate = () => {
-  //   let d = new Date();
-  //   let localDate = `${d.getDate()} / ${
-  //     d.getMonth() + 1
-  //   } / ${d.getFullYear()}`;
-  
-  //   return localDate;
-  // };
-
-  // console.log(currentDate())
 
   const onSubmitNewTrip = (event) => {
     event.preventDefault()
@@ -61,7 +50,7 @@ const CreateTripPage = () => {
             resetState()
           } else{
             alert("Ok! Thank you for contribuation!")
-            history.push('/trips/admlist')
+            history.push('/adm')
           }
         })
         .catch(error => {
@@ -72,9 +61,10 @@ const CreateTripPage = () => {
 
   return (
     <div>
-      <NavBar />
-      <h1>Create a new mission</h1>
-      <Form onSubmit={onSubmitNewTrip}>
+      <NavBarAdm />
+      <DivForm>
+      <TitleList>Create a new mission</TitleList>
+      <Form onSubmit={onSubmitNewTrip} className="col-md-8 offset-md-2">
         <Form.Row>
           <Form.Group as={Col}>
             <Form.Label>Name</Form.Label>
@@ -85,7 +75,7 @@ const CreateTripPage = () => {
             onChange={handleInputChange}
             value={form.name}
             name={'name'}
-            pattern={"^.{5,}"}
+            pattern={"^.{5,50}"}
             />
           </Form.Group>
 
@@ -146,18 +136,16 @@ const CreateTripPage = () => {
           onChange={handleInputChange}
           value={form.description}
           name={'description'}
-          pattern={"^.{50,}"}
+          pattern={"^.{50,200}"}
           />
         </Form.Group>
 
         
-        <StyledButton variant="primary" type="submit">
+        <StyledButton block variant="transparent" type="submit">
           Create Mission
         </StyledButton>
       </Form>
-      <StyledButton onClick={goBackAdmPage}>
-        Voltar para Opções de Adm
-      </StyledButton>
+      </DivForm>
     </div>
   );
 };
