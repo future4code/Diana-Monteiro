@@ -9,7 +9,7 @@ export const DivFooter = styled.div`
   @media (min-device-width: 320px) and (max-device-width: 420px) {
     flex-direction: column;
     padding: 1em;
-    height: 48em;
+    height: 100%;
   }
 `;
 
@@ -46,7 +46,8 @@ export const DivMedias = styled.div`
   display: flex;
   padding-top: 20px;
   @media (min-device-width: 320px) and (max-device-width: 420px) {
-    justify-content: center;
+    justify-content: space-between;
+    margin: 0 20px;
   }
 `;
 
@@ -54,7 +55,7 @@ export const SectionLinks = styled.section`
   display: flex;
   flex-direction: column;
   @media (min-device-width: 320px) and (max-device-width: 420px) {
-    padding: 2em 0 0 2em;
+    align-items: center;
   }
 `;
 
@@ -76,7 +77,7 @@ export const ImgLogo = styled.img`
 export const ImgMedia = styled.img`
   width: 50%;
   @media (min-device-width: 320px) and (max-device-width: 420px) {
-    width: 80%;
+    width: 200%;
   }
 `;
 
@@ -97,7 +98,7 @@ export const Link = styled.a`
 export const Title = styled.h4`
   padding: 20px 0;
   color: white;
-`
+`;
 
 export const Copyright = styled.p`
   text-align: end;
@@ -111,4 +112,7 @@ export const Adress = styled.p`
   padding-bottom: 25px;
   font-size: 15px;
   width: 25em;
+  @media (min-device-width: 320px) and (max-device-width: 420px) {
+    text-align: center;
+  }
 `;

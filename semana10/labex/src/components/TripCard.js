@@ -21,16 +21,16 @@ const TripCard = (props) => {
           <Card.Text>Date: {props.date}</Card.Text>
           <Card.Text>Planet: {props.planet}</Card.Text>
           <Card.Text>Duration in days: {props.duration}</Card.Text>
-          
+
           <DivButton>
-          <StyledButton
-            variant="transparent"
-            className=""
-            block
-            onClick={() => props.goTo(props.id)}
-          >
-            {props.nameButton}
-          </StyledButton>
+            <StyledButton
+              variant="transparent"
+              className=""
+              block
+              onClick={() => props.goTo(props.id)}
+            >
+              {props.nameButton}
+            </StyledButton>
           </DivButton>
         </Card.Body>
       </Card>

@@ -16,7 +16,7 @@ import {
   LinkImg,
   Link,
   Title,
-  Adress
+  Adress,
 } from "./styled";
 
 const Footer = () => {
@@ -25,7 +25,10 @@ const Footer = () => {
       <DivTop>
         <SectionLogo>
           <ImgLogo src={logo} />
-          <Adress>34th Ave, Hawthorne, California, EUA, 11106. <br/>+1 (800) 123 45 45</Adress>
+          <Adress>
+            34th Ave, Hawthorne, California, EUA, 11106. <br />
+            +1 (800) 123 45 45
+          </Adress>
         </SectionLogo>
         <SectionLinks>
           <Title>Developer</Title>

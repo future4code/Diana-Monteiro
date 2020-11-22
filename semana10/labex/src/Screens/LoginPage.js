@@ -66,7 +66,12 @@ const LoginPage = () => {
               onChange={handlePassword}
             />
           </Form.Group>
-          <StyledButton onClick={login} variant="primary" type="submit">
+          <StyledButton
+            block
+            onClick={login}
+            variant="transparent"
+            type="submit"
+          >
             Submit
           </StyledButton>
         </Form>

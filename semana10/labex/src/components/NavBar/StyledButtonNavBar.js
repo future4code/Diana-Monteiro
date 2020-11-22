@@ -1,22 +1,21 @@
 import styled from "styled-components";
-import { Button } from "react-bootstrap";
 
-export const StyledButton = styled(Button)`
+export const StyledButtonNavBar = styled.button`
   z-index: 1;
   position: relative;
   font-size: inherit;
   font-family: inherit;
   color: white;
   font-family: "Bebas Neue", cursive;
-  font-size: 1.3em;
+  font-size: 1.5em;
   padding: 0.2em 1.1em;
-  margin-right: 20px;
   outline: none;
   border: none;
   border-radius: 3px;
   background-color: hsl(236, 32%, 26%);
   overflow: hidden;
-  transition: color 0.45s ease-in-out;
+  margin: 0 0 0 20px;
+  transition: color 0.4s ease-in-out;
 
   ::before {
     content: "";
@@ -24,8 +23,8 @@ export const StyledButton = styled(Button)`
     position: absolute;
     bottom: 100%;
     left: 100%;
-    width: 100%;
-    height: 100%;
+    width: 1em;
+    height: 1em;
     border-radius: 50%;
     border-radius: 3px;
     background-color: #75b8c8;
@@ -47,5 +46,11 @@ export const StyledButton = styled(Button)`
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
+  }
+
+  @media (min-device-width: 320px) and (max-device-width: 420px) {
+    display: block;
+    margin: 5px auto;
+    padding: 5px 80px;
   }
 `;

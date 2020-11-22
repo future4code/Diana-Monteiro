@@ -63,14 +63,19 @@ const TripDetailsPage = () => {
   return (
     <div>
       <NavBarAdm />
-      <TitleAdm>Applications for Mission: {trip.name}</TitleAdm>
+      <TitleAdm>
+        Applications for Mission: {trip.name}
+        {}trip.
+      </TitleAdm>
       <DivDetailsCard>
         {applications.length === 0 ? (
           <DivNoApply>
             <TitleNoApply>
               There are no applications for this mission.
             </TitleNoApply>
-            <StyledButton variant="transparent"  onClick={goBack}>Go Back</StyledButton>
+            <StyledButton variant="transparent" onClick={goBack}>
+              Go Back
+            </StyledButton>
           </DivNoApply>
         ) : (
           applications.map((application) => {

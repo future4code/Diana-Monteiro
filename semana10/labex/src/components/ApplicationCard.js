@@ -1,16 +1,19 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { StyledButton } from "../components/StyledButton";
-import { DivApplicationCard } from "../Screens/styled";
+import {
+  DivApplicationCard,
+  DivButton,
+  CardApplication,
+} from "../Screens/styled";
 
 export const ApplicationCard = (props) => {
   return (
     <DivApplicationCard>
-      <Card
+      <CardApplication
         bg="transparent"
         text="dark"
-        className="text-center h-100"
-        style={{ width: "30rem"}}
+        className="text-center h-100 pb-5"
         key={props.id}
       >
         <Card.Header as="h5" className="font-weight-bold">
@@ -21,20 +24,22 @@ export const ApplicationCard = (props) => {
             {props.country}. {props.age} years old, {props.profession}.
           </Card.Title>
           <Card.Text>{props.applicationText}</Card.Text>
-          <StyledButton
-            variant="primary"
-            onClick={() => props.decide(true, props.id)}
-          >
-            Accept
-          </StyledButton>
-          <StyledButton
-            variant="primary"
-            onClick={() => props.decide(false, props.id)}
-          >
-            Reject
-          </StyledButton>
+          <DivButton>
+            <StyledButton
+              variant="primary"
+              onClick={() => props.decide(true, props.id)}
+            >
+              Accept
+            </StyledButton>
+            <StyledButton
+              variant="primary"
+              onClick={() => props.decide(false, props.id)}
+            >
+              Reject
+            </StyledButton>
+          </DivButton>
         </Card.Body>
-      </Card>
+      </CardApplication>
     </DivApplicationCard>
   );
 };

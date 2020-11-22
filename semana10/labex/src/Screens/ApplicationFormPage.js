@@ -60,7 +60,7 @@ const ApplicationFormPage = () => {
                 className="col-md-8 offset-md-2"
               >
                 <Form.Row>
-                  <Form.Group as={Col}>
+                  <Form.Group as={Col}  md={12} lg={6}>
                     <Form.Label>Name</Form.Label>
                     <Form.Control
                       required
@@ -102,7 +102,7 @@ const ApplicationFormPage = () => {
                 </Form.Group>
 
                 <Form.Row>
-                  <Form.Group as={Col}>
+                  <Form.Group as={Col} md={12} lg={6}>
                     <Form.Label>
                       Profession *Enter more than 10 characters.
                     </Form.Label>
@@ -130,6 +130,7 @@ const ApplicationFormPage = () => {
                     </Form.Control>
                   </Form.Group>
                 </Form.Row>
+                <br/>
                 <StyledButton variant="transparent" 
                 block
                 type="submit">
