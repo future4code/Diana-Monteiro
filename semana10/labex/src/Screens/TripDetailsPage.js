@@ -65,7 +65,6 @@ const TripDetailsPage = () => {
       <NavBarAdm />
       <TitleAdm>
         Applications for Mission: {trip.name}
-        {}trip.
       </TitleAdm>
       <DivDetailsCard>
         {applications.length === 0 ? (
