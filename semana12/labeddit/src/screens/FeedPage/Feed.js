@@ -8,6 +8,7 @@ import { baseUrl } from "../../constants/urls";
 import { useRequestData } from "../../hooks/useRequestData";
 import { useProtectPage } from "../../hooks/useProtectPage";
 import { goToPost } from "../../routes/condinator";
+import Loader from "../../components/Loader/Loader"
 
 import { DivFeed, DivPost } from "./styled";
 
@@ -20,7 +21,9 @@ const Feed = () => {
   return (
     <DivFeed>
       <CreatePost update={updatePosts} />
-      {posts &&
+      {!posts ?
+        <Loader/>
+        :
         posts.posts
           .sort((a, b) => {
             return b.createdAt - a.createdAt;

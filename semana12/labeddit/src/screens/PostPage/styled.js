@@ -14,5 +14,8 @@ export const DivPost = styled.div`
     border-radius: 5px;
     border: 2px outset;
     padding: 20px 0;
-    background-color: whitesmoke;
+    background-color: white;
+    @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+        margin: 20px;
+        width: 90%;
 `

@@ -40,4 +40,11 @@ export const StyledButton = styled.button`
     box-shadow: 0 0 0 0;
     outline: 0;
   }
+
+  @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+    display: block;
+    margin: 15px auto;
+    padding: 0.5em 3em;
+    }
+
 `

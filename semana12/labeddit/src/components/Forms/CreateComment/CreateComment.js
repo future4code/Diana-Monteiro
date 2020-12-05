@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { Form, Button } from "react-bootstrap";
 
@@ -6,8 +6,11 @@ import { createNewComment } from "../../../services/post"
 import { useForm } from "../../../hooks/useForm";
 
 import { DivComment } from "./styled"
+import {StyledButtonUser} from "../../Buttons/StyledButtonUser"
+import Loader from "../../Loader/LoaderSmall"
 
 export const CreateComment = (props) => {
+  const [loading, setLoading] = useState(false)
   const { form, onChange, resetState } = useForm({
     text: "",
   });
@@ -19,7 +22,7 @@ export const CreateComment = (props) => {
 
   const handleSubmission = (event) => {
     event.preventDefault();
-    createNewComment(form, props.update, props.id);
+    createNewComment(form, props.update, props.id, setLoading);
     resetState();
   }
 
@@ -36,9 +39,9 @@ export const CreateComment = (props) => {
           as="textarea" rows={3}
         />
       </Form.Group>
-      <Button block variant="primary" type="submit">
-        Comentar
-      </Button>
+      <StyledButtonUser block variant="primary" type="submit">
+      {loading ? <Loader/> : 'Comentar'}
+      </StyledButtonUser>
     </Form>
     </DivComment>
   );

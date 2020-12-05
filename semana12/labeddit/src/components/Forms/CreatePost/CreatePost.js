@@ -1,15 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { Form} from "react-bootstrap";
 
 import { createNewPost } from "../../../services/post"
 import { useForm } from "../../../hooks/useForm";
 import { StyledButtonUser } from "../../Buttons/StyledButtonUser"
+import Loader from "../../Loader/LoaderSmall"
 
 import { DivPost } from "./styled";
 
 
 export const CreatePost = (props) => {
+  const [loading, setLoading] = useState(false)
+
   const { form, onChange, resetState } = useForm({
     title: "",
     text: "",
@@ -23,7 +26,7 @@ export const CreatePost = (props) => {
 
   const handleSubmission = (event) => {
     event.preventDefault();
-    createNewPost(form, props.update);
+    createNewPost(form, props.update, setLoading);
     resetState();
   }
 
@@ -51,7 +54,7 @@ export const CreatePost = (props) => {
         />
       </Form.Group>
       <StyledButtonUser block variant="primary" type="submit">
-        Criar Post!
+      {loading ? <Loader/> : 'Postar'}
       </StyledButtonUser>
     </Form>
     </DivPost>

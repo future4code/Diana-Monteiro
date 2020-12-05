@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory } from "react-router-dom";
 
 import { Form} from "react-bootstrap";
@@ -9,8 +9,10 @@ import {goToLogin} from "../../routes/condinator"
 
 import { StyledButton } from "../../components/Buttons/StyledButtonForm"
 import { Title, FormSignup, Text, DivSignup} from "./styled"
+import Loader from "../../components/Loader/LoaderSmall"
 
 const Register = () => {
+  const [loading, setLoading] = useState(false)
 
   const { form, onChange } = useForm({
     email: "",
@@ -28,14 +30,14 @@ const Register = () => {
 
   const handleSubmission = (event) => {
     event.preventDefault();
-    signUp(form, history)
+    signUp(form, history,setLoading)
   }
 
   return (
     <DivSignup>
     <FormSignup
     onSubmit={handleSubmission} className="col-md-6">
-      <Title>Faça parte do Labeddit</Title>
+      <Title>Faça parte do Blueddit</Title>
       <Form.Group>
         <Form.Label>
           Usuário:
@@ -75,7 +77,9 @@ const Register = () => {
           />
       </Form.Group>
       <Form.Group>
-          <StyledButton block type="submit" variant="transparent">Cadastrar</StyledButton>
+          <StyledButton block type="submit" variant="transparent">
+          {loading ? <Loader/> : 'Cadastrar'}
+          </StyledButton>
       </Form.Group>
       <Form.Group>
         <Text onClick={() => goToLogin(history)}>

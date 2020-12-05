@@ -7,6 +7,9 @@ export const DivSignup = styled.div`
     background: white;
     padding: 3em;
     font-family: 'Varela Round', sans-serif;
+    @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+        padding: 4em 10px;
+    }
 `
 export const Title = styled.h1`
     font-weight: bold; 
@@ -29,4 +32,8 @@ export const Text = styled.p`
         cursor: pointer;
         color: #03045e;
     }
+    @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+        display: none;
+  }
+
 `

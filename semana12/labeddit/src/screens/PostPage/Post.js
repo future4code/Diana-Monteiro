@@ -9,6 +9,7 @@ import { CreateComment } from "../../components/Forms/CreateComment/CreateCommen
 import { goToFeed } from "../../routes/condinator";
 import VoteComment from "../../components/VoteBox/VoteComment";
 import VotePost from "../../components/VoteBox/VotePost"
+import Loader from "../../components/Loader/Loader"
 
 import { DivFeed, DivPost } from "./styled"
 
@@ -25,7 +26,9 @@ const Post = () => {
 
   return (
     <DivFeed>
-      {posts && (
+      {!posts ? <Loader/>
+      :
+      (
         <DivPost>
         <VotePost
         key={id}

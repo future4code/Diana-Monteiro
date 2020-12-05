@@ -24,7 +24,7 @@ const Router = () => {
             <Header title="Voltar para Login" goTo={goToLogin} />
             <SignUp/>
         </Route>
-        <Route exact path="/">
+        <Route exact path={['/feed', '/']}>
             <Header/>
             <Feed/>
         </Route>
@@ -33,7 +33,7 @@ const Router = () => {
             <Post/>
         </Route>
         <Route>
-          <Header/>
+          <Header title="Voltar para Login" goTo={goToLogin}/>
             <Error/>
         </Route>
       </Switch>

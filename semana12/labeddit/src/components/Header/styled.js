@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Navbar} from "react-bootstrap"
+import { Navbar, Nav} from "react-bootstrap"
 
 export const NavBar = styled(Navbar)`
     background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%); 
@@ -9,5 +9,15 @@ export const NavBar = styled(Navbar)`
     font-size: 1.1em;
 `
 export const Logo = styled.img`
-    width: 45%;
+    width: 16%;
+    padding: 5px 0;
+    @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+    width: 60%;
+    }
 `
+export const NavText = styled(Nav)`
+    @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+        text-align: center;
+    }
+`
+

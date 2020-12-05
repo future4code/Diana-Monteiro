@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 export const DivLogin = styled.div`
     display: flex;
     justify-content: center;
-    background: white;
+    background-color: #e2eafc;
     padding-bottom: 2.25em;
     align-items: center;
     font-family: 'Varela Round', sans-serif;
@@ -19,6 +19,10 @@ export const FormLogin = styled(Form)`
   padding: 0 40px;
   height: 23.5em;
   background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
+  @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+    margin: 4em 10px;
+    height: 30em;
+  }
 `;
 export const Text = styled.small`
   font-weight: bold;
@@ -27,4 +31,10 @@ export const Text = styled.small`
     color: #03045e;
   }
 `;
+
+export const Gif = styled.img`
+ @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+   display: none;
+  }
+`
 

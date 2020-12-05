@@ -12,8 +12,6 @@ const PostCard = (props) => {
         {props.userName}
       </Card.Header>
       <Card.Body>
-      </Card.Body>
-      <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.text}</Card.Text>
       </Card.Body>
