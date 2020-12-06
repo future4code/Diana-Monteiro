@@ -7,4 +7,6 @@ export const DivCard = styled(Card)`
 export const User = styled.img`
     width: 5%;
     margin-right: 15px;
+    @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
+        width: 10%;
 `

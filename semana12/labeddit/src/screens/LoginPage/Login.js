@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Form, CardImg } from "react-bootstrap";
@@ -9,13 +9,13 @@ import { goToSignUp } from "../../routes/condinator";
 import { login } from "../../services/user";
 
 import { StyledButton } from "../../components/Buttons/StyledButtonForm";
-import Loader from "../../components/Loader/LoaderSmall"
-import { DivLogin, Title, FormLogin, Text, Gif} from "./styled"
+import Loader from "../../components/Loader/LoaderSmall";
+import { DivLogin, Title, FormLogin, Text, Gif } from "./styled";
 import gif from "../../assests/Blueddit.gif";
 
 const LoginPage = () => {
   useProtectPage();
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const { form, onChange } = useForm({
     email: "",
@@ -59,15 +59,15 @@ const LoginPage = () => {
           />
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
-        <StyledButton block variant="transparent" type="submit">
-        {loading ? <Loader/> : 'Entrar'}
-        </StyledButton>
-        <Text onClick={() => goToSignUp(history)}>
-          Novo por aqui? Inscreva-se para acessar sua timeline!
-        </Text>
+          <StyledButton block variant="transparent" type="submit">
+            {loading ? <Loader /> : "Entrar"}
+          </StyledButton>
+          <Text onClick={() => goToSignUp(history)}>
+            Novo por aqui? Inscreva-se para acessar sua timeline!
+          </Text>
         </Form.Group>
       </FormLogin>
-      <Gif src={gif}/>
+      <Gif src={gif} />
     </DivLogin>
   );
 };

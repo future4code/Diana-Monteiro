@@ -2,16 +2,18 @@ import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 
 import { useRequestData } from "../../hooks/useRequestData";
-import { baseUrl } from "../../constants/urls";
-import CommentCard from "../../components/Card/CommentCard";
 import { useProtectPage } from "../../hooks/useProtectPage";
-import { CreateComment } from "../../components/Forms/CreateComment/CreateComment";
+import { baseUrl } from "../../constants/urls";
 import { goToFeed } from "../../routes/condinator";
-import VoteComment from "../../components/VoteBox/VoteComment";
-import VotePost from "../../components/VoteBox/VotePost"
-import Loader from "../../components/Loader/Loader"
 
-import { DivFeed, DivPost } from "./styled"
+import CommentCard from "../../components/Card/CommentCard";
+import { CreateComment } from "../../components/Forms/CreateComment/CreateComment";
+import VoteComment from "../../components/VoteBox/VoteComment";
+import VotePost from "../../components/VoteBox/VotePost";
+import Loader from "../../components/Loader/Loader";
+import ToUp from "../../components/ToUp/ToUp";
+
+import { DivFeed, DivPost } from "./styled";
 
 const Post = () => {
   const history = useHistory();
@@ -19,36 +21,32 @@ const Post = () => {
   useProtectPage();
   const { id } = useParams();
 
-  const [posts, updatePosts] = useRequestData(
-    `${baseUrl}/posts/${id}`,
-    undefined
-  );
+  const [{ post }, updatePosts] = useRequestData(`${baseUrl}/posts/${id}`);
 
   return (
     <DivFeed>
-      {!posts ? <Loader/>
-      :
-      (
+      {!post ? (
+        <Loader />
+      ) : (
         <DivPost>
-        <VotePost
-        key={id}
-        update={updatePosts}
-        quantity={posts.post.votesCount}
-        direction={posts.post.userVoteDirection}
-      />
-        <CommentCard
-          key={id}
-          userName={posts.post.username}
-          title={posts.post.title}
-          text={posts.post.text}
-          goTo={() => goToFeed(history)}
-          buttonName="voltar"
-        />
+          <VotePost
+            key={id}
+            update={updatePosts}
+            quantity={post.votesCount}
+            direction={post.userVoteDirection}
+          />
+          <CommentCard
+            key={id}
+            userName={post.username}
+            title={post.title}
+            text={post.text}
+            goTo={() => goToFeed(history)}
+          />
         </DivPost>
       )}
       <CreateComment update={updatePosts} id={id} />
-      {posts &&
-        posts.post.comments
+      {post &&
+        post.comments
           .sort((a, b) => {
             return b.createdAt - a.createdAt;
           })
@@ -72,6 +70,7 @@ const Post = () => {
               </DivPost>
             );
           })}
+      <ToUp />
     </DivFeed>
   );
 };

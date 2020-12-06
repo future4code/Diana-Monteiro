@@ -8,7 +8,7 @@ export const DivSignup = styled.div`
     padding: 3em;
     font-family: 'Varela Round', sans-serif;
     @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
-        padding: 4em 10px;
+        padding: 2em 10px;
     }
 `
 export const Title = styled.h1`

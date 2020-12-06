@@ -6,4 +6,7 @@ export const DivVote = styled.div`
 `;
 export const Arrow = styled.img`
   width: 60%;
+  :hover{
+    cursor: pointer;
+  }
 `;

@@ -7,8 +7,7 @@ import arrowUpGreen from "../../assests/uparrowgreen.svg";
 
 import { voteOnPost } from "../../services/vote";
 
-import { DivVote, Arrow } from "./styled"
-
+import { DivVote, Arrow } from "./styled";
 
 const VotePost = (props) => {
   const onClickRate = (vote) => {
@@ -20,7 +19,7 @@ const VotePost = (props) => {
   };
 
   return (
-    <DivVote>
+    <DivVote key={props.id}>
       {props.direction === 0 ? (
         <>
           <Arrow

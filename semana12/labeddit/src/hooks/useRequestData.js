@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {axiosConfig} from "../constants/urls"
+import { axiosConfig } from "../constants/urls";
 
-export function useRequestData(url, initialState) {
-  const [data, setData] = useState(initialState);
+export function useRequestData(url) {
+  const [data, setData] = useState({});
 
   const getData = () => {
     axios
@@ -14,12 +14,11 @@ export function useRequestData(url, initialState) {
       .catch((erro) => {
         console.log(erro);
       });
-  }
+  };
 
   useEffect(() => {
-    getData()
+    getData();
   }, [url]);
 
   return [data, getData];
 }
-

@@ -8,6 +8,7 @@ import Post from "../screens/PostPage/Post"
 import SignUp from "../screens/SignUpPage/SignUp"
 
 import Header from "../components/Header/Header"
+import Footer from "../components/Footer/Footer"
 
 import {goToLogin, goToSignUp} from "../routes/condinator"
 
@@ -19,22 +20,27 @@ const Router = () => {
         <Route exact path="/login">
           < Header title="Inscreva-se aqui!" goTo={goToSignUp} />
             <Login/>
+            <Footer/>
         </Route>
         <Route exact path="/signup">
             <Header title="Voltar para Login" goTo={goToLogin} />
             <SignUp/>
+            <Footer/>
         </Route>
         <Route exact path={['/feed', '/']}>
             <Header/>
             <Feed/>
+            <Footer/>
         </Route>
         <Route exact path="/feed/:id">
             <Header/>
             <Post/>
+            <Footer/>
         </Route>
         <Route>
           <Header title="Voltar para Login" goTo={goToLogin}/>
             <Error/>
+            <Footer/>
         </Route>
       </Switch>
     </BrowserRouter>

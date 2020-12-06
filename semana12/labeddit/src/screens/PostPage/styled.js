@@ -18,4 +18,17 @@ export const DivPost = styled.div`
     @media screen and (min-device-width : 320px) and (max-device-width : 420px) {
         margin: 20px;
         width: 90%;
-`
+    }
+`;
+
+export const Arrow = styled.img`
+  width: 60%;
+  :hover{
+    cursor: pointer;
+  }
+`;
+
+export const DivVote = styled.div`
+  text-align: center;
+  width: 2em;
+`;

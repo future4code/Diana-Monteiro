@@ -8,7 +8,8 @@ import { baseUrl } from "../../constants/urls";
 import { useRequestData } from "../../hooks/useRequestData";
 import { useProtectPage } from "../../hooks/useProtectPage";
 import { goToPost } from "../../routes/condinator";
-import Loader from "../../components/Loader/Loader"
+import Loader from "../../components/Loader/Loader";
+import ToUp from "../../components/ToUp/ToUp";
 
 import { DivFeed, DivPost } from "./styled";
 
@@ -16,15 +17,19 @@ const Feed = () => {
   useProtectPage();
   const history = useHistory();
 
-  const [posts, updatePosts] = useRequestData(`${baseUrl}/posts`, undefined);
+  const [{ posts }, updatePosts] = useRequestData(`${baseUrl}/posts`);
+
+  const scrollTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <DivFeed>
       <CreatePost update={updatePosts} />
-      {!posts ?
-        <Loader/>
-        :
-        posts.posts
+      {!posts ? (
+        <Loader />
+      ) : (
+        posts
           .sort((a, b) => {
             return b.createdAt - a.createdAt;
           })
@@ -48,7 +53,9 @@ const Feed = () => {
                 />
               </DivPost>
             );
-          })}
+          })
+      )}
+      <ToUp />
     </DivFeed>
   );
 };

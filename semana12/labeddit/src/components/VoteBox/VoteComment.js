@@ -6,11 +6,9 @@ import arrowUp from "../../assests/uparrow.svg";
 import arrowUpGreen from "../../assests/uparrowgreen.svg";
 
 import { voteOnComment } from "../../services/vote";
-import { DivVote, Arrow} from "./styled"
-
+import { DivVote, Arrow } from "./styled";
 
 const VoteComment = (props) => {
-
   const onClickRate = (vote) => {
     const body = {
       direction: vote,
