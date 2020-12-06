@@ -18,7 +18,7 @@ const VoteComment = (props) => {
   };
 
   return (
-    <DivVote>
+    <DivVote key={props.id}>
       {props.direction === 0 ? (
         <>
           <Arrow

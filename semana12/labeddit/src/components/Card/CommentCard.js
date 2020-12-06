@@ -5,7 +5,7 @@ import user from "../../assests/user.svg";
 
 const CommentCard = (props) => {
   return (
-    <DivCard className="col-md-11" bg="transparent">
+    <DivCard key={props.id} className="col-md-11" bg="transparent">
       <Card.Header as="h5">
         <User src={user} />
         {props.userName}

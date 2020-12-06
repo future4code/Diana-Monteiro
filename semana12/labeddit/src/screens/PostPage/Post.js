@@ -30,13 +30,13 @@ const Post = () => {
       ) : (
         <DivPost>
           <VotePost
-            key={id}
+            id={id}
             update={updatePosts}
             quantity={post.votesCount}
             direction={post.userVoteDirection}
           />
           <CommentCard
-            key={id}
+            id={id}
             userName={post.username}
             title={post.title}
             text={post.text}
