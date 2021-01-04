@@ -1,7 +1,7 @@
 const fs = require('fs')
-const task = process.argv[2]
-const taskList = []
-const addTasks = taskList.push(task)
 
+fs.appendFile("./taskList.txt", `${process.argv[2]},\n`, (err)=> err&&console.log(err))
 
-console.log(taskList)
+fs.readFile("./taskList.txt", function(err, file) {
+    console.log('Tarefas:\n' + file.toString());
+})
