@@ -1,0 +1,15 @@
+{
+  "name": "aula-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "print-name-and-age":"clear && node ./exercicio1.js",
+    "print-math-result":"clear && node ./exercicio2.js",
+    "print-task-list":"clear && node ./exercicio3.js"
+  },
+  "author": "Diana Monteiro",
+  "license": "ISC"
+}
