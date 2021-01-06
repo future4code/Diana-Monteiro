@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+//ENDPOINT 1
 app.get("/countries/all", (req: Request, res: Response) => {
   const result = countries.map((country) => ({
     id: country.id,
@@ -16,6 +17,7 @@ app.get("/countries/all", (req: Request, res: Response) => {
   res.status(200).send(result);
 });
 
+//ENDEPOINT 3
 app.get("/countries/search", (req: Request, res: Response) => {
   let result: country[] = countries;
 
@@ -44,6 +46,39 @@ app.get("/countries/search", (req: Request, res: Response) => {
   }
 });
 
+//ENDEPOINT 6
+
+app.post("/countries/create", (req: Request, res: Response) => {
+
+  const newCountry : country = {
+    id: Date.now(),
+    name: req.body.name,
+    capital: req.body.capital,
+    continent: req.body.continent
+  }
+ 
+  let errorCode: number = 400;
+
+  try {
+    if (!req.headers.authorization || req.headers.authorization.length < 10) {
+      errorCode = 401;
+      throw new Error("Chave de identificação inválida");
+    }
+
+    if(countries.includes(req.body.name)){
+        errorCode = 401;
+        throw new Error("Esse país já foi computado!");   
+    }
+
+    countries.push(newCountry);
+    res.status(200).send({message: "Sucess!", country:newCountry});
+
+  } catch (error) {
+    res.status(errorCode).send(error.message);
+  }
+});
+
+//ENDEPOINT 4
 app.put("/countries/edit/:id", (req: Request, res: Response) => {
   const result = countries.findIndex(
     (country) => country.id === Number(req.params.id)
@@ -59,6 +94,7 @@ app.put("/countries/edit/:id", (req: Request, res: Response) => {
   }
 });
 
+//EDITPOINT 2
 app.get("/countries/:id", (req: Request, res: Response) => {
   const result: country | undefined = countries.find(
     (country) => country.id === Number(req.params.id)
@@ -68,6 +104,33 @@ app.get("/countries/:id", (req: Request, res: Response) => {
     res.status(200).send(result);
   } else {
     res.status(404).send("Not found");
+  }
+});
+
+//EDITPOINT 5
+
+app.delete("/countries/:id", (req: Request, res: Response) => {
+  let errorCode: number = 400;
+
+  try {
+    if (!req.headers.authorization || req.headers.authorization.length < 10) {
+      errorCode = 401;
+      throw new Error("Chave de identificação inválida");
+    }
+
+    const index: number = countries.findIndex(
+      (country) => country.id === Number(req.params.id)
+    );
+
+    if (index === -1) {
+      errorCode = 404;
+      throw new Error("País não encontrado");
+    }
+
+    countries.splice(index, 1);
+    res.status(200).send("País deletado com sucesso!");
+  } catch (error) {
+    res.status(errorCode).send(error.message);
   }
 });
 
