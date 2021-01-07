@@ -202,7 +202,7 @@ app.delete("/user", (req: Request, res: Response) => {
   let errorCode: number = 400;
 
   try {
-    
+    //código aqui
   } catch (error) {
   }
 })
