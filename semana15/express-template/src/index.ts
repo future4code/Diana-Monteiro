@@ -68,6 +68,11 @@ app.post("/countries/create", (req: Request, res: Response) => {
       throw new Error("Chave de identificação inválida");
     }
 
+    if(!newCountry.name || !newCountry.capital || !newCountry.continent){
+      errorCode = 422;
+      throw new Error("Preencha todos os campos para seguir!");
+    }
+
     if (result) {
       errorCode = 401;
       throw new Error("Esse país já foi computado!");
