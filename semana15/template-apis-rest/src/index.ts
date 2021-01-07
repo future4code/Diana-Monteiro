@@ -202,8 +202,12 @@ app.delete("/user", (req: Request, res: Response) => {
   let errorCode: number = 400;
 
   try {
-    //código aqui
+    const lastUserIndex: number = Number(users.length -1)
+
+    users.splice(lastUserIndex, 1)
+    res.status(200).send({message: "Usuário deletado com sucesso!"});
   } catch (error) {
+    res.status(errorCode).send({message: error.message});
   }
 })
 
