@@ -49,14 +49,17 @@ app.get("/countries/search", (req: Request, res: Response) => {
 //ENDEPOINT 6
 
 app.post("/countries/create", (req: Request, res: Response) => {
-
-  const newCountry : country = {
+  const newCountry: country = {
     id: Date.now(),
     name: req.body.name,
     capital: req.body.capital,
-    continent: req.body.continent
-  }
- 
+    continent: req.body.continent,
+  };
+
+  const result: country | undefined = countries.find(
+    (country) => country.name === req.body.name
+  );
+  
   let errorCode: number = 400;
 
   try {
@@ -65,14 +68,13 @@ app.post("/countries/create", (req: Request, res: Response) => {
       throw new Error("Chave de identificação inválida");
     }
 
-    if(countries.includes(req.body.name)){
-        errorCode = 401;
-        throw new Error("Esse país já foi computado!");   
+    if (result) {
+      errorCode = 401;
+      throw new Error("Esse país já foi computado!");
     }
 
     countries.push(newCountry);
-    res.status(200).send({message: "Sucess!", country:newCountry});
-
+    res.status(200).send({ message: "Sucess!", country: newCountry });
   } catch (error) {
     res.status(errorCode).send(error.message);
   }
