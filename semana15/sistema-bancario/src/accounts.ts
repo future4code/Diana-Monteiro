@@ -5,77 +5,51 @@ export type extract = {
 };
 
 export type account = {
-    cpf: string;
-    name: string;
-    birthDate: string;
-    balance: number;
-    userExtract: extract[]
-  };  
+  cpf: string;
+  name: string;
+  birthDate: string | Date;
+  balance: number;
+  statement: extract[];
+};
 
 export let accounts: account[] = [
   {
-    "cpf": "11727716779",
-    "name": "Diana Monteiro",
-    "birthDate": "30/04/1988",
-    "balance": 4000,
-    "userExtract": [
-        {
-            value: 0,
-            date: 16022021,
-            description: "Pagando conta de luz"
-        }
-    ]
+    name: "Diana Monteiro",
+    cpf: "11727716779",
+    birthDate: "2020-04-30T00:00:00.000Z",
+    balance: 2000,
+    statement: [
+      {
+        value: 1000,
+        date: 1610154121076,
+        description: "Depósito de dinheiro",
+      },
+      {
+        value: 1000,
+        date: 1610154141962,
+        description: "Depósito de dinheiro",
+      },
+    ],
   },
   {
-    "cpf": "25825914759",
-    "name": "Maria do Bairro",
-    "birthDate": "20/11/1980",
-    "balance": 2000,
-    "userExtract": [
-        {
-            value: 0,
-            date: 16022021,
-            description: "Pagando conta de luz"
-        }
-    ]
+    name: "Maria Mariana",
+    cpf: "11456716779",
+    birthDate: "1980-02-10T00:00:00.000Z",
+    balance: 0,
+    statement: [],
   },
   {
-    "cpf": "15987456325",
-    "name": "Fernanda Garcia",
-    "birthDate": "15/01/1984",
-    "balance": 3000,
-    "userExtract": [
-        {
-            value: 0,
-            date: 16022021,
-            description: "Pagando conta de luz"
-        }
-    ]
+    name: "Lucas Ribeiro",
+    cpf: "36985147879",
+    birthDate: "2000-09-25T00:00:00.000Z",
+    balance: 0,
+    statement: [],
   },
   {
-    "cpf": "15489562314",
-    "name": "Marina Azzi",
-    "birthDate": "28/09/1990",
-    "balance": 5000,
-    "userExtract": [
-        {
-            value: 0,
-            date: 16022021,
-            description: "Pagando conta de luz"
-        }
-    ]
-  },
-  {
-    "cpf": "15426985478",
-    "name": "Augusto Luna",
-    "birthDate": "10/08/1985",
-    "balance": 4000,
-    "userExtract": [
-        {
-            value: 0,
-            date: 16022021,
-            description: "Pagando conta de luz"
-        }
-    ]
+    name: "Diego Mariana",
+    cpf: "11456147879",
+    birthDate: "1998-11-17T00:00:00.000Z",
+    balance: 0,
+    statement: [],
   },
 ];
