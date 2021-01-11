@@ -133,49 +133,71 @@ a)  A query abaixo cria a tabela de nome Filmes com asseguinte colunas: id, tít
     );
     ```
 
-b) INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
+b)   ```
+    INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
     VALUES ( 001, 
     "Se Eu Fosse Você", 
     "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos", 
     "2006-01-06", 
     7);
+    ```
 
-c)  INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
+c)  ```
+    INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
     VALUES ( 002, 
 	"Doce de mãe", 
     "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela", 
     "2012-12-27", 
 	10);
-
-d)  INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
+    ```
+    
+d)  ```
+    INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
     VALUES ( 003, 
 	"Dona Flor e seus dois Maridos", 
     "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.", 
     "2017-11-02", 
 	8);
+    ```
 
-e)  INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
+e)   ```
+    INSERT INTO Filmes ( id, Título, Sinopse, Lançamento, Avaliação)
     VALUES ( 004, 
 	"Bacurau", 
     "Pouco após a morte de dona Carmelita, aos 94 anos, os moradores de um pequeno povoado localizado no sertão brasileiro, chamado Bacurau, descobrem que a comunidade não consta mais em qualquer mapa. Aos poucos, percebem algo estranho na região: enquanto drones passeiam pelos céus, estrangeiros chegam à cidade pela primeira vez. Quando carros se tornam vítimas de tiros e cadáveres começam a aparecer, Teresa (Bárbara Colen), Domingas (Sônia Braga), Acácio (Thomas Aquino), Plínio (Wilson Rabelo), Lunga (Silvero Pereira) e outros habitantes chegam à conclusão de que estão sendo atacados. Falta identificar o inimigo e criar coletivamente um meio de defesa.", 
     "2019-08-29", 
 	9);
+    ```
 
 ### Exercício 6
 
-a)  SELECT id, Título, Avaliação from Filmes WHERE id = "002";
+a)  ```
+    SELECT id, Título, Avaliação from Filmes WHERE id = "002";
+    ```
 
-b)  Retornei um filme a partir de um Título espécífico pois o campo nome foi substituido por Título.
+b)  ```
+    Retornei um filme a partir de um Título espécífico pois o campo nome foi substituido por Título.
     SELECT * from Filmes WHERE Título = "Bacurau";
+    ```
 
-c)  SELECT id, Título, Sinopse FROM Filmes WHERE Avaliação >= 7;
+c)  ```
+    SELECT id, Título, Sinopse FROM Filmes WHERE Avaliação >= 7;
+    ```
 
 ### Exercício 7
 
-a)  SELECT * FROM Filmes WHERE Título LIKE "%vida%";
+a)  ```
+    SELECT * FROM Filmes WHERE Título LIKE "%vida%";
+    ```
 
-b)  SELECT * FROM Filmes WHERE Título LIKE "%v%" OR Sinopse LIKE "%brasil%";
+b)  ```
+    SELECT * FROM Filmes WHERE Título LIKE "%v%" OR Sinopse LIKE "%brasil%";
+    ```
 
-c)  SELECT * FROM Filmes WHERE Lançamento < "2021-01-11";
+c)  ```
+    SELECT * FROM Filmes WHERE Lançamento < "2021-01-11";
+    ```
 
-d)  SELECT * FROM Filmes WHERE Lançamento < "2021-01-11" AND (Título LIKE "%v%" OR Sinopse LIKE "%brasil%") AND Avaliação > 7;
+d)  ```
+    SELECT * FROM Filmes WHERE Lançamento < "2021-01-11" AND (Título LIKE "%v%" OR Sinopse LIKE "%brasil%") AND Avaliação > 7;
+    ```
