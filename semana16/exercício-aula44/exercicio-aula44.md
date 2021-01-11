@@ -122,7 +122,7 @@ d) SELECT * FROM Actor WHERE (name LIKE "G%" OR name LIKE "A%" OR name LIKE "%g%
 
 ### Exercício 5
 
-a)  A qury abaixo cria a tabela de nome Filmes com asseguinte colunas: id, título, sinopse, lançamento e avaliação.
+a)  A query abaixo cria a tabela de nome Filmes com asseguinte colunas: id, título, sinopse, lançamento e avaliação.
     ```
     CREATE TABLE Filmes(
     id INT PRIMARY KEY,
