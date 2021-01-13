@@ -37,19 +37,19 @@ const server = app.listen(process.env.PORT || 3003, () => {
 
 /**************************************************************/
 
-app.get("/", testEndpoint);
+// app.get("/", testEndpoint);
 
-async function testEndpoint(req: Request, res: Response): Promise<any> {
-  try {
-    const result = await connection.raw(`
-      SELECT * FROM Actor
-    `);
+// async function testEndpoint(req: Request, res: Response): Promise<any> {
+//   try {
+//     const result = await connection.raw(`
+//       SELECT * FROM Actor
+//     `);
 
-    res.status(200).send(result);
-  } catch (error) {
-    res.status(400).send(error.message);
-  }
-}
+//     res.status(200).send(result);
+//   } catch (error) {
+//     res.status(400).send(error.message);
+//   }
+// }
 
 //Exercício 1 letraA
 // const getActorById = async (id: string): Promise<any> => {
@@ -67,7 +67,7 @@ async function testEndpoint(req: Request, res: Response): Promise<any> {
 //   const result = await connection.raw(`
 //       SELECT * FROM Actor WHERE name LIKE "%${name}%";
 //   `)
-  
+
 //   return result[0][0]
 // }
 
@@ -86,13 +86,13 @@ async function testEndpoint(req: Request, res: Response): Promise<any> {
 //   const result = await connection.raw(`
 //       SELECT COUNT (*) as count FROM Actor WHERE gender = '${gender}'
 //   `)
-  
+
 //   return result[0][0]
 // }
 
-// app.get("/:gender", async (req: Request, res: Response) => {
+// app.get("/gender", async (req: Request, res: Response) => {
 //   try {
-//     const gender = req.params.gender;
+//     const gender = req.query.gender as string;
 //     const countGender = await getAcountByGender(gender);
 //     res.status(200).send({ Actor: countGender });
 //   } catch (error) {
@@ -101,32 +101,156 @@ async function testEndpoint(req: Request, res: Response): Promise<any> {
 //   }
 // });
 
-const updateSalary = async (salary: number, id:string): Promise<any> => {
+// const updateSalary = async (salary: number, id:string): Promise<any> => {
+//   try{
+//   await connection('Actor')
+//     .update({
+//       salary: salary,
+//     })
+//     .where("id", id);
 
-  try{
-  await connection('Actor')
-    .update({
-      salary: salary,
-    })
-    .where(id);
+//       console.log(`Salário atualizado com sucesso para ${salary}`);
 
-      console.log(`Salário atualizado com sucesso para ${salary}`);
-      
-   } catch (error) {
-      throw new Error(error.sqlMessage || error.message);
-   }
+//    } catch (error) {
+//       throw new Error(error.sqlMessage || error.message);
+//    }
+// };
+
+// app.post("/", async (req:Request, res:Response) => {
+
+//   try {
+//         const id = req.body.id
+//         const salary = req.body.salary;
+//         const newSalary = Number(salary)
+
+//         await updateSalary(newSalary, id);
+
+//         res.status(200).send("Salário atualizado com sucesso");
+//       } catch (error) {
+//         console.log(error);
+//         res.send(error.sqlMessage || error.message);
+//       }
+// });
+
+// const deleteActor = async (id:string): Promise<any> => {
+//     try{
+//     await connection('Actor')
+//       .delete()
+//       .where("id", id);
+//      } catch (error) {
+//         throw new Error(error.sqlMessage || error.message);
+//      }
+// };
+
+// app.delete("/:id", async (req:Request, res:Response) => {
+
+//     try {
+//           const id = req.params.id;
+//           await deleteActor(id);
+
+//           res.status(200).send("Ação realizada com sucesso");
+//         } catch (error) {
+//           console.log(error);
+//           res.send(error.sqlMessage || error.message);
+//         }
+//   });
+
+// const averageWave = async (gender:string): Promise<any> => {
+//   try{
+//   const result = await connection('Actor')
+//     .avg("salary as avarage")
+//     .where("gender", gender);
+//     console.log(result[0])
+//     return result[0];
+//    } catch (error) {
+//       throw new Error(error.sqlMessage || error.message);
+//    }
+// };
+
+// averageWave("female")
+
+// app.get ("/avg/:gender", async (req: Request, res: Response) => {
+//     try {
+//       const gender = req.params.gender
+//       const avgSalary = averageWave(gender)
+//       res.status(200).send({ Gender: gender, avgSalary });
+//     } catch (error) {
+//       console.log(error);
+//       res.send(error.sqlMessage || error.message);
+//     }
+//   });
+
+const createMovies = async (
+  id: number,
+  title: string,
+  synopsis: string,
+  releaseDate: Date | string,
+  playingLimitDate: Date | string
+): Promise<any> => {
+  try {
+    await connection
+      .insert({
+        id: id,
+        title: title,
+        synopsis: synopsis,
+        release_date: releaseDate,
+        playing_limit_date: playingLimitDate,
+      })
+      .into("Movie");
+
+    console.log(`Filme criado com sucesso`);
+  } catch (error) {
+    throw new Error(error.sqlMessage || error.message);
+  }
 };
 
-app.put("/", async (req:Request, res:Response) => {
-  try {
-        const id = req.body
-        const salary = req.body as number;
-        
-        await updateSalary(salary, id);
+app.post("/", async (req:Request, res:Response) => {
 
-        res.status(200).send("Salário atualizado com sucesso");
+  try {
+        await createMovies(
+          req.body.id, 
+          req.body.title,
+          req.body.synopsis,
+          req.body.releaseDate,
+          req.body.playingLimitDate);
+
+        res.status(200).send("Filme criado com sucesso");
       } catch (error) {
         console.log(error);
         res.send(error.sqlMessage || error.message);
       }
 });
+
+
+// app.get("/", getAllMovies);
+
+// async function getAllMovies(req: Request, res: Response): Promise<any> {
+//   try {
+//     const result = await connection.raw(`
+//       SELECT * FROM Movie LIMIT 15
+//     `);
+
+//     res.status(200).send(result[0]);
+//   } catch (error) {
+//     res.status(400).send(error.message);
+//   }
+// }
+
+// const getMovieByTitle = async (title: string): Promise<any> => {
+//     const result = await connection.raw(`
+//         SELECT * FROM Movie WHERE title LIKE "%${title}%";
+//     `)
+  
+//     return result[0][0]
+//   }
+  
+//   app.get("/:title", async (req: Request, res: Response) => {
+//     try {
+//       const title = req.params.title;
+//       const myMovie = await getMovieByTitle(title);
+//       res.status(200).send({ Movie: myMovie });
+//     } catch (error) {
+//       console.log(error);
+//       res.send(error.sqlMessage || error.message);
+//     }
+//   });
