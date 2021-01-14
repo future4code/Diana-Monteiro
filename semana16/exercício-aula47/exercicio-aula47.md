@@ -115,7 +115,7 @@ LEFT JOIN Rating ON Rating.id = Movie.id;
 
 ### Exercício 6
 
-a) A relação é do tipo 1:M
+a) A relação é do tipo M:N.
 
 
 b)
