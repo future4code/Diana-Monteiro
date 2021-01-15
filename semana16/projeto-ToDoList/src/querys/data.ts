@@ -79,3 +79,14 @@ export const createTask = async (task: Task): Promise<void> => {
         throw new Error(error.sqlMessage || error.message)
     }
 }
+
+export const getTaskById = async (task_id: string): Promise<any> => {
+    try {
+        const result = await connection("Tasks")
+        .select("*")
+        .where("task_id", task_id) 
+        return (result[0])
+    } catch (error) {
+        throw new Error(error.sqlMessage || error.message)
+    }
+}

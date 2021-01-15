@@ -3,7 +3,7 @@ import express, { Router, Request, Response } from 'express'
 import cors from 'cors'
 
 // Query functions
-import {createUser, getUserById, editUser, createTask} from '../querys/data'
+import {createUser, getUserById, editUser, createTask, getTaskById} from '../querys/data'
 
 //Chamando função de formatar data
 const { formatStringDate} = require('../utils/utils');
@@ -84,14 +84,14 @@ router.post("/user/edit/:id", async (req:Request, res: Response) => {
 /////////////////////////////////////////////////////////
 router.put("/task", async (req: Request, res: Response) => {
     try {
-        const { title, description, deadline, status} = req.body;
+        const { title, description, deadline, status, creatorUserId} = req.body;
 
         const result = {
             title: title,
             description: description,
             deadline: await formatStringDate(deadline),
             status: status,
-            creatorUserId: Date.now()
+            creatorUserId: creatorUserId
         }
 
        //Validação todos os campos obrigatórios
@@ -102,12 +102,30 @@ router.put("/task", async (req: Request, res: Response) => {
        }
         
         await createTask(result)
-        res.status(200).send("O usuário criado com sucesso")
+        res.status(200).send("Tarefa criado com sucesso")
 
     } catch (error) {
         res.status(400).send(error.sqlMessage || error.message)
     }
 })
 
+///////////////////////////////////////////////////////////////////////////
+router.get("/task/:id", async (req: Request, res: Response) => {
+    let errorCode: number = 400;
+
+    try {
+        const result = await getTaskById(req.params.id)
+
+        if (!result) {
+            errorCode = 422;
+            throw new Error("Id inválido.");
+        }
+
+        res.status(200).send(result)
+
+    } catch (error) {
+        res.status(400).send(error.sqlMessage || error.message)
+    }
+})
 
 export default router
