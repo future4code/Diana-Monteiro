@@ -17,3 +17,8 @@ export enum STATUS {
     nickname: string,
     email: string
  }
+
+ export type TaskRelations = {
+    task_id: number,
+    user_id: number
+ }

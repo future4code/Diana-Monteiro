@@ -4,7 +4,7 @@ import Knex from 'knex';
 import dotenv from 'dotenv';
 
 // Types and enums
-import {STATUS, Task, User} from "../types/type"
+import {STATUS, Task, User, TaskRelations} from "../types/type"
 
 // Database configuration
 dotenv.config()
@@ -37,11 +37,32 @@ export const createUser = async (user: User): Promise<void> => {
     }
 }
 
-export const getUserById = async (id: string): Promise<any> => {
+export const getAllUsers = async (): Promise<any> => {
     try {
         const result = await connection("Users")
         .select("*")
+        return (result)
+    } catch (error) {
+        throw new Error(error.sqlMessage || error.message)
+    }
+}
+
+export const getUserById = async (id: string): Promise<any> => {
+    try {
+        const result = await connection("Users")
+        .select("id", "nickname")
         .where("id", id) 
+        return (result[0])
+    } catch (error) {
+        throw new Error(error.sqlMessage || error.message)
+    }
+}
+
+export const getUserByNickname = async (nickname: string): Promise<any> => {
+    try {
+        const result = await connection("Users")
+        .select("id", "nickname")
+        .where("nickname", nickname) 
         return (result[0])
     } catch (error) {
         throw new Error(error.sqlMessage || error.message)
@@ -86,6 +107,48 @@ export const getTaskById = async (task_id: string): Promise<any> => {
         .select("*")
         .where("task_id", task_id) 
         return (result[0])
+    } catch (error) {
+        throw new Error(error.sqlMessage || error.message)
+    }
+}
+
+export const getTaskByCreator = async (creatorUserId: string): Promise<any> => {
+    try {
+        const result = await connection("Tasks")
+        .select("*")
+        .where("creatorUserId", creatorUserId) 
+        return (result[0])
+    } catch (error) {
+        throw new Error(error.sqlMessage || error.message)
+    }
+}
+
+
+export const createResponsible = async (task_relation: TaskRelations): Promise<void> => {
+    try {
+        await connection
+            .insert({
+                task_id: task_relation.task_id,
+                user_id: task_relation.user_id
+            })
+            .into("Task_Relations")
+
+    } catch (error) {
+        throw new Error(error.sqlMessage || error.message)
+    }
+}
+
+export const deleteTaskById = async (task_id: string): Promise<any> => {
+    try {
+        const result =  await connection("Task_Relations")
+        .delete("*")
+        .where("task_id", task_id) 
+        
+        await connection("Tasks")
+        .delete("*")
+        .where("task_id", task_id)
+        
+       
     } catch (error) {
         throw new Error(error.sqlMessage || error.message)
     }
