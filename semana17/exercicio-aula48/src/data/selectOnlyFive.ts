@@ -1,6 +1,6 @@
 import { connection } from "../index"
 
-export async function selectOnlyFive(page:number):Promise<any> {
+export async function selectOnlyFive(page:string):Promise<any> {
     const resultsPerPage: number = 5
     const pageNumber: number = Number(page)
     const offset: number = resultsPerPage * (pageNumber - 1)
@@ -8,6 +8,6 @@ export async function selectOnlyFive(page:number):Promise<any> {
     .select("*")
     .limit(resultsPerPage)
     .offset(offset)
-    
+
     return result
 }

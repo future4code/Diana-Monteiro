@@ -9,14 +9,9 @@ export const getOnlyFive = async (
   res: Response
 ): Promise<void> => {
   try {
-    const page = Number(req.query.page as string);
+    const page = req.query.page as string;
 
-    if (page % 2 !== 0) {
-      res.statusCode = 422;
-      throw new Error(`"page" deve ser um número positivo`);
-    }
-
-    const result = await selectOnlyFive;
+    const result = await selectOnlyFive(page);
     res.status(200).send(result);
   } catch (error) {
     console.log(error);

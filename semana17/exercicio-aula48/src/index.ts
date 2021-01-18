@@ -16,6 +16,7 @@ import {getUserByName} from './endpoints/getUserByName'
 import {getUserByType} from './endpoints/getUserByType'
 import {getOrderBy} from './endpoints/getOrderBy'
 import {getOnlyFive} from './endpoints/getOnlyFive'
+import {getUsers} from './endpoints/getUsers'
 
 //Express configuration for use
 const app: Express = express();
@@ -43,6 +44,8 @@ app.get('/users/search/:type', getUserByType)
 app.get('/users/orderBy', getOrderBy)
 
 app.get('/users/onlyFive', getOnlyFive)
+
+app.get('/users/', getUsers)
 
 // Server configuration
 const server = app.listen(process.env.PORT || 3003, () => {
