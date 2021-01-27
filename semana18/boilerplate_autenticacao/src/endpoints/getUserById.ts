@@ -15,9 +15,14 @@ export const getUserById = async (
          throw new Error("Usuário não encontrado")
       }
 
+      if (authenticationData.role !== "NORMAL") {
+         throw new Error("Apenas um usuário NORMAL pode acessar essa funcionlidade.");
+       }
+
       res.status(200).send({
          id: user.id,
-         email: user.email
+         email: user.email,
+         role: authenticationData.role
       })
 
    } catch (error) {

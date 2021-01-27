@@ -27,7 +27,7 @@ export const login = async (req: Request, res: Response) => {
 
     const passwordIsCorrect: boolean = compare(input.password, user.password);
 
-    if (passwordIsCorrect) {
+    if (!passwordIsCorrect) {
       throw new Error("Senha incorreta.");
     }
 
