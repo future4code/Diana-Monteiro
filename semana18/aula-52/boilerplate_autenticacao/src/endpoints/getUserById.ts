@@ -9,13 +9,11 @@ export const getUserById = async (
    try {
     const token = req.headers.authorization as string;
     const authenticationData = getTokenData(token);
-
       const user = await selectUserById(authenticationData.id)
 
       if (!user) {
          throw new Error("Usuário não encontrado")
       }
-
 
       if (authenticationData.role !== "NORMAL") {
          throw new Error("Apenas um usuário NORMAL pode acessar essa funcionlidade.");
@@ -25,7 +23,6 @@ export const getUserById = async (
          id: user.id,
          email: user.email,
          role: authenticationData.role
-
       })
 
    } catch (error) {

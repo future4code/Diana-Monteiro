@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { selectUserByEmail } from "../data/selectUserByEmail";
 import { generateToken } from "../service/authenticator";
-
 import { compare } from "../service/hashManager";
 
 export const login = async (req: Request, res: Response) => {
@@ -46,4 +45,3 @@ export type loginInput = {
   email: string;
   password: string;
 };
-
