@@ -2,8 +2,10 @@ import { Request, Response } from "express";
 import {insertUser} from "../data/insertUser";
 import { generate } from "../service/idGenerator";
 import { generateToken } from "../service/authenticator";
+
 import { generateHash } from "../service/hashManager";
 import { USER_ROLES } from "../types/user";
+
 
 export const createUser = async (req: Request, res: Response) => {
     try {
@@ -22,6 +24,7 @@ export const createUser = async (req: Request, res: Response) => {
             throw new Error("Senha Inválida");
         }
 
+
         if (
             req.body.role !== USER_ROLES.ADMIN &&
             req.body.role !== USER_ROLES.NORMAL
@@ -32,11 +35,13 @@ export const createUser = async (req: Request, res: Response) => {
         const id: string = generate();
         const cypherPassword: string = generateHash(req.body.password)
 
+
         await insertUser(
             id,
             req.body.name,
             req.body.nickname,
             req.body.email,
+
             cypherPassword,
             req.body.role
         );
@@ -45,6 +50,7 @@ export const createUser = async (req: Request, res: Response) => {
             id: id, 
             role: req.body.role
         });
+
 
         res
             .status(200)
