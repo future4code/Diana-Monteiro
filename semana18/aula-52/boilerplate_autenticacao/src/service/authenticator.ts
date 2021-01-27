@@ -1,5 +1,4 @@
 import * as jwt from "jsonwebtoken";
-
 import { USER_ROLES } from "../types/user";
 
 const expiresIn = "1y";
@@ -21,5 +20,4 @@ export const getTokenData = (token: string): AuthenticationData => {
 export type AuthenticationData = {
   id: string;
   role: USER_ROLES;
-
 };
