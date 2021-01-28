@@ -1,9 +1,12 @@
 import { Request, Response } from "express";
 import {insertUser} from "../data/insertUser";
+import {insertAddress} from "../data/insertAdress"
 import { generate } from "../service/idGenerator";
 import { generateToken } from "../service/authenticator";
 import { generateHash } from "../service/hashManager";
 import { USER_ROLES } from "../types/user";
+import { address } from "../types/address";
+import {getAddressInfo} from "../endpoints/getAdressInfo"
 
 export const createUser = async (req: Request, res: Response) => {
     try {
