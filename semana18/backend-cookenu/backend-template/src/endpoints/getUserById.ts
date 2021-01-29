@@ -7,12 +7,15 @@ import {selectUserById} from '../data/querys/selectUserById'
 //Services
 import {getTokenData} from "../services/authenticator";
 
-export const getUserById = async (req: Request, res: Response): Promise<void> => {
+export const getUserById = async (req: Request, res: Response): Promise<any> => {
     try {
         res.statusCode = 422
-        const token = req.headers.authorization as string;
-        const authenticationData = getTokenData(token);
+        getTokenData(req.headers.authorization as string);
         const user = await selectUserById(req.params.id)
+
+        if (!user) {
+            throw new Error("User not found!");
+        }
 
         res.status(200).send({
             id: user.id,
