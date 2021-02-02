@@ -16,6 +16,14 @@ export type user = {
    nickname: string,
    email: string,
    password: string,
-   role: USER_ROLES
+   role: USER_ROLES,
+   tasks?: task[]
 }
 
+export type signupInputDTO = {
+   name: string,
+   nickname: string,
+   email: string,
+   password: string,
+   role: string
+}

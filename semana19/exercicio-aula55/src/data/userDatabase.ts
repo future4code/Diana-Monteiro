@@ -1,6 +1,6 @@
 import { connection } from "./connection"
 import { user } from "../business/entities/user"
-
+import { convertUserRoleToString } from "./model/userModel"
 
 export const insertUser = async(
    user: user
@@ -11,7 +11,7 @@ export const insertUser = async(
       nickname: user.nickname,
       email: user.email,
       password: user.password,
-      role: user.role
+      role: convertUserRoleToString(user.role)
    }).into('to_do_list_users')
 }
 

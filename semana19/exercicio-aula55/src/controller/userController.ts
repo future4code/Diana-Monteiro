@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import { businessLogin, businessSignup } from "../business/userBusiness";
+import { signupInputDTO } from "../business/entities/user";
+
 
 export const login = async (
    req: Request,
@@ -24,15 +26,17 @@ export const signup = async (
    res: Response
 ) => {
    try {
-      const { name, nickname, email, password, role } = req.body
+      const input: signupInputDTO = 
+      {
+      name: req.body.name,
+      nickname: req.body.nickname,
+      password: req.body.password,
+      role: req.body.role,
+      email: req.body.email
+   }
 
-      const token = await businessSignup(
-         name,
-         nickname,
-         email,
-         password,
-         role
-      )
+
+      const token = await businessSignup(input)
 
       res
          .status(201)
