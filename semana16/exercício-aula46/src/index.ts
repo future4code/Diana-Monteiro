@@ -176,6 +176,7 @@ const server = app.listen(process.env.PORT || 3003, () => {
 //       res.status(200).send({ Gender: gender, avgSalary });
 //     } catch (error) {
 //       console.log(error);
+
 //       res.send(error.sqlMessage || error.message);
 //     }
 //   });
