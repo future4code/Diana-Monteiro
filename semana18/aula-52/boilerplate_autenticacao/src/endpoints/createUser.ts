@@ -6,7 +6,7 @@ import { generateToken } from "../service/authenticator";
 import { generateHash } from "../service/hashManager";
 import { USER_ROLES } from "../types/user";
 import { address } from "../types/address";
-import {getAddressInfo} from "../endpoints/getAdressInfo"
+import {getAddressByCep} from "../service/addresManager"
 
 export const createUser = async (req: Request, res: Response) => {
     try {
@@ -32,8 +32,14 @@ export const createUser = async (req: Request, res: Response) => {
             throw new Error(`"role" deve ser "NORMAL" ou "ADMIN"`)
          }
 
+         //geração id
         const id: string = generate();
+        const addressId: string = generate();
+
+        //senha criptografada
         const cypherPassword: string = generateHash(req.body.password)
+
+        const dataCep: address = await getAddressByCep(req.body.cep)
 
         await insertUser(
             id,
@@ -43,6 +49,17 @@ export const createUser = async (req: Request, res: Response) => {
             cypherPassword,
             req.body.role
         );
+
+        await insertAddress(
+            addressId,
+            dataCep.street,
+            req.body.number,
+            dataCep.neighborhood,
+            dataCep.city,
+            dataCep.state,
+            id,
+            req.body.complement
+        )
 
         const token = generateToken({
             id: id, 
