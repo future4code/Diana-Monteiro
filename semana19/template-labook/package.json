@@ -6,7 +6,7 @@
    "scripts": {
       "my-sql-setup": "tsc && node ./build/mySqlSetup.js",
       "start": "npm run build && node --inspect ./build/index.js",
-      "dev": "clear && ts-node-dev ./src/index.ts",
+      "dev": "ts-node-dev ./src/index.ts",
       "build": "clear && echo \"Transpiling files...\" && tsc && echo \"Done!\" ",
       "test": "jest"
    },

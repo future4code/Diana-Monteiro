@@ -5,22 +5,24 @@ import { convertPostTypesToString } from "./model/postModel";
 export class PostDatabase extends BaseDatabase {
   tableName = "labook_posts";
 
-  insertPost = async (post: post) => {
+   public insertPost = async (post: post) => {
     try {
-      await BaseDatabase.connection(this.tableName).insert({
+      await BaseDatabase.connection
+      .insert({
         id: post.id,
-        photo: post.id,
-        description: post.id,
+        photo: post.photo,
+        description: post.description,
         type: convertPostTypesToString(post.type),
-        createdAt: post.createdAt,
-        authorId: post.authorId,
-      });
+        created_at: post.created_at,
+        author_id: post.author_id,
+      })
+      .into(this.tableName);
     } catch (error) {
       throw new Error(error.slqMessage || error.message);
     }
   };
 
-  selectPostById = async (
+  public selectPostById = async (
     id: string
  ): Promise<post> => {
 
@@ -34,8 +36,8 @@ export class PostDatabase extends BaseDatabase {
             photo: result[0].photo,
             description: result[0].description,
             type: result[0].type,
-            createdAt: result[0].created_at,
-            authorId: result[0].author_id,
+            created_at: result[0].created_at,
+            author_id: result[0].author_id,
          }
     } catch (error) {
         throw new Error(error.slqMessage || error.message)

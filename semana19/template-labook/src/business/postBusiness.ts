@@ -1,35 +1,37 @@
 import { PostDatabase } from "../data/postDataBase";
 import { generateId } from "./services/idGenerator";
 import { post } from "./entities/post";
+import { getTokenData } from "../business/services/authenticator";
 import { createPostInputDTO, convertStringToPostType } from "../data/model/postModel";
+import { AuthenticationData } from "../business/entities/user"
 
-const { date } = require("../services/dateFunction");
+const { date } = require("./services/dateFunction");
 const postDatabase: PostDatabase = new PostDatabase();
-let message = "Success!";
 
-export const businessCreatePost = async (input: createPostInputDTO) => {
+export class PostBusiness {
+
+ businessCreatePost = async (input: createPostInputDTO, token: string) => {
   if (
     !input.photo ||
     !input.description ||
-    !input.type ||
-    !input.authorId
+    !input.type
   ) {
-    message = '"photo", "description", "type", "createdAt" and "authorId" must be provided';
-    throw new Error(message);
+    throw new Error('"photo", "description" and "type" must be provided');
   }
 
   const id: string = generateId();
   const createdDate = date(Date.now())
+  const tokenData: AuthenticationData = getTokenData(token)
 
   const newPost: post = {
     id,
     photo: input.photo,
     description: input.description,
     type: convertStringToPostType(input.type),
-    createdAt: createdDate,
-    authorId: input.type
+    created_at: createdDate,
+    author_id: tokenData.id
   };
-   const post = await postDatabase.insertPost(newPost);
-
-  return post;
+   await postDatabase.insertPost(newPost);
+   return;
 };
+}

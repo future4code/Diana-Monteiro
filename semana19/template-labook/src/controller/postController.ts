@@ -1,17 +1,23 @@
 import { Request, Response } from "express";
-import { getTokenData } from "../business/services/authenticator";
 import { post } from "../business/entities/post";
 import { createPostInputDTO } from "../data/model/postModel";
-import { AuthenticationData } from "../business/entities/user"
+import { PostBusiness } from "../business/postBusiness";
 
-export const createPost = async (req: Request, res: Response): Promise<any> => {
+const postBusiness: PostBusiness = new PostBusiness();
+
+export class PostController {
+
+ createPost = async (req: Request, res: Response): Promise<any> => {
     try {
-        const { photo, description, type } = req.body
+        const input: createPostInputDTO = {
+            photo: req.body.photo,
+            description: req.body.description,
+            type: req.body.type,
+          };
  
        const token: string = req.headers.authorization as string
  
-       const tokenData: AuthenticationData = getTokenData(token)
-      
+      await postBusiness.businessCreatePost(input, token);
  
        res.status(201).send({ message: "Created post!" })
  
@@ -19,6 +25,7 @@ export const createPost = async (req: Request, res: Response): Promise<any> => {
         res.status(error.statusCode || 400).send(error.message)
     }
  }
+}
  
 //  export const getPostById = async (req: Request, res: Response) => {
 //     try {
