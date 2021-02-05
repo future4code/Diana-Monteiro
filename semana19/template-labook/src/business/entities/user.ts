@@ -9,9 +9,3 @@ export type user = {
     password: string
  }
 
- export type signupInputDTO = {
-    name: string,
-    email: string,
-    password: string,
- }
- 

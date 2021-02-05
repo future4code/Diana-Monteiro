@@ -2,7 +2,8 @@ import { HashManager } from "./services/hashManager";
 import { UserDatabase} from "../data/userDatabase";
 import { generateToken } from "./services/authenticator";
 import { generateId } from "./services/idGenerator";
-import { user, signupInputDTO } from "./entities/user";
+import { user } from "./entities/user";
+import { signupInputDTO } from "../data/model/userModel";
 
 const hashManager: HashManager = new HashManager()
 const userDatabase: UserDatabase = new UserDatabase()
@@ -27,7 +28,6 @@ export const businessSignup = async (
         email: input.email,
         password: cypherPassword,
      }
-     const userDatabase = new UserDatabase();
      await userDatabase.insertUser(user);
 
      const token: string = generateToken({ id })
@@ -43,7 +43,6 @@ export const businessSignup = async (
         throw new Error(message)
      }
 
-     const userDatabase = new UserDatabase();
      const user: user = await userDatabase.selectUserByEmail(email)
 
      if (!user) {
@@ -60,6 +59,6 @@ export const businessSignup = async (
         id: user.id
      })
  
-    return user;
+    return {data : user, token: token};
  
  }

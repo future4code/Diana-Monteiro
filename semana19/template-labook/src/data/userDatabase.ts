@@ -8,6 +8,7 @@ export class UserDatabase extends BaseDatabase{
     insertUser = async(
         user: user
     ) =>{
+      try {
         await BaseDatabase.connection(this.tableName)
         .insert({
            id:user.id,
@@ -15,14 +16,15 @@ export class UserDatabase extends BaseDatabase{
            email: user.email,
            password: user.password
         })
-
+      } catch (error) {
+         throw new Error(error.slqMessage || error.message)
+      }
     }
 
     selectUserByEmail = async (
         email: string
      ): Promise<user> => {
   
-        console.log(this);
         try {
            const result = await BaseDatabase.connection(this.tableName)
               .select("*")

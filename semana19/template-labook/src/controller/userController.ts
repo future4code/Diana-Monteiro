@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { businessLogin, businessSignup } from "../business/userBussiness";
-import { signupInputDTO } from "../business/entities/user";
+import { signupInputDTO } from "../data/model/userModel"
 
 export const signup = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -22,9 +22,9 @@ export const login = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
 
-    const token = await businessLogin(email, password)
+    const user = await businessLogin(email, password)
 
-    res.status(200).send({ message:"Logged user!", token });
+    res.status(200).send({ message:"Logged user!", user });
   } catch (error) {
    res.status(400).send(error.message)
   }

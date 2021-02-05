@@ -11,7 +11,7 @@
       "test": "jest"
    },
    "keywords": [],
-   "author": "",
+   "author": "Diana Monteiro",
    "license": "ISC",
    "dependencies": {
       "bcryptjs": "^2.4.3",
