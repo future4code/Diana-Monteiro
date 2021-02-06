@@ -1,9 +1,8 @@
 import express from "express";
-import { PostController} from "../postController";
+import postController from "../postController";
 
 export const postRouter = express.Router();
 
-const postController: PostController = new PostController();
 
 postRouter.post('/create', postController.createPost)
-// postRouter.get('/posts/:id', getPostById)
+postRouter.get('/:id', postController.getPostById)

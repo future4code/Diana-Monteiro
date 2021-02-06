@@ -1,6 +1,6 @@
 import * as bcrypt from "bcryptjs"
 
-export class HashManager {
+class HashManager {
    private cost: number = Number(process.env.BCRYPT_COST)
 
   public hash: (text:string) => Promise<string> = async (
@@ -18,3 +18,5 @@ export class HashManager {
  }
 
 }
+
+export default new HashManager()

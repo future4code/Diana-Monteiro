@@ -4,3 +4,7 @@ export type signupInputDTO = {
     password: string,
  }
  
+ export type loginInputDTO = {
+    email: string,
+    password: string
+} 

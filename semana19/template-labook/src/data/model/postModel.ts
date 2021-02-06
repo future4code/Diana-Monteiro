@@ -1,4 +1,4 @@
-import { POST_TYPES, post } from "../../business/entities/post";
+import { POST_TYPES } from "../../business/entities/post";
 
 export const convertPostTypesToString = (post: POST_TYPES): string => {
     return post === POST_TYPES.EVENT ? "event" : "normal";

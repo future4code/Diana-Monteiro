@@ -8,6 +8,6 @@ export type post = {
     photo: string,
     description: string,
     type: POST_TYPES,
-    created_at: Date,
+    created_at: string,
     author_id: string
  }
