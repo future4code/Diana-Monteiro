@@ -9,7 +9,7 @@ describe("performPurchase - EX2a", () => {
       try {
           const user: User = {
               name: "Nome",
-              balance: 50
+              balance: 300
           }
 
           expect(user.balance).toBeGreaterThan(200)
@@ -21,7 +21,7 @@ describe("performPurchase - EX2a", () => {
 })
 
 describe("performPurchase - EX2b", () => {
-    test("Testing balance greater than value", () => {
+    test("Testing balance less than value", () => {
 
       expect.assertions(1)
 
@@ -40,7 +40,7 @@ describe("performPurchase - EX2b", () => {
 })
 
 describe("performPurchase - EX2c", () => {
-    test("Testing balance greater than value", () => {
+    test("Testing balance equal than value", () => {
 
       expect.assertions(1)
 
