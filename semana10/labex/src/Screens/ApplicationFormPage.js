@@ -57,7 +57,7 @@ const ApplicationFormPage = () => {
         <TitleList>Make your application here</TitleList>
               <Form
                 onSubmit={onSubmitApplication}
-                className="col-md-8 offset-md-2"
+                className=""
               >
                 <Form.Row>
                   <Form.Group as={Col}  md={12} lg={6}>
